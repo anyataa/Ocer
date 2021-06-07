@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="UIViewController-BYZ-38-t0r" id="BYZ-38-t0r" customClass="ViewController" customModule="Ocer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lr-v8-yDF">
+                                <rect key="frame" x="1000" y="143" width="233" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.79774934050000001" green="0.41375306249999999" blue="0.30977079270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Ke Sekolah">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6U0-Kl-sXu" kind="presentation" modalPresentationStyle="fullScreen" id="KQE-cW-VUT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a88-8F-LAO">
+                                <rect key="frame" x="1000" y="404" width="233" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.79774934050000001" green="0.41375306249999999" blue="0.30977079270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Bantu Petani">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4He-KM-KLh" kind="presentation" modalPresentationStyle="fullScreen" id="t4x-nN-MFF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFr-Ig-Ose">
+                                <rect key="frame" x="1000" y="726" width="233" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.79774934050000001" green="0.41375306249999999" blue="0.30977079270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Olahraga Yuk">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4He-KM-KLh" kind="presentation" modalPresentationStyle="fullScreen" id="icb-83-VTv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214.78770131771594" y="93.75"/>
+        </scene>
+        <!--SubMenu-->
+        <scene sceneID="hTl-Ug-ohN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SubMenu" id="6U0-Kl-sXu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfz-V8-oAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="463" y="-114"/>
+        </scene>
+        <!--UnderDevelopment-->
+        <scene sceneID="f9s-aO-0jC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UnderDevelopment" id="4He-KM-KLh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuE-Hq-sMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="644"/>
+        </scene>
+        <!--UIViewController-cA7-rb-hgX-->
+        <scene sceneID="Svh-Lt-FIG">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-cA7-rb-hgX" storyboardName="BangunTidur" referencedIdentifier="UIViewController-cA7-rb-hgX" id="WoA-EX-FXk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h64-he-8A1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="-923"/>
+        </scene>
+        <!--UIViewController-WRd-Gu-FLQ-->
+        <scene sceneID="yAg-o5-1pp">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-WRd-Gu-FLQ" storyboardName="Mandi" referencedIdentifier="UIViewController-WRd-Gu-FLQ" id="4xw-H1-mx8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbK-72-IkQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="-157"/>
+        </scene>
+        <!--UIViewController-IaN-3a-IlL-->
+        <scene sceneID="TX0-3t-Qng">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-IaN-3a-IlL" storyboardName="Sarapan" referencedIdentifier="UIViewController-IaN-3a-IlL" id="bW5-JV-res" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4t6-LB-aVV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="658"/>
+        </scene>
+        <!--UIViewController-eh7-hB-jsS-->
+        <scene sceneID="Ech-5H-3LI">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-eh7-hB-jsS" storyboardName="KeSekolah" referencedIdentifier="UIViewController-eh7-hB-jsS" id="iB5-9T-pU4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vyy-8B-x66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="1425"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="icb-83-VTv"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
