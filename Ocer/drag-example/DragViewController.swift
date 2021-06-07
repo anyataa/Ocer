@@ -29,6 +29,22 @@ class DragViewController: UIViewController {
         view.backgroundColor = .black
         return view
     }()
+    
+    let playButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 450, y: 800, width: 110, height: 30))
+        button.backgroundColor = .red
+        button.setTitle("Play", for: .normal)
+        button.addTarget(self, action: #selector(play), for: .touchUpInside)
+        return button
+    }()
+    
+    let playButton2: UIButton = {
+        let button = UIButton(frame: CGRect(x: 580, y: 800, width: 110, height: 30))
+        button.backgroundColor = .blue
+        button.setTitle("Play2", for: .normal)
+        button.addTarget(self, action: #selector(play2), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +53,10 @@ class DragViewController: UIViewController {
         view.addSubview(draggableObject)
         view.addSubview(dropZone)
         view.addSubview(dropZone2)
+        view.addSubview(playButton)
+        view.addSubview(playButton2)
+        
+        draggableObject.center = view.center
         
         //add to zones to check intersection
         zones.append(dropZone.frame)
@@ -48,18 +68,21 @@ class DragViewController: UIViewController {
     }
 
     @objc private func drag(_ sender: UIPanGestureRecognizer) {
+        if (sender.view == nil) {
+            return
+        }
         switch sender.state {
         case .began:
             //get object position on drag start
-            center = draggableObject.center
-        
-        case .changed:
+            center = sender.view!.center
+            
             //bring dragged object to front (topmost z index within the same view hierarchy)
             view.bringSubviewToFront(sender.view!)
             
+        case .changed:
             //update object position while dragging
             let translation = sender.translation(in: view)
-            draggableObject.center = CGPoint(x: center.x + translation.x,
+            sender.view!.center = CGPoint(x: center.x + translation.x,
                                           y: center.y + translation.y)
             
             //check if object intersects with drop zones
@@ -103,4 +126,52 @@ class DragViewController: UIViewController {
             break
         }
     }
+    
+    @objc func play(sender: UIButton!) {
+        self.view.bringSubviewToFront(self.draggableObject)
+        
+        //nested animation
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
+            self.draggableObject.center = self.dropZone.center
+        } completion: { _ in
+            UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
+                self.draggableObject.center = self.dropZone2.center
+            } completion: { _ in
+                UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
+                    self.draggableObject.center = self.view.center
+                } completion: { _ in
+                    print("done1")
+                }
+            }
+        }
+    }
+    
+    @objc func play2(sender: UIButton!) {
+        self.view.bringSubviewToFront(self.draggableObject)
+        
+        //animation with keyframes
+        UIView.animateKeyframes(withDuration: 4.0, delay: 0, options: [.calculationModeLinear], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
+                    self.draggableObject.center = self.dropZone.center
+                })
+            UIView.addKeyframe(withRelativeStartTime: 0.12, relativeDuration: 0.25, animations: {
+                    self.draggableObject.center = self.dropZone2.center
+                })
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.1, animations: {
+                    self.draggableObject.center = self.view.center
+                })
+            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.1, animations: {
+                    self.draggableObject.center = self.dropZone2.center
+                })
+            UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.1, animations: {
+                    self.draggableObject.center = self.dropZone.center
+                })
+            UIView.addKeyframe(withRelativeStartTime: 0.95, relativeDuration: 0.1, animations: {
+                    self.draggableObject.center = self.view.center
+                })
+            }, completion:{_ in
+                print("done2")
+            })
+    }
+    
 }
