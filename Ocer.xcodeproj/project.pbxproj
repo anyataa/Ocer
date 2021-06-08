@@ -20,6 +20,7 @@
 		8454D394266DECD50035302A /* Mandi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D393266DECD50035302A /* Mandi.storyboard */; };
 		8454D398266DECE10035302A /* Sarapan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D396266DECE10035302A /* Sarapan.storyboard */; };
 		8454D39B266DECF20035302A /* KeSekolah.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D39A266DECF20035302A /* KeSekolah.storyboard */; };
+		8454D3D7266F01D10035302A /* BangunTidurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D3D6266F01D10035302A /* BangunTidurViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8454D393266DECD50035302A /* Mandi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mandi.storyboard; sourceTree = "<group>"; };
 		8454D397266DECE10035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/Sarapan.storyboard; sourceTree = "<group>"; };
 		8454D39A266DECF20035302A /* KeSekolah.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KeSekolah.storyboard; sourceTree = "<group>"; };
+		8454D3D6266F01D10035302A /* BangunTidurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangunTidurViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				8454D38F266DECC80035302A /* BangunTidur.storyboard */,
 				8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */,
 				8454D388266DEC850035302A /* SubMenu.storyboard */,
+				8454D3D6266F01D10035302A /* BangunTidurViewController.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				8418B90326685E48002C8105 /* ViewController.swift in Sources */,
 				8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */,
 				8418B90926685E48002C8105 /* Ocer.xcdatamodeld in Sources */,
+				8454D3D7266F01D10035302A /* BangunTidurViewController.swift in Sources */,
 				8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
