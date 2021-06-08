@@ -12,9 +12,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var collectionView: UICollectionView!
     
     let stories: [Story] = [
-        Story(storyName: "Berangkat Sekolah", storyImage: "Story1"),
-        Story(storyName: "Berangkat Sekolah", storyImage: "Story2"),
-        Story(storyName: "Berangkat Sekolah", storyImage: "Story3")
+        Story(storyName: "StoryTitle1", storyImage: "Story1"),
+        Story(storyName: "StoryTitle1", storyImage: "Story2"),
+        Story(storyName: "StoryTitle1", storyImage: "Story3")
     ]
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: indexPath) as! CardView
         
-        cell.cardName.image = UIImage(named: "AppName")
+        cell.cardName.image = UIImage(named: "\(stories[indexPath.row].storyName)")
         
         cell.cardImage.image = UIImage(named: "\(stories[indexPath.row].storyImage)")
         cell.cardImage.layer.cornerRadius = 30

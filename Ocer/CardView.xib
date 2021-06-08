@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="402" height="293"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppName" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-M5-zq0">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StoryTitle1" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-M5-zq0">
                         <rect key="frame" x="16" y="12" width="370" height="38"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -36,7 +36,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="AppName" width="415" height="103"/>
         <image name="Story1" width="6000" height="3000"/>
+        <image name="StoryTitle1" width="290" height="35"/>
     </resources>
 </document>

@@ -13,10 +13,10 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var collectionView: UICollectionView!
     
     let scenes: [Scene] = [
-        Scene(sceneName: "Bangun tidur", sceneImage: "SubMenu1"),
-        Scene(sceneName: "Menyikat gigi", sceneImage: "SubMenu2"),
-        Scene(sceneName: "Sarapan", sceneImage: "SubMenu3"),
-        Scene(sceneName: "Pergi sekolah", sceneImage: "SubMenu4")
+        Scene(sceneName: "Scene1", sceneImage: "SubMenu1"),
+        Scene(sceneName: "Scene2", sceneImage: "SubMenu2"),
+        Scene(sceneName: "Scene3", sceneImage: "SubMenu3"),
+        Scene(sceneName: "Scene4", sceneImage: "SubMenu4")
     ]
     
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: indexPath) as! CardView
-        cell.cardName.image = UIImage(named: "AppName")
+        cell.cardName.image = UIImage(named: "\(scenes[indexPath.row].sceneName)")
         cell.cardImage.image = UIImage(named: "\(scenes[indexPath.row].sceneImage)")
         
         return cell
