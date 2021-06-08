@@ -10,7 +10,7 @@ import UIKit
 class DragViewController: UIViewController {
     
     var center: CGPoint = CGPoint.zero
-    var zones: [CGRect] = []
+    var zones: [UIView] = []
     
     let draggableObject: UIView = {
         let view = UIView(frame: CGRect(x: 500, y: 500, width: 100, height: 100))
@@ -45,22 +45,36 @@ class DragViewController: UIViewController {
         button.addTarget(self, action: #selector(play2), for: .touchUpInside)
         return button
     }()
+    
+    func addZone(x:Int, y:Int, width:Int = 110, height:Int = 110) -> UIView {
+        let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
+        view.backgroundColor = .black
+        zones.append(view)
+        return view
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //setup view
         view.addSubview(draggableObject)
-        view.addSubview(dropZone)
-        view.addSubview(dropZone2)
+//        view.addSubview(dropZone)
+//        view.addSubview(dropZone2)
+        view.addSubview(addZone(x: 100, y: 100))
+        view.addSubview(addZone(x: 300, y: 100))
+        view.addSubview(addZone(x: 500, y: 100))
+        view.addSubview(addZone(x: 500, y: 300))
+        view.addSubview(addZone(x: 700, y: 300))
+        view.addSubview(addZone(x: 700, y: 500))
+        
         view.addSubview(playButton)
         view.addSubview(playButton2)
         
         draggableObject.center = view.center
         
         //add to zones to check intersection
-        zones.append(dropZone.frame)
-        zones.append(dropZone2.frame)
+//        zones.append(dropZone.frame)
+//        zones.append(dropZone2.frame)
         
         //add pan gesture
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(drag(_:)))
@@ -90,15 +104,15 @@ class DragViewController: UIViewController {
             //TODO is looping necessary?
             for zone in zones {
                 if (sender.view?.frame != nil) {
-                    if (sender.view!.frame.intersects(zone))  {
+                    if (sender.view!.frame.intersects(zone.frame))  {
                         //turn on shadow if dragged object is on top of drop zone
                         //TODO green shadow for correct zone, red for incorrect zone
                         sender.view!.layer.shadowRadius = 15
-                        if(zone == dropZone.frame) {
+//                        if(zone == dropZone.frame) {
                             sender.view!.layer.shadowColor = UIColor.green.cgColor
-                        } else {
-                            sender.view!.layer.shadowColor = UIColor.red.cgColor
-                        }
+//                        } else {
+//                            sender.view!.layer.shadowColor = UIColor.red.cgColor
+//                        }
                         sender.view!.layer.shadowOpacity = 1
                     break
                 } else {
@@ -111,15 +125,22 @@ class DragViewController: UIViewController {
             //snap animation
             //TODO check UISnapBehavior
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
-                if (sender.view?.frame != nil) {
-                    //TODO snap to correct zone, otherwise reset draggableObject position
-                    if (sender.view!.frame.intersects(self.dropZone.frame)){
-                        sender.view!.center = self.dropZone.center
-                    } else {
-                        sender.view!.center = self.view.center
+//                if (sender.view?.frame != nil) {
+//                    //TODO snap to correct zone, otherwise reset draggableObject position
+//                    if (sender.view!.frame.intersects(self.dropZone.frame)){
+//                        sender.view!.center = self.dropZone.center
+//                    } else {
+//                        sender.view!.center = self.view.center
+//                    }
+//                    //turn off shadow
+//                    sender.view!.layer.shadowOpacity = 0
+//                }
+                for zone in self.zones {
+                    if (sender.view!.frame.intersects(zone.frame)){
+                        sender.view!.center = zone.center
+                        sender.view!.layer.shadowOpacity = 0
+                        break
                     }
-                    //turn off shadow
-                    sender.view!.layer.shadowOpacity = 0
                 }
             }
         default:
@@ -150,25 +171,32 @@ class DragViewController: UIViewController {
         self.view.bringSubviewToFront(self.draggableObject)
         
         //animation with keyframes
-        UIView.animateKeyframes(withDuration: 4.0, delay: 0, options: [.calculationModeLinear], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
-                    self.draggableObject.center = self.dropZone.center
-                })
-            UIView.addKeyframe(withRelativeStartTime: 0.12, relativeDuration: 0.25, animations: {
-                    self.draggableObject.center = self.dropZone2.center
-                })
-            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.1, animations: {
-                    self.draggableObject.center = self.view.center
-                })
-            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.1, animations: {
-                    self.draggableObject.center = self.dropZone2.center
-                })
-            UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.1, animations: {
-                    self.draggableObject.center = self.dropZone.center
-                })
-            UIView.addKeyframe(withRelativeStartTime: 0.95, relativeDuration: 0.1, animations: {
-                    self.draggableObject.center = self.view.center
-                })
+        UIView.animateKeyframes(withDuration: 3.0, delay: 0, options: [.calculationModeLinear], animations: {
+//            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
+//                    self.draggableObject.center = self.dropZone.center
+//                })
+//            UIView.addKeyframe(withRelativeStartTime: 0.12, relativeDuration: 0.25, animations: {
+//                    self.draggableObject.center = self.dropZone2.center
+//                })
+//            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.1, animations: {
+//                    self.draggableObject.center = self.view.center
+//                })
+//            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.1, animations: {
+//                    self.draggableObject.center = self.dropZone2.center
+//                })
+//            UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.1, animations: {
+//                    self.draggableObject.center = self.dropZone.center
+//                })
+//            UIView.addKeyframe(withRelativeStartTime: 0.95, relativeDuration: 0.1, animations: {
+//                    self.draggableObject.center = self.view.center
+//                })
+            
+            for (index,zone) in self.zones.enumerated() {
+                UIView.addKeyframe(withRelativeStartTime: Double(index)/Double(self.zones.count), relativeDuration: 0.1, animations: {
+                        self.draggableObject.center = zone.center
+                    })
+            }
+            
             }, completion:{_ in
                 print("done2")
             })
