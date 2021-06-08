@@ -10,43 +10,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardViewCell" id="gTV-IL-0wX" customClass="CardView" customModule="Ocer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="329" height="258"/>
+            <rect key="frame" x="0.0" y="0.0" width="402" height="293"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="329" height="258"/>
+                <rect key="frame" x="0.0" y="0.0" width="402" height="293"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppName" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-M5-zq0">
-                        <rect key="frame" x="8" y="12" width="313" height="38"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="38" id="M7Z-Dr-dwU"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppName" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-M5-zq0">
+                        <rect key="frame" x="8" y="12" width="402" height="38"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sekolah" translatesAutoresizingMaskIntoConstraints="NO" id="P6Y-Yi-S3w">
-                        <rect key="frame" x="16" y="58" width="297" height="192"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Story1" translatesAutoresizingMaskIntoConstraints="NO" id="P6Y-Yi-S3w">
+                        <rect key="frame" x="16" y="66" width="370" height="227"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstItem="D2A-M5-zq0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="CJO-0S-bAk"/>
-                <constraint firstAttribute="bottom" secondItem="P6Y-Yi-S3w" secondAttribute="bottom" constant="8" id="DUP-Z6-ZNT"/>
-                <constraint firstItem="P6Y-Yi-S3w" firstAttribute="top" secondItem="D2A-M5-zq0" secondAttribute="bottom" constant="8" id="E8S-ep-uHq"/>
-                <constraint firstItem="P6Y-Yi-S3w" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="QAN-87-Ehf"/>
-                <constraint firstItem="D2A-M5-zq0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="apf-Ka-BBW"/>
-                <constraint firstAttribute="trailing" secondItem="D2A-M5-zq0" secondAttribute="trailing" constant="8" id="gNI-9O-3gF"/>
-                <constraint firstAttribute="trailing" secondItem="P6Y-Yi-S3w" secondAttribute="trailing" constant="16" id="xhQ-61-Zkt"/>
-            </constraints>
-            <size key="customSize" width="329" height="258"/>
+            <size key="customSize" width="329" height="238"/>
             <connections>
-                <outlet property="storyImage" destination="P6Y-Yi-S3w" id="ACp-T8-dYj"/>
-                <outlet property="storyName" destination="D2A-M5-zq0" id="qo1-ru-fdf"/>
+                <outlet property="cardImage" destination="P6Y-Yi-S3w" id="m5l-YN-tLy"/>
+                <outlet property="cardName" destination="D2A-M5-zq0" id="34x-E6-6VU"/>
             </connections>
-            <point key="canvasLocation" x="145.6521739130435" y="133.92857142857142"/>
+            <point key="canvasLocation" x="144.92753623188406" y="126.89732142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="AppName" width="415" height="103"/>
-        <image name="Sekolah" width="426" height="217"/>
+        <image name="Story1" width="6000" height="3000"/>
     </resources>
 </document>

@@ -25,6 +25,7 @@
 		F301015C266E2C2500002D7A /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F301015A266E2C2500002D7A /* CardView.xib */; };
 		F301015E266E317300002D7A /* SubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301015D266E317300002D7A /* SubMenu.swift */; };
 		F3010160266E322F00002D7A /* UnderDevelopment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301015F266E322F00002D7A /* UnderDevelopment.swift */; };
+		F31B7005266F0F9E00A6324A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31B7004266F0F9E00A6324A /* Scene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		F301015A266E2C2500002D7A /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F301015D266E317300002D7A /* SubMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMenu.swift; sourceTree = "<group>"; };
 		F301015F266E322F00002D7A /* UnderDevelopment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderDevelopment.swift; sourceTree = "<group>"; };
+		F31B7004266F0F9E00A6324A /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				F301015A266E2C2500002D7A /* CardView.xib */,
 				F301015D266E317300002D7A /* SubMenu.swift */,
 				F301015F266E322F00002D7A /* UnderDevelopment.swift */,
+				F31B7004266F0F9E00A6324A /* Scene.swift */,
 			);
 			path = Ocer;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				F301015B266E2C2500002D7A /* CardView.swift in Sources */,
 				F301015E266E317300002D7A /* SubMenu.swift in Sources */,
 				F3010132266E1AA000002D7A /* Story.swift in Sources */,
+				F31B7005266F0F9E00A6324A /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anyacreate.Ocer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -395,7 +399,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anyacreate.Ocer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

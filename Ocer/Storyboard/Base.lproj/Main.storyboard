@@ -20,25 +20,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-Yi-CfQ">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ocer" translatesAutoresizingMaskIntoConstraints="NO" id="XZQ-Za-hD0">
-                                        <rect key="frame" x="95" y="381" width="558" height="485"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="558" id="8ox-hg-7ls"/>
-                                            <constraint firstAttribute="height" constant="485" id="sq1-re-6UT"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppName" translatesAutoresizingMaskIntoConstraints="NO" id="GBb-vB-orC">
-                                        <rect key="frame" x="147" y="185" width="400" height="107"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="400" id="1NI-zx-632"/>
-                                            <constraint firstAttribute="height" constant="107" id="wsJ-XO-bxo"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="UnL-mE-rvh">
+                                        <rect key="frame" x="0.0" y="-32" width="1366" height="1084"/>
                                     </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-7F-r4j">
-                                        <rect key="frame" x="734" y="30" width="632" height="994"/>
+                                        <rect key="frame" x="684" y="50" width="632" height="924"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ajf-yE-BhM">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="632" id="pbM-K0-P53"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Ajf-yE-BhM">
                                             <size key="itemSize" width="128" height="128"/>
+                                            <size key="estimatedItemSize" width="418" height="313"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -57,14 +50,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="XZQ-Za-hD0" firstAttribute="top" secondItem="GBb-vB-orC" secondAttribute="bottom" constant="89" id="Ljq-oP-JBv"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Sy-7F-r4j" secondAttribute="trailing" id="OzO-Hi-7AL"/>
-                                    <constraint firstItem="2Sy-7F-r4j" firstAttribute="leading" secondItem="XZQ-Za-hD0" secondAttribute="trailing" constant="81" id="U77-vj-Nwa"/>
-                                    <constraint firstItem="GBb-vB-orC" firstAttribute="leading" secondItem="Weg-Yi-CfQ" secondAttribute="leading" constant="147" id="VOH-xf-Uu4"/>
-                                    <constraint firstItem="GBb-vB-orC" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="top" constant="185" id="Ye2-lo-790"/>
-                                    <constraint firstAttribute="bottom" secondItem="2Sy-7F-r4j" secondAttribute="bottom" id="ZLR-nu-3qd"/>
-                                    <constraint firstItem="XZQ-Za-hD0" firstAttribute="leading" secondItem="Weg-Yi-CfQ" secondAttribute="leading" constant="95" id="i19-DP-97p"/>
-                                    <constraint firstItem="2Sy-7F-r4j" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="top" constant="30" id="keC-LE-MJK"/>
+                                    <constraint firstItem="UnL-mE-rvh" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="topMargin" constant="-40" id="9yd-yV-qrH"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Sy-7F-r4j" secondAttribute="trailing" constant="50" id="OzO-Hi-7AL"/>
+                                    <constraint firstItem="UnL-mE-rvh" firstAttribute="leading" secondItem="Weg-Yi-CfQ" secondAttribute="leading" id="VSB-md-OTV"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Sy-7F-r4j" secondAttribute="bottom" constant="50" id="ZLR-nu-3qd"/>
+                                    <constraint firstItem="2Sy-7F-r4j" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="top" constant="50" id="keC-LE-MJK"/>
+                                    <constraint firstAttribute="bottom" secondItem="UnL-mE-rvh" secondAttribute="bottomMargin" constant="-20" id="t9D-BX-w49"/>
+                                    <constraint firstAttribute="trailing" secondItem="UnL-mE-rvh" secondAttribute="trailing" id="xJZ-LS-lUg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -137,8 +129,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppName" width="415" height="103"/>
-        <image name="Ocer" width="493" height="566"/>
+        <image name="Background" width="2734" height="2048"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

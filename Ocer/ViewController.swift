@@ -12,19 +12,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var collectionView: UICollectionView!
     
     let stories: [Story] = [
-        Story(storyName: "Berangkat Sekolah", storyImage: "Sekolah"),
-        Story(storyName: "Berangkat Sekolah", storyImage: "Sekolah"),
-        Story(storyName: "Berangkat Sekolah", storyImage: "Sekolah")
+        Story(storyName: "Berangkat Sekolah", storyImage: "Story1"),
+        Story(storyName: "Berangkat Sekolah", storyImage: "Story2"),
+        Story(storyName: "Berangkat Sekolah", storyImage: "Story3")
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Refactor this to new file
         let nib = UINib(nibName: "CardView", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "CardViewCell")
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        
+        self.collectionView.backgroundColor = UIColor(white: 0, alpha: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,8 +37,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: indexPath) as! CardView
         
-        cell.storyName.image = UIImage(named: "AppName")
-        cell.storyImage.image = UIImage(named: "\(stories[indexPath.row].storyImage)")
+        cell.cardName.image = UIImage(named: "AppName")
+        
+        cell.cardImage.image = UIImage(named: "\(stories[indexPath.row].storyImage)")
+        cell.cardImage.layer.cornerRadius = 30
         
         return cell
     }

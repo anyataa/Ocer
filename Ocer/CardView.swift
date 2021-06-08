@@ -9,8 +9,8 @@ import UIKit
 
 class CardView: UICollectionViewCell {
     
-    @IBOutlet weak var storyName: UIImageView!
-    @IBOutlet weak var storyImage: UIImageView!
+    @IBOutlet weak var cardName: UIImageView!
+    @IBOutlet weak var cardImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
