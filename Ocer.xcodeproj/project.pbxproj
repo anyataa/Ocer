@@ -14,6 +14,7 @@
 		8418B90926685E48002C8105 /* Ocer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8418B90726685E48002C8105 /* Ocer.xcdatamodeld */; };
 		8418B90B26685E49002C8105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8418B90A26685E49002C8105 /* Assets.xcassets */; };
 		8418B90E26685E49002C8105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8418B90C26685E49002C8105 /* LaunchScreen.storyboard */; };
+		8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */; };
 		8454D38A266DEC850035302A /* SubMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D388266DEC850035302A /* SubMenu.storyboard */; };
 		8454D38D266DEC9F0035302A /* UnderDevelopment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */; };
 		8454D391266DECC80035302A /* BangunTidur.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D38F266DECC80035302A /* BangunTidur.storyboard */; };
@@ -38,6 +39,7 @@
 		8418B90A26685E49002C8105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8418B90D26685E49002C8105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8418B90F26685E49002C8105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangunTidurViewController.swift; sourceTree = "<group>"; };
 		8454D389266DEC850035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/SubMenu.storyboard; sourceTree = "<group>"; };
 		8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnderDevelopment.storyboard; sourceTree = "<group>"; };
 		8454D390266DECC80035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/BangunTidur.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				8454D39D266DED0B0035302A /* Storyboard */,
 				8418B8FE26685E48002C8105 /* AppDelegate.swift */,
+				8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */,
 				8418B90026685E48002C8105 /* SceneDelegate.swift */,
 				8418B90226685E48002C8105 /* ViewController.swift */,
 				8418B90A26685E49002C8105 /* Assets.xcassets */,
@@ -199,6 +202,7 @@
 				F301015B266E2C2500002D7A /* CardView.swift in Sources */,
 				F301015E266E317300002D7A /* SubMenu.swift in Sources */,
 				F3010132266E1AA000002D7A /* Story.swift in Sources */,
+				8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */,
 				F31B7005266F0F9E00A6324A /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
