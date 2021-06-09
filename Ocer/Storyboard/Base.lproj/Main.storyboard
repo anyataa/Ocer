@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="-32" width="1366" height="1084"/>
                                     </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-7F-r4j">
-                                        <rect key="frame" x="684" y="50" width="632" height="924"/>
+                                        <rect key="frame" x="684" y="50" width="632" height="974"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="632" id="pbM-K0-P53"/>
@@ -53,7 +53,7 @@
                                     <constraint firstItem="UnL-mE-rvh" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="topMargin" constant="-40" id="9yd-yV-qrH"/>
                                     <constraint firstAttribute="trailing" secondItem="2Sy-7F-r4j" secondAttribute="trailing" constant="50" id="OzO-Hi-7AL"/>
                                     <constraint firstItem="UnL-mE-rvh" firstAttribute="leading" secondItem="Weg-Yi-CfQ" secondAttribute="leading" id="VSB-md-OTV"/>
-                                    <constraint firstAttribute="bottom" secondItem="2Sy-7F-r4j" secondAttribute="bottom" constant="50" id="ZLR-nu-3qd"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Sy-7F-r4j" secondAttribute="bottom" id="ZLR-nu-3qd"/>
                                     <constraint firstItem="2Sy-7F-r4j" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="top" constant="50" id="keC-LE-MJK"/>
                                     <constraint firstAttribute="bottom" secondItem="UnL-mE-rvh" secondAttribute="bottomMargin" constant="-20" id="t9D-BX-w49"/>
                                     <constraint firstAttribute="trailing" secondItem="UnL-mE-rvh" secondAttribute="trailing" id="xJZ-LS-lUg"/>

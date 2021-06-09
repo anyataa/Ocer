@@ -13,8 +13,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     let stories: [Story] = [
         Story(storyName: "StoryTitle1", storyImage: "Story1"),
-        Story(storyName: "StoryTitle1", storyImage: "Story2"),
-        Story(storyName: "StoryTitle1", storyImage: "Story3")
+        Story(storyName: "StoryTitle2", storyImage: "Story2"),
+        Story(storyName: "StoryTitle3", storyImage: "Story3")
     ]
     
     override func viewDidLoad() {
