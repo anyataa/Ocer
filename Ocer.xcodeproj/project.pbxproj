@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A3C44F3266CCE7A00159097 /* Drag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C44F2266CCE7A00159097 /* Drag.storyboard */; };
 		0A3C44F5266CCEA000159097 /* DragViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C44F4266CCEA000159097 /* DragViewController.swift */; };
+		0A81FF98266FE1540026AE37 /* ArrowSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A81FF96266FE1540026AE37 /* ArrowSquare.swift */; };
+		0A81FF9D266FEAEA0026AE37 /* ArrowSquare.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A81FF9C266FEAEA0026AE37 /* ArrowSquare.xib */; };
 		8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B8FE26685E48002C8105 /* AppDelegate.swift */; };
 		8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B90026685E48002C8105 /* SceneDelegate.swift */; };
 		8418B90326685E48002C8105 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B90226685E48002C8105 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		0A3C44F2266CCE7A00159097 /* Drag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drag.storyboard; sourceTree = "<group>"; };
 		0A3C44F4266CCEA000159097 /* DragViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragViewController.swift; sourceTree = "<group>"; };
+		0A81FF96266FE1540026AE37 /* ArrowSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowSquare.swift; sourceTree = "<group>"; };
+		0A81FF9C266FEAEA0026AE37 /* ArrowSquare.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrowSquare.xib; sourceTree = "<group>"; };
 		8418B8FB26685E48002C8105 /* Ocer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ocer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8418B8FE26685E48002C8105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8418B90026685E48002C8105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 			children = (
 				0A3C44F2266CCE7A00159097 /* Drag.storyboard */,
 				0A3C44F4266CCEA000159097 /* DragViewController.swift */,
+				0A81FF96266FE1540026AE37 /* ArrowSquare.swift */,
+				0A81FF9C266FEAEA0026AE37 /* ArrowSquare.xib */,
 			);
 			path = "drag-example";
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 			files = (
 				0A3C44F3266CCE7A00159097 /* Drag.storyboard in Resources */,
 				8418B90E26685E49002C8105 /* LaunchScreen.storyboard in Resources */,
+				0A81FF9D266FEAEA0026AE37 /* ArrowSquare.xib in Resources */,
 				8418B90B26685E49002C8105 /* Assets.xcassets in Resources */,
 				8418B90626685E48002C8105 /* Main.storyboard in Resources */,
 			);
@@ -157,6 +164,7 @@
 			files = (
 				8418B90326685E48002C8105 /* ViewController.swift in Sources */,
 				8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */,
+				0A81FF98266FE1540026AE37 /* ArrowSquare.swift in Sources */,
 				8418B90926685E48002C8105 /* Ocer.xcdatamodeld in Sources */,
 				0A3C44F5266CCEA000159097 /* DragViewController.swift in Sources */,
 				8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */,
