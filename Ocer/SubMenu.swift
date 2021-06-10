@@ -49,7 +49,15 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        if indexPath.row == 0 {
+            self.performSegue(withIdentifier: "toBangunTidur", sender: nil)
+        } else if indexPath.row == 1 {
+            self.performSegue(withIdentifier: "toMandi", sender: nil)
+        } else if indexPath.row == 2 {
+            self.performSegue(withIdentifier: "toSarapan", sender: nil)
+        } else if indexPath.row == 3 {
+            self.performSegue(withIdentifier: "toKeSekolah", sender: nil)
+        }
     }
     
 }
