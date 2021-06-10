@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A87D5E326729B4800C3FED4 /* KeSekolahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */; };
 		8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B8FE26685E48002C8105 /* AppDelegate.swift */; };
 		8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B90026685E48002C8105 /* SceneDelegate.swift */; };
 		8418B90326685E48002C8105 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B90226685E48002C8105 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeSekolahViewController.swift; sourceTree = "<group>"; };
 		8418B8FB26685E48002C8105 /* Ocer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ocer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8418B8FE26685E48002C8105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8418B90026685E48002C8105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				F301015D266E317300002D7A /* SubMenu.swift */,
 				F301015F266E322F00002D7A /* UnderDevelopment.swift */,
 				F31B7004266F0F9E00A6324A /* Scene.swift */,
+				0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */,
 			);
 			path = Ocer;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */,
 				F3010160266E322F00002D7A /* UnderDevelopment.swift in Sources */,
 				8418B90926685E48002C8105 /* Ocer.xcdatamodeld in Sources */,
+				0A87D5E326729B4800C3FED4 /* KeSekolahViewController.swift in Sources */,
 				8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */,
 				F301015B266E2C2500002D7A /* CardView.swift in Sources */,
 				F301015E266E317300002D7A /* SubMenu.swift in Sources */,
