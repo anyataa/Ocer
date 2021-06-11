@@ -68,6 +68,10 @@ class KeSekolahViewController: UIViewController {
         //animation with keyframes
         UIView.animateKeyframes(withDuration: 5.0, delay: 0, options: [.calculationModeLinear], animations: {
             for (index,zone) in self.zones.enumerated() {
+                //move car
+                UIView.addKeyframe(withRelativeStartTime: Double(index)/Double(self.zones.count), relativeDuration: 0.1, animations: {
+                        self.car.center = zone.center
+                    })
                 
                 //rotate car
                 //Degrees    Radians (exact)    Radians (approx)
@@ -75,6 +79,7 @@ class KeSekolahViewController: UIViewController {
                 //180°            π                   3.142
                 //270°            3π/2                4.712
                 //360°            2π                  6.283
+                //self.zones[index+1].center = destination
                 if (index != self.zones.count-1){
                     if (self.zones[index+1].center.x > zone.center.x){
                         //turn right = 0 degree
@@ -99,11 +104,6 @@ class KeSekolahViewController: UIViewController {
                             })
                     }
                 }
-                
-                //move car
-                UIView.addKeyframe(withRelativeStartTime: Double(index)/Double(self.zones.count), relativeDuration: 0.1, animations: {
-                        self.car.center = zone.center
-                    })
             }
         }, completion:{_ in
             //TODO end the game
@@ -112,74 +112,73 @@ class KeSekolahViewController: UIViewController {
     }
     
     @objc private func drag(_ sender: MyGesture) {
-        if (sender.view == nil) {
-            print("view is nil")
-            return
-        }
-
-        switch sender.state {
-            case .began:
-                let dir = sender.direction!.rawValue
-                print(dir)
-                
-                //bring dragged object to front (topmost z index within the same view hierarchy)
-                view.bringSubviewToFront(sender.view!)
-                
-            case .changed:
-                //update object position while being dragged
-                let translation = sender.translation(in: view)
-                sender.view!.center = CGPoint(x: sender.center!.x + translation.x,
-                                              y: sender.center!.y + translation.y)
-                
-                //check if object intersects with drop zones
-                //TODO only 1 arrow per drop zone is correct
-                for (index,zone) in self.zones.enumerated() {
-                    if (index == self.zones.count-1) {
-                        break
-                    }
-                    if (sender.view?.frame != nil) {
-                        if (sender.view!.frame.intersects(zone.frame))  {
+        
+        if let sview = sender.view, let scenter = sender.center, let sdirection = sender.direction {
+            switch sender.state {
+                case .began:
+                    print("direction: \(sdirection)")
+                    
+                    //bring dragged object to front (topmost z index within the same view hierarchy)
+                    view.bringSubviewToFront(sview)
+                    
+                case .changed:
+                    //update object position while being dragged
+                    let translation = sender.translation(in: view)
+                    sview.center = CGPoint(x: scenter.x + translation.x, y: scenter.y + translation.y)
+                    
+                    //check if object intersects with drop zones
+                    //TODO only 1 arrow per drop zone is correct
+                    for (index,zone) in self.zones.enumerated() {
+                        if (index == self.zones.count-1) {
+                            break
+                        }
+                        
+                        if (sview.frame.intersects(zone.frame))  {
                             //turn on shadow if dragged object is on top of drop zone
                             //TODO green shadow for correct zone, red for incorrect zone
-                            sender.view!.layer.shadowRadius = 15
+                            sview.layer.shadowRadius = 15
                             //if(zone == dropZone.frame) {
-                                sender.view!.layer.shadowColor = UIColor.green.cgColor
+                                sview.layer.shadowColor = UIColor.green.cgColor
                             //} else {
                             //    sender.view!.layer.shadowColor = UIColor.red.cgColor
                             //}
-                            sender.view!.layer.shadowOpacity = 1
+                            sview.layer.shadowOpacity = 1
                         break
                         } else {
-                            sender.view!.layer.shadowOpacity = 0
+                            sview.layer.shadowOpacity = 0
                         }
+                        
                     }
-                }
-                
-            case .ended:
-                //animation
-//                UIView.animate(withDuration: 0, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
+                    
+                case .ended:
+                    //animation
+                    //UIView.animate(withDuration: 0, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                     //TODO snap to correct zone, otherwise reset draggableObject position
                     //     get arrow direction and compare to what direction the zone would accept
                     //     let dir = sender.direction!.rawValue
-                    
+                        
                     //add arrow image to zone
                     for (index,zone) in self.zones.enumerated() {
                         if (index == self.zones.count-1) {
                             break
                         }
-                        if (sender.view!.frame.intersects(zone.frame)){
-                            let i = sender.view! as! UIImageView
-                            zone.image = i.image
-                            break
+                        if (sview.frame.intersects(zone.frame)){
+                            if let i = sview as? UIImageView {
+                                zone.image = i.image
+                                break
+                            }
                         }
-                    }
-//                } completion: { _ in
-                    //reset arrow position
-                    sender.view!.center = sender.center!
-                    sender.view!.layer.shadowOpacity = 0
-//                }
-            default:
-                break
+                        }
+                    //} completion: { _ in
+                        //reset arrow position
+                        sview.center = scenter
+                        sview.layer.shadowOpacity = 0
+                    //}
+                default:
+                    break
+            }
+        } else {
+            print("something went wrong")
         }
     }
 }
