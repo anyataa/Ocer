@@ -92,6 +92,14 @@
                                     <action selector="playButton:" destination="eh7-hB-jsS" eventType="touchUpInside" id="6Xs-p2-fzh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgQ-EU-Nzv">
+                                <rect key="frame" x="94" y="69" width="75" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <action selector="back:" destination="eh7-hB-jsS" eventType="touchUpInside" id="Otb-bM-xGf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3uP-V4-Vhf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -108,13 +116,13 @@
                         <outlet property="arrowRight" destination="F84-Sq-nmi" id="YzV-QH-OSz"/>
                         <outlet property="arrowUp" destination="Jcs-sa-iXy" id="c3O-mF-WOi"/>
                         <outlet property="car" destination="Rqr-kl-yoq" id="mo6-av-bjk"/>
+                        <outlet property="finishZone" destination="Vzb-rq-IWq" id="kj5-W2-z94"/>
                         <outlet property="zone1" destination="TEi-LQ-DIb" id="BVk-Ny-7TR"/>
                         <outlet property="zone2" destination="hrO-RH-Qyj" id="Rk4-Ul-dYJ"/>
                         <outlet property="zone3" destination="laY-oN-hOM" id="RQp-zd-uLs"/>
                         <outlet property="zone4" destination="usK-VF-39o" id="l4F-8Z-K4h"/>
                         <outlet property="zone5" destination="aHk-HF-OMw" id="X4A-fg-HrC"/>
                         <outlet property="zone6" destination="NWb-V1-Dbv" id="0yk-ip-PdA"/>
-                        <outlet property="zone7" destination="Vzb-rq-IWq" id="orU-LA-hig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCd-ny-IbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -127,10 +135,11 @@
                 <viewControllerPlaceholder storyboardName="SubMenu" id="6U0-Kl-sXu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfz-V8-oAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="-114"/>
+            <point key="canvasLocation" x="978" y="1027"/>
         </scene>
     </scenes>
     <resources>
+        <image name="BackButton" width="75" height="45"/>
         <image name="Berangkat Sekolah" width="5692" height="4267"/>
         <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>

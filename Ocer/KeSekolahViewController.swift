@@ -20,15 +20,24 @@ class KeSekolahViewController: UIViewController {
     @IBOutlet weak var zone4: UIImageView!
     @IBOutlet weak var zone5: UIImageView!
     @IBOutlet weak var zone6: UIImageView!
-    @IBOutlet weak var zone7: UIImageView!
+    @IBOutlet weak var finishZone: UIImageView!
     
     @IBOutlet weak var car: UIImageView!
     
-    var zones: [UIImageView] = []
+    var zones: [Dictionary<String,Any>] = []
+    var totalDistance:CGFloat = 0
+    var carCenter:CGPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        carCenter = car.center
+        
+        setupArrow()
+        setupZones(zone1, zone2, zone3, zone4, zone5, zone6, finishZone)
+    }
+    
+    func setupArrow() {
         arrowUp.isUserInteractionEnabled = true
         let up = MyGesture(target: self, action: #selector(drag(_:)))
         up.direction = .up
@@ -52,73 +61,123 @@ class KeSekolahViewController: UIViewController {
         left.direction = .left
         left.center = arrowLeft.center
         arrowLeft.addGestureRecognizer(left)
-        
-        zones.append(zone1)
-        zones.append(zone2)
-        zones.append(zone3)
-        zones.append(zone4)
-        zones.append(zone5)
-        zones.append(zone6)
-        zones.append(zone7)
+    }
+    
+    func setupZones(_ zones:UIImageView...){
+        for (index, zone) in zones.enumerated() {
+            var distance:CGFloat = 0
+            if (index != zones.count-1){
+                if (index == 0) {
+                    distance = getDistance(car.center, zone.center)
+                } else {
+                    distance = getDistance(zones[index-1].center, zone.center)
+                }
+
+                if (zone.center.x < zones[index+1].center.x){
+                    //destination = right
+                    self.zones.append(["zone": zone, "destinationDirection": Direction.right, "correct": false, "distanceFromPreviousZone": distance])
+                } else if (zone.center.x > zones[index+1].center.x){
+                    //destination = left
+                    self.zones.append(["zone": zone, "destinationDirection": Direction.left, "correct": false, "distanceFromPreviousZone": distance])
+                }  else if (zone.center.y < zones[index+1].center.y){
+                    //destination = down
+                    self.zones.append(["zone": zone, "destinationDirection": Direction.down, "correct": false, "distanceFromPreviousZone": distance])
+                } else if (zone.center.y > zones[index+1].center.y){
+                    //destination = up
+                    self.zones.append(["zone": zone, "destinationDirection": Direction.up, "correct": false, "distanceFromPreviousZone": distance])
+                }
+            } else {
+                //finish zone
+                distance = getDistance(zones[index-1].center, finishZone.center)
+                self.zones.append(["zone": zone, "correct": true, "distanceFromPreviousZone": distance])
+            }
+            totalDistance += distance
+        }
+    }
+    
+    func getDistance(_ lhs: CGPoint, _ rhs: CGPoint) -> CGFloat {
+        //get distance between two centers
+        //function to calculate the hypotenuse
+        return hypot(lhs.x - rhs.x, lhs.y - rhs.y)
+    }
+    
+    func verifyAnswers() -> Bool{
+        //verify if each zone is correct
+        for zone in zones {
+            if !(zone["correct"] as! Bool) {
+                return false
+            }
+        }
+        return true
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func playButton(_ sender: Any) {
+        if !(verifyAnswers()){
+            print("incorrect")
+            //TODO handle incorrect answers if play button is pressed
+            return
+        }
+        
         self.view.bringSubviewToFront(self.car)
         
         //animation with keyframes
         UIView.animateKeyframes(withDuration: 5.0, delay: 0, options: [.calculationModeLinear], animations: {
-            for (index,zone) in self.zones.enumerated() {
+            for (index, zone) in self.zones.enumerated() {
                 //move car
-                UIView.addKeyframe(withRelativeStartTime: Double(index)/Double(self.zones.count), relativeDuration: 0.1, animations: {
-                        self.car.center = zone.center
+                UIView.addKeyframe(withRelativeStartTime: Double(index)/Double(self.zones.count), relativeDuration: Double(zone["distanceFromPreviousZone"] as! CGFloat)/Double(self.totalDistance), animations: {
+                        self.car.center = (zone["zone"] as! UIImageView).center
                     })
                 
                 //rotate car
-                //Degrees    Radians (exact)    Radians (approx)
-                //90°             π/2                 1.571
-                //180°            π                   3.142
-                //270°            3π/2                4.712
-                //360°            2π                  6.283
-                //self.zones[index+1].center = destination
+                //Degrees    Radians (exact)    Radians (approx)    Direction(initial: right = 0°)
+                //90°             π/2                 1.571             Down
+                //180°            π                   3.142             Left
+                //270°            3π/2                4.712             Up
+                //360°            2π                  6.283             Right
                 if (index != self.zones.count-1){
-                    if (self.zones[index+1].center.x > zone.center.x){
-                        //turn right = 0 degree
+                    if (zone["destinationDirection"] as! Direction == .up) {
                         UIView.addKeyframe(withRelativeStartTime: Double(index+1)/Double(self.zones.count), relativeDuration: 0.03, animations: {
-                            self.car.transform = CGAffineTransform(rotationAngle: 0)
+                            self.car.transform = CGAffineTransform(rotationAngle: 4.712)
                             })
-                        
-                    } else if (self.zones[index+1].center.x < zone.center.x){
-                        //turn left = 180 degree
-                        UIView.addKeyframe(withRelativeStartTime: Double(index+1)/Double(self.zones.count), relativeDuration: 0.03, animations: {
-                            self.car.transform = CGAffineTransform(rotationAngle: 3.142)
-                            })
-                    }  else if (self.zones[index+1].center.y > zone.center.y){
-                        //turn down = 90 degree
+                    } else if (zone["destinationDirection"] as! Direction == .down) {
                         UIView.addKeyframe(withRelativeStartTime: Double(index+1)/Double(self.zones.count), relativeDuration: 0.03, animations: {
                             self.car.transform = CGAffineTransform(rotationAngle: 1.571)
                             })
-                    } else if (self.zones[index+1].center.y < zone.center.y){
-                        //turn up = 270 degree
+                    } else if (zone["destinationDirection"] as! Direction == .left) {
                         UIView.addKeyframe(withRelativeStartTime: Double(index+1)/Double(self.zones.count), relativeDuration: 0.03, animations: {
-                            self.car.transform = CGAffineTransform(rotationAngle: 4.712)
+                            self.car.transform = CGAffineTransform(rotationAngle: 3.142)
+                            })
+                    } else if (zone["destinationDirection"] as! Direction == .right) {
+                        UIView.addKeyframe(withRelativeStartTime: Double(index+1)/Double(self.zones.count), relativeDuration: 0.03, animations: {
+                            self.car.transform = CGAffineTransform(rotationAngle: 0)
                             })
                     }
                 }
             }
         }, completion:{_ in
-            //TODO end the game
+            //TODO end the game, show congratulation pop up
             print("congratulation")
+            let alert = UIAlertController(title: "Congratulation", message: "Kamu hebat!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
+                (action) in
+                alert.dismiss(animated: true, completion: nil)
+                if let center = self.carCenter {
+                    self.car.center = center
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
         })
     }
     
     @objc private func drag(_ sender: MyGesture) {
-        
-        if let sview = sender.view, let scenter = sender.center, let sdirection = sender.direction {
+        if let sview = sender.view as? UIImageView, let scenter = sender.center, let sdirection = sender.direction {
             switch sender.state {
                 case .began:
-                    print("direction: \(sdirection)")
-                    
-                    //bring dragged object to front (topmost z index within the same view hierarchy)
+                    //bring dragged object to the front (topmost z index)
                     view.bringSubviewToFront(sview)
                     
                 case .changed:
@@ -127,22 +186,21 @@ class KeSekolahViewController: UIViewController {
                     sview.center = CGPoint(x: scenter.x + translation.x, y: scenter.y + translation.y)
                     
                     //check if object intersects with drop zones
-                    //TODO only 1 arrow per drop zone is correct
-                    for (index,zone) in self.zones.enumerated() {
+                    for (index, zone) in self.zones.enumerated() {
                         if (index == self.zones.count-1) {
+                            //ignore finish zone
                             break
                         }
                         
-                        if (sview.frame.intersects(zone.frame))  {
-                            //turn on shadow if dragged object is on top of drop zone
-                            //TODO green shadow for correct zone, red for incorrect zone
+                        if (sview.frame.intersects((zone["zone"] as! UIImageView).frame))  {
+                            //turn on green shadow if dragged object is on top of correct drop zone, red if incorrect
                             sview.layer.shadowRadius = 15
-                            //if(zone == dropZone.frame) {
-                                sview.layer.shadowColor = UIColor.green.cgColor
-                            //} else {
-                            //    sender.view!.layer.shadowColor = UIColor.red.cgColor
-                            //}
                             sview.layer.shadowOpacity = 1
+                            if (sdirection == zone["destinationDirection"] as! Direction){
+                                sview.layer.shadowColor = UIColor.green.cgColor
+                            } else {
+                                sview.layer.shadowColor = UIColor.red.cgColor
+                            }
                         break
                         } else {
                             sview.layer.shadowOpacity = 0
@@ -151,40 +209,38 @@ class KeSekolahViewController: UIViewController {
                     }
                     
                 case .ended:
-                    //animation
-                    //UIView.animate(withDuration: 0, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
-                    //TODO snap to correct zone, otherwise reset draggableObject position
-                    //     get arrow direction and compare to what direction the zone would accept
-                    //     let dir = sender.direction!.rawValue
-                        
-                    //add arrow image to zone
-                    for (index,zone) in self.zones.enumerated() {
+                    //add arrow image to zone if it is correct
+                    for (index, zone) in self.zones.enumerated() {
                         if (index == self.zones.count-1) {
+                            //ignore finish zone
                             break
                         }
-                        if (sview.frame.intersects(zone.frame)){
-                            if let i = sview as? UIImageView {
-                                zone.image = i.image
+                        if (sview.frame.intersects((zone["zone"] as! UIImageView).frame)){
+                            if (sdirection == zone["destinationDirection"] as! Direction){
+                                (zone["zone"] as! UIImageView).image = sview.image
+                                self.zones[index]["correct"] = true
                                 break
+                            } else {
+                                //TODO handle incorrect try
+                                //haptic feedback? shaky animation? sound?
+                                print("incorrect")
                             }
                         }
-                        }
-                    //} completion: { _ in
-                        //reset arrow position
-                        sview.center = scenter
-                        sview.layer.shadowOpacity = 0
-                    //}
+                    }
+                    
+                    //reset dragged object state
+                    sview.center = scenter
+                    sview.layer.shadowOpacity = 0
+                    
                 default:
                     break
             }
-        } else {
-            print("something went wrong")
         }
     }
 }
 
-enum Direction:String {
-    case up = "up", left = "left" , down = "down" , right = "right"
+enum Direction {
+    case up, left, down, right
 }
 
 class MyGesture: UIPanGestureRecognizer {
