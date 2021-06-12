@@ -10,6 +10,7 @@ import UIKit
 class BangunTidurViewController: UIViewController {
 
     let backgroundImage =  UIImage(named: "kamar")
+    let pillowImage = UIImage(named: "bantal")
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
     
@@ -18,76 +19,109 @@ class BangunTidurViewController: UIViewController {
         backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         view.addSubview(backgroundPlaceHolder)
     }
+    
+    func setBackButton() {
+        let backIcon = UIImageView(image: UIImage(named: "BackButton"))
+        backIcon.frame=CGRect(x: 30, y: 60, width: 80, height: 60)
+        
+        backIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(segueBack)))
+        
+        view.addSubview(backIcon)
+    }
+    @objc func segueBack() {
+        performSegue(withIdentifier: "subMenu", sender: self)
+    }
+//    func setPillow() {
+//        let pillowImagePlace = UIImageView(image: UIImage(named: "bantal"))
+//        pillowImagePlace.frame = CGRect(x: 100, y: 500, width: 200, height: 200)
+//        pillowImagePlace.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragPillow(_ :))))
+//        view.addSubview(pillowImagePlace)
+//    }
+    
+
+    
+    
+    
+
     let pillow: UIView = {
-        let view = UIView(frame: CGRect(x: 500, y: 500, width: 188, height: 110))
-        view.backgroundColor = .yellow
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 10
-        view.layer.cornerRadius = 20
+//        let view = UIImageView(image: UIImage(named: "bantal"))
+//        view.frame = CGRect(x: 100, y: 500, width: 188, height: 110)
+        
+        let view = UIView(frame: CGRect(x: 500, y: 500, width: 195, height: 110))
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "bantal")!)
+//        view.layer.borderColor = UIColor.black.cgColor
+//        view.layer.borderWidth = 10
+//        view.layer.cornerRadius = 20
         return view
     }()
     
     let pillow2: UIView = {
-        let view = UIView(frame: CGRect(x: 200, y: 800, width: 188, height: 110))
-        view.backgroundColor = .yellow
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 10
-        view.layer.cornerRadius = 20
+        
+        let view = UIView(frame: CGRect(x: 300, y: 800, width: 195, height: 110))
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "bantal")!)
+//        let view = UIView(frame: CGRect(x: 200, y: 800, width: 188, height: 110))
+//        view.backgroundColor = .yellow
+//        view.layer.borderColor = UIColor.black.cgColor
+//        view.layer.borderWidth = 10
+//        view.layer.cornerRadius = 20
         return view
     }()
     
     let pillow3: UIView = {
-        let view = UIView(frame: CGRect(x: 730, y: 380, width: 130, height: 250))
-        view.layer.cornerRadius = 50
-        view.backgroundColor = .yellow
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 10
+        let view = UIView(frame: CGRect(x: 300, y: 800, width: 112, height: 254))
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "guling")!)
+    
+//        let view = UIView(frame: CGRect(x: 730, y: 380, width: 130, height: 250))
+//        view.layer.cornerRadius = 50
+//        view.backgroundColor = .yellow
+//        view.layer.borderColor = UIColor.black.cgColor
+//        view.layer.borderWidth = 10
         return view
     }()
     
     let rug: UIView = {
-        let view = UIView(frame: CGRect(x: 140, y: 700, width: 338, height: 188))
-        view.backgroundColor = .green
-        view.layer.cornerRadius = 94
-        view.layer.borderWidth = 10
-        view.layer.borderColor = UIColor.black.cgColor
+        let view = UIView(frame: CGRect(x: 140, y: 700, width: 338, height: 192))
+        view.backgroundColor =  UIColor(patternImage: UIImage(named: "keset")!)
+//        view.layer.cornerRadius = 94
+//        view.layer.borderWidth = 10
+//        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
     let pillowZone: UIView = {
         let view = UIView(frame: CGRect(x: 305, y: 260, width: 188, height: 110))
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
-        view.layer.borderWidth = 10
-        view.layer.borderColor = UIColor.black.cgColor
+//        view.backgroundColor = .white
+//        view.layer.cornerRadius = 20
+//        view.layer.borderWidth = 10
+//        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
     let pillowZone2: UIView = {
         let view = UIView(frame: CGRect(x: 530, y: 260, width: 188, height: 110))
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
-        view.layer.borderWidth = 10
-        view.layer.borderColor = UIColor.black.cgColor
+//        view.backgroundColor = .white
+//        view.layer.cornerRadius = 20
+//        view.layer.borderWidth = 10
+//        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
     let pillowZone3: UIView = {
         let view = UIView(frame: CGRect(x: 430, y: 380, width: 130, height: 250))
-        view.layer.cornerRadius = 50
-        view.backgroundColor = .white
-        view.layer.borderWidth = 10
-        view.layer.borderColor = UIColor.black.cgColor
+//        view.layer.cornerRadius = 50
+//        view.backgroundColor = .white
+//        view.layer.borderWidth = 10
+//        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
     
     let rugZone: UIView = {
-        let view = UIView(frame: CGRect(x: 840, y: 700, width: 338, height: 188))
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 94
-        view.layer.borderWidth = 10
-        view.layer.borderColor = UIColor.black.cgColor
+        let view = UIView(frame: CGRect(x: 840, y: 700, width: 338, height: 198))
+//        view.backgroundColor = .white
+//        view.layer.cornerRadius = 94
+//        view.layer.borderWidth = 10
+//        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
 
@@ -97,6 +131,8 @@ class BangunTidurViewController: UIViewController {
 
         //set background image
         setBackgroundImage()
+        setBackButton()
+//        setPillow()
 
         //setup view
         view.addSubview(pillow)
@@ -143,8 +179,7 @@ class BangunTidurViewController: UIViewController {
             for zone in zones {
                 if (sender.view?.frame != nil) {
                     if (sender.view!.frame.intersects(zone))  {
-                        //turn on shadow if dragged object is on top of drop zone
-                        //TODO green shadow for correct zone, red for incorrect zone
+                      
                         sender.view!.layer.shadowRadius = 15
                         if(zone == pillowZone.frame || zone == pillowZone2.frame) {
                             sender.view!.layer.shadowColor = UIColor.green.cgColor
@@ -160,8 +195,7 @@ class BangunTidurViewController: UIViewController {
             }
             
         case .ended:
-            //snap animation
-            //TODO check UISnapBehavior
+          
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
                     self.dragEnded(draggableObject: sender, draggableZone: self.pillowZone, draggableZone2: self.pillowZone2)
@@ -190,14 +224,10 @@ class BangunTidurViewController: UIViewController {
             pillow2.center = CGPoint(x: center.x + translation.x,
                                           y: center.y + translation.y)
             
-            //check if object intersects with drop zones
-            //TODO only 1 drop zone is correct
-            //TODO is looping necessary?
             for zone in zones {
                 if (sender.view?.frame != nil) {
                     if (sender.view!.frame.intersects(zone))  {
-                        //turn on shadow if dragged object is on top of drop zone
-                        //TODO green shadow for correct zone, red for incorrect zone
+                      
                         sender.view!.layer.shadowRadius = 15
                         if(zone == pillowZone.frame || zone == pillowZone2.frame) {
                             sender.view!.layer.shadowColor = UIColor.green.cgColor
@@ -243,9 +273,7 @@ class BangunTidurViewController: UIViewController {
             pillow3.center = CGPoint(x: center.x + translation.x,
                                           y: center.y + translation.y)
             
-            //check if object intersects with drop zones
-            //TODO only 1 drop zone is correct
-            //TODO is looping necessary?
+            
             for zone in zones {
                 if (sender.view?.frame != nil) {
                     if (sender.view!.frame.intersects(zone))  {
@@ -293,12 +321,9 @@ class BangunTidurViewController: UIViewController {
             
             //update object position while dragging
             let translation = sender.translation(in: view)
-            rug.center = CGPoint(x: center.x + translation.x,
-                                          y: center.y + translation.y)
+            rug.center = CGPoint(x: center.x + translation.x, y: center.y + translation.y)
             
-            //check if object intersects with drop zones
-            //TODO only 1 drop zone is correct
-            //TODO is looping necessary?
+          
             for zone in zones {
                 if (sender.view?.frame != nil) {
                     if (sender.view!.frame.intersects(zone))  {
