@@ -321,8 +321,7 @@ class BangunTidurViewController: UIViewController {
             
             //update object position while dragging
             let translation = sender.translation(in: view)
-            rug.center = CGPoint(x: center.x + translation.x,
-                                          y: center.y + translation.y)
+            rug.center = CGPoint(x: center.x + translation.x, y: center.y + translation.y)
             
           
             for zone in zones {
