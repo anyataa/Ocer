@@ -15,6 +15,7 @@
 		8418B90B26685E49002C8105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8418B90A26685E49002C8105 /* Assets.xcassets */; };
 		8418B90E26685E49002C8105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8418B90C26685E49002C8105 /* LaunchScreen.storyboard */; };
 		8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */; };
+		8438ED9A2674915B00100FA1 /* SarapanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438ED992674915B00100FA1 /* SarapanViewController.swift */; };
 		8454D38A266DEC850035302A /* SubMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D388266DEC850035302A /* SubMenu.storyboard */; };
 		8454D38D266DEC9F0035302A /* UnderDevelopment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */; };
 		8454D391266DECC80035302A /* BangunTidur.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D38F266DECC80035302A /* BangunTidur.storyboard */; };
@@ -40,6 +41,7 @@
 		8418B90D26685E49002C8105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8418B90F26685E49002C8105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangunTidurViewController.swift; sourceTree = "<group>"; };
+		8438ED992674915B00100FA1 /* SarapanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SarapanViewController.swift; sourceTree = "<group>"; };
 		8454D389266DEC850035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/SubMenu.storyboard; sourceTree = "<group>"; };
 		8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnderDevelopment.storyboard; sourceTree = "<group>"; };
 		8454D390266DECC80035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/BangunTidur.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				8418B8FE26685E48002C8105 /* AppDelegate.swift */,
 				8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */,
 				8418B90026685E48002C8105 /* SceneDelegate.swift */,
+				8438ED992674915B00100FA1 /* SarapanViewController.swift */,
 				8418B90226685E48002C8105 /* ViewController.swift */,
 				8418B90A26685E49002C8105 /* Assets.xcassets */,
 				8418B90C26685E49002C8105 /* LaunchScreen.storyboard */,
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8418B90326685E48002C8105 /* ViewController.swift in Sources */,
+				8438ED9A2674915B00100FA1 /* SarapanViewController.swift in Sources */,
 				8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */,
 				F3010160266E322F00002D7A /* UnderDevelopment.swift in Sources */,
 				8418B90926685E48002C8105 /* Ocer.xcdatamodeld in Sources */,
