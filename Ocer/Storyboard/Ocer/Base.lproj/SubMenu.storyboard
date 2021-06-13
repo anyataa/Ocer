@@ -71,6 +71,10 @@
                     <connections>
                         <outlet property="collectionView" destination="Isu-uz-7CB" id="WRE-Le-NVy"/>
                         <outlet property="subSceneView" destination="T9j-Y7-gv6" id="Oa0-Pm-vnZ"/>
+                        <segue destination="A2Q-uJ-w5S" kind="presentation" identifier="toBangunTidur" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="aim-Su-2hS"/>
+                        <segue destination="yTj-Zp-q1v" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="JEb-gT-C5f"/>
+                        <segue destination="ja8-oL-yao" kind="presentation" identifier="toSarapan" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="UQA-LS-F7i"/>
+                        <segue destination="5Km-sz-08h" kind="presentation" identifier="toKeSekolah" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="aUe-S7-Xr0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfG-MZ-Spf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
