@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0E650C26770C6400583B49 /* bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A0E650B26770C6400583B49 /* bg.mp3 */; };
 		0A87D5E326729B4800C3FED4 /* KeSekolahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */; };
+		0AEEA8BB267700BE0088CD42 /* no.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AEEA8B9267700BE0088CD42 /* no.mp3 */; };
+		0AEEA8BC267700BE0088CD42 /* ok.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AEEA8BA267700BE0088CD42 /* ok.mp3 */; };
 		8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B8FE26685E48002C8105 /* AppDelegate.swift */; };
 		8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B90026685E48002C8105 /* SceneDelegate.swift */; };
 		8418B90326685E48002C8105 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418B90226685E48002C8105 /* ViewController.swift */; };
@@ -36,7 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0E650B26770C6400583B49 /* bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg.mp3; sourceTree = "<group>"; };
 		0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeSekolahViewController.swift; sourceTree = "<group>"; };
+		0AEEA8B9267700BE0088CD42 /* no.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = no.mp3; sourceTree = "<group>"; };
+		0AEEA8BA267700BE0088CD42 /* ok.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ok.mp3; sourceTree = "<group>"; };
 		8418B8FB26685E48002C8105 /* Ocer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ocer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8418B8FE26685E48002C8105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8418B90026685E48002C8105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AEEA8B8267700AD0088CD42 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				0A0E650B26770C6400583B49 /* bg.mp3 */,
+				0AEEA8B9267700BE0088CD42 /* no.mp3 */,
+				0AEEA8BA267700BE0088CD42 /* ok.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		8418B8F226685E48002C8105 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				C63E861E2678741700B97B55 /* Congrats Page */,
+				0AEEA8B8267700AD0088CD42 /* Sound */,
 				8454D39D266DED0B0035302A /* Storyboard */,
 				8418B8FE26685E48002C8105 /* AppDelegate.swift */,
 				8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */,
@@ -202,7 +219,9 @@
 			files = (
 				8454D38A266DEC850035302A /* SubMenu.storyboard in Resources */,
 				8418B90E26685E49002C8105 /* LaunchScreen.storyboard in Resources */,
+				0AEEA8BC267700BE0088CD42 /* ok.mp3 in Resources */,
 				F301015C266E2C2500002D7A /* CardView.xib in Resources */,
+				0A0E650C26770C6400583B49 /* bg.mp3 in Resources */,
 				8454D391266DECC80035302A /* BangunTidur.storyboard in Resources */,
 				8454D394266DECD50035302A /* Mandi.storyboard in Resources */,
 				C63E8623267877FB00B97B55 /* CongratsPageLater.xib in Resources */,
@@ -212,6 +231,7 @@
 				8454D39B266DECF20035302A /* KeSekolah.storyboard in Resources */,
 				8454D398266DECE10035302A /* Sarapan.storyboard in Resources */,
 				C63E8624267877FB00B97B55 /* CongratsPage.xib in Resources */,
+				0AEEA8BB267700BE0088CD42 /* no.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
