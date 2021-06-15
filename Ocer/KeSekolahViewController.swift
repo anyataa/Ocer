@@ -58,10 +58,12 @@ class KeSekolahViewController: UIViewController {
 	var soundPlayer: AVAudioPlayer?
 	var soundVolume: Float = 0.2
 	var musicPlayer: AVAudioPlayer?
+	var musicVolume: Float = 0.2
     
     var zones: [Dictionary<String,Any>] = []
     var totalDistance:CGFloat = 0
-    
+	var initialCarPosition:CGPoint?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -152,78 +154,24 @@ class KeSekolahViewController: UIViewController {
         return true
     }
 	
-	func muteMusic(){
-		//TODO mute is global
-		if (musicPlayer!.isPlaying){
-			musicSetting.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
-			musicPlayer?.stop()
-		} else {
-			musicSetting.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
-			musicPlayer?.play()
+	func resetGame(){
+		self.car.center = initialCarPosition ?? CGPoint(x:0, y:0)
+		
+		//reset value except finishZone
+		for index in 0...zones.count-2 {
+			(zones[index]["zone"] as! UIImageView).image = nil
+			zones[index]["correct"] = false
 		}
 	}
-	
-	func muteSound(){
-		//TODO mute is global
-		if (soundVolume == 0.2) {
-			soundSetting.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
-			soundVolume = 0
-		} else {
-			soundSetting.setImage(UIImage(systemName: "speaker.wave.2"), for: .normal)
-			soundVolume = 0.2
-		}
-	}
-	
-	func playMusic(){
-		let path = Bundle.main.path(forResource: "bg", ofType: "mp3")!
-		let url = URL(fileURLWithPath: path)
 
-		do {
-			//TODO volume = 0 or 100 based on setting ??
-			//TODO play or pause based on setting
-			musicPlayer = try AVAudioPlayer(contentsOf: url)
-			musicPlayer?.volume = 0.2
-			musicPlayer?.numberOfLoops = -1
-			musicPlayer?.play()
-		} catch {
-			print("couldn't load the file")
-		}
-	}
-	
-	func playSound(_ soundName:String){
-		let path = Bundle.main.path(forResource: soundName, ofType: "mp3")!
-		let url = URL(fileURLWithPath: path)
-
-		do {
-			//TODO volume = 0 or 100 based on setting ??
-			//TODO play or pause based on setting
-			soundPlayer = try AVAudioPlayer(contentsOf: url)
-			soundPlayer?.volume = soundVolume
-			soundPlayer?.play()
-		} catch {
-			print("couldn't load the file")
-		}
-	}
-    
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-	@IBAction func muteMusic(_ sender: Any) {
-		muteMusic()
-	}
-	@IBAction func muteSound(_ sender: Any) {
-		muteSound()
-	}
-	
     @IBAction func playButton(_ sender: Any) {
         if !(verifyAnswers()){
             print("incorrect")
-            //TODO: handle incorrect answers if play button is pressed
             return
         }
 		DispatchQueue.main.async {
 			self.playButton.isUserInteractionEnabled = false
-			let initialCarPosition = self.car.center
+			self.initialCarPosition = self.car.center
 			
 			//animation with keyframes
 			UIView.animateKeyframes(withDuration: 5.0, delay: 0, options: [.calculationModeLinear], animations: {
@@ -241,16 +189,8 @@ class KeSekolahViewController: UIViewController {
 					}
 				}
 			}, completion:{_ in
-				//TODO end the game, show congratulation pop up
-				print("congratulation")
-				let alert = UIAlertController(title: "Congratulation", message: "Kamu hebat!", preferredStyle: .alert)
-				alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
-					(action) in
-					alert.dismiss(animated: true, completion: nil)
-					self.car.center = initialCarPosition
-					self.playButton.isUserInteractionEnabled = true
-				}))
-				self.present(alert, animated: true, completion: nil)
+				CongratsPageLater.showCongratulation(self)
+				self.playButton.isUserInteractionEnabled = true
 			})
 		}
         
@@ -306,8 +246,6 @@ class KeSekolahViewController: UIViewController {
 								playSound("ok")
                                 break
                             } else {
-                                //TODO handle incorrect try
-                                //haptic feedback? shaky animation? sound?
                                 print("incorrect")
 								playSound("no")
                             }
@@ -323,4 +261,75 @@ class KeSekolahViewController: UIViewController {
             }
         }
     }
+	
+	@IBAction func back(_ sender: Any) {
+		self.dismiss(animated: true, completion: nil)
+	}
+	
+	@IBAction func muteMusic(_ sender: Any) {
+		muteMusic()
+	}
+	
+	@IBAction func muteSound(_ sender: Any) {
+		muteSound()
+	}
+	
+	func muteMusic(){
+		if (musicPlayer!.isPlaying){
+			musicSetting.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
+			musicPlayer?.stop()
+		} else {
+			musicSetting.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
+			musicPlayer?.play()
+		}
+	}
+	
+	func muteSound(){
+		if (soundVolume > 0) {
+			soundSetting.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
+			soundVolume = 0
+		} else {
+			soundSetting.setImage(UIImage(systemName: "speaker.wave.2"), for: .normal)
+			soundVolume = 0.2
+		}
+	}
+	
+	func playMusic(){
+		let path = Bundle.main.path(forResource: "bg", ofType: "mp3")!
+		let url = URL(fileURLWithPath: path)
+
+		do {
+			musicPlayer = try AVAudioPlayer(contentsOf: url)
+			musicPlayer?.volume = musicVolume
+			musicPlayer?.numberOfLoops = -1
+			musicPlayer?.play()
+		} catch {
+			print("couldn't load the file")
+		}
+	}
+	
+	func playSound(_ soundName:String){
+		let path = Bundle.main.path(forResource: soundName, ofType: "mp3")!
+		let url = URL(fileURLWithPath: path)
+
+		do {
+			soundPlayer = try AVAudioPlayer(contentsOf: url)
+			soundPlayer?.volume = soundVolume
+			soundPlayer?.play()
+		} catch {
+			print("couldn't load the file")
+		}
+	}
+}
+
+extension KeSekolahViewController: CongratsDelegateLater {
+	func ulangButtonTapped() {
+		resetGame()
+		self.dismiss(animated: false, completion: nil)
+	}
+	
+	func keluarButtonTapped() {
+		self.dismiss(animated: true, completion: nil)
+		self.dismiss(animated: true, completion: nil)
+	}
 }
