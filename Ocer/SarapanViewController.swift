@@ -7,7 +7,20 @@
 
 import UIKit
 
-class SarapanViewController: UIViewController {
+class SarapanViewController: UIViewController, CongratsDelegate {
+    
+//     Peotocol XIB Congratulation
+    func ulangButtonTapped() {
+    }
+    
+    func keluarButtonTapped() {
+    }
+    
+    func lanjutButtonTapped() {
+    }
+    
+//    Protocol Finish
+    
     var center: CGPoint = CGPoint.zero
     var score : Int = 0
     var dropZone : CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -72,7 +85,7 @@ class SarapanViewController: UIViewController {
     let car: UIView  = {
         let mobil = UIView(frame: CGRect(x: 500, y: 50, width: 289, height: 210))
 //      NOTE:  Remove force Unwrap
-        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "mobil")!)
+        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "Mobil")!)
             return mobil
     }()
     
@@ -207,9 +220,36 @@ class SarapanViewController: UIViewController {
     func sayCongratulationWhenFinish(){
         if self.score == 3 {
             print("Yes You Did It")
+            
+//            implement congratulation XIB
+            let congratsPage = CongratsPage()
+        
+            congratsPage.modalPresentationStyle = .custom
+            congratsPage.congratsDelegate = self
+        
+            present(congratsPage, animated: true, completion: nil)
         }
     }
 
+}
+
+
+extension ViewController: CongratsDelegate{
+func ulangButtonTapped() {
+    self.dismiss(animated: true, completion: nil)
+    performSegue(withIdentifier: "toPage1", sender: nil)
+}
+
+func keluarButtonTapped() {
+    self.dismiss(animated: true, completion: nil)
+    performSegue(withIdentifier: "toSubMenu", sender: nil)
+}
+
+func lanjutButtonTapped() {
+    self.dismiss(animated: true, completion: nil)
+    performSegue(withIdentifier: "toPage2", sender: nil)
+    print("from main page")
+}
 }
 
 
