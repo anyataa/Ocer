@@ -41,4 +41,12 @@ class CongratsPageLater: UIViewController {
         print("keluar button okay")
     }
 
+	static func showCongratulation(_ sender:CongratsDelegateLater) {
+		let congratsPage = CongratsPageLater()
+
+		congratsPage.modalPresentationStyle = .custom
+		congratsPage.congratsDelegateLater = sender
+
+		(sender as! UIViewController).present(congratsPage, animated: true, completion: nil)
+	}
 }
