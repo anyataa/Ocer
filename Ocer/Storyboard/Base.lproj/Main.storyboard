@@ -30,18 +30,18 @@
                                             <constraint firstAttribute="width" constant="632" id="pbM-K0-P53"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Ajf-yE-BhM">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="estimatedItemSize" width="418" height="313"/>
+                                            <size key="itemSize" width="100" height="100"/>
+                                            <size key="estimatedItemSize" width="380" height="293"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hh2-Ez-LeP">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storyCell" id="hh2-Ez-LeP">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZXk-Pm-JeG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionViewCellContentView>
                                             </collectionViewCell>

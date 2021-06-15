@@ -16,8 +16,12 @@ class MandiViewController: UIViewController {
     
     var player: AVPlayer?
     
+//    let screenSize = UIScreen.main.boundss
+//    let screenWidth = screenSize.width
+//    let screenHeight = screenSize.height
+    
     let videoView1: UIView = {
-        let view = UIView(frame: CGRect(x: 130, y: 736, width: 300, height: 150))
+        let view = UIView(frame: CGRect(x: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 130), y: (UIScreen.main.bounds.height - UIScreen.main.bounds.height + 736), width: 300, height: 150))
         view.backgroundColor = .green
         view.layer.cornerRadius = 20
         
@@ -25,7 +29,7 @@ class MandiViewController: UIViewController {
     }()
     
     let videoView2: UIView = {
-        let view = UIView(frame: CGRect(x: 524, y: 736, width: 300, height: 150))
+        let view = UIView(frame: CGRect(x: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 524), y: 736, width: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 300), height: 150))
         view.backgroundColor = .orange
         view.layer.cornerRadius = 20
         
@@ -33,7 +37,7 @@ class MandiViewController: UIViewController {
     }()
     
     let videoView3: UIView = {
-        let view = UIView(frame: CGRect(x: 937, y: 736, width: 300, height: 150))
+        let view = UIView(frame: CGRect(x: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 937), y: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 736), width: 300, height: 150))
         view.backgroundColor = .systemIndigo
         view.layer.cornerRadius = 20
         
@@ -41,7 +45,7 @@ class MandiViewController: UIViewController {
     }()
     
     let videoZone1: UIView = {
-        let view = UIView(frame: CGRect(x: 130, y: 136, width: 300, height: 150))
+        let view = UIView(frame: CGRect(x: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 130), y: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 136), width: 300, height: 150))
         view.backgroundColor = .lightGray
         view.layer.cornerRadius = 20
         
@@ -49,7 +53,7 @@ class MandiViewController: UIViewController {
     }()
     
     let videoZone2: UIView = {
-        let view = UIView(frame: CGRect(x: 524, y: 136, width: 300, height: 150))
+        let view = UIView(frame: CGRect(x: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 524), y: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 136), width: 300, height: 150))
         view.backgroundColor = .lightGray
         view.layer.cornerRadius = 20
         
@@ -57,7 +61,7 @@ class MandiViewController: UIViewController {
     }()
     
     let videoZone3: UIView = {
-        let view = UIView(frame: CGRect(x: 937, y: 136, width: 300, height: 150))
+        let view = UIView(frame: CGRect(x: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 937), y: (UIScreen.main.bounds.width - UIScreen.main.bounds.width + 136), width: 300, height: 150))
         view.backgroundColor = .lightGray
         view.layer.cornerRadius = 20
         
