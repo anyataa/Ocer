@@ -41,6 +41,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         view.addSubview(backIcon)
     }
     @objc func segueBack() {
+        self.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "subMenu", sender: self)
     }
     
@@ -233,7 +234,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 
 }
 
-
+//Tanya besik kenapa gamau klik ke segue
 extension ViewController: CongratsDelegate{
 func ulangButtonTapped() {
     self.dismiss(animated: true, completion: nil)
@@ -242,14 +243,14 @@ func ulangButtonTapped() {
 
 func keluarButtonTapped() {
     self.dismiss(animated: true, completion: nil)
-    performSegue(withIdentifier: "toSubMenu", sender: nil)
+    performSegue(withIdentifier: "subMenu", sender: nil)
 }
 
 func lanjutButtonTapped() {
     self.dismiss(animated: true, completion: nil)
     performSegue(withIdentifier: "toPage2", sender: nil)
     print("from main page")
-}
+    }
 }
 
 
