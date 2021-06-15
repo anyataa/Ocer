@@ -24,14 +24,14 @@
                                         <rect key="frame" x="0.0" y="-32" width="1366" height="1084"/>
                                     </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-7F-r4j">
-                                        <rect key="frame" x="684" y="50" width="632" height="974"/>
+                                        <rect key="frame" x="803" y="25" width="400" height="974"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="632" id="pbM-K0-P53"/>
+                                            <constraint firstAttribute="width" constant="400" id="v0i-yA-von"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Ajf-yE-BhM">
                                             <size key="itemSize" width="100" height="100"/>
-                                            <size key="estimatedItemSize" width="380" height="293"/>
+                                            <size key="estimatedItemSize" width="400" height="300"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -51,12 +51,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="UnL-mE-rvh" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="topMargin" constant="-40" id="9yd-yV-qrH"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Sy-7F-r4j" secondAttribute="trailing" constant="50" id="OzO-Hi-7AL"/>
+                                    <constraint firstItem="2Sy-7F-r4j" firstAttribute="centerY" secondItem="Weg-Yi-CfQ" secondAttribute="centerY" id="BW9-RY-Enp"/>
                                     <constraint firstItem="UnL-mE-rvh" firstAttribute="leading" secondItem="Weg-Yi-CfQ" secondAttribute="leading" id="VSB-md-OTV"/>
-                                    <constraint firstAttribute="bottom" secondItem="2Sy-7F-r4j" secondAttribute="bottom" id="ZLR-nu-3qd"/>
-                                    <constraint firstItem="2Sy-7F-r4j" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="top" constant="50" id="keC-LE-MJK"/>
+                                    <constraint firstItem="2Sy-7F-r4j" firstAttribute="centerX" secondItem="Weg-Yi-CfQ" secondAttribute="centerX" constant="320" id="Y5f-mh-Gf7"/>
                                     <constraint firstAttribute="bottom" secondItem="UnL-mE-rvh" secondAttribute="bottomMargin" constant="-20" id="t9D-BX-w49"/>
                                     <constraint firstAttribute="trailing" secondItem="UnL-mE-rvh" secondAttribute="trailing" id="xJZ-LS-lUg"/>
+                                    <constraint firstItem="2Sy-7F-r4j" firstAttribute="top" secondItem="Weg-Yi-CfQ" secondAttribute="top" constant="25" id="yPc-rJ-6FK"/>
                                 </constraints>
                             </view>
                         </subviews>
