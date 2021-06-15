@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MandiViewController: UIViewController {
+class MandiViewController: UIViewController, CongratsDelegate {
     
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
@@ -280,9 +280,29 @@ class MandiViewController: UIViewController {
         }
     }
     
+    func ulangButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toMandi", sender: nil)
+    }
+    
+    func keluarButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toSubMenu", sender: nil)
+    }
+    
+    func lanjutButtonTapped() {
+//        self.dismiss(animated: true, completion: nil)
+//        performSegue(withIdentifier: "toSarapan", sender: nil)
+    }
+    
     func check() {
         if (self.scene1.center == self.sceneZone2.center) && (self.scene2.center == self.sceneZone4.center) && (self.scene3.center == self.sceneZone1.center) && (self.scene4.center == self.sceneZone3.center) {
-            print("All correct")
+            let congratsPage = CongratsPage()
+            
+                congratsPage.modalPresentationStyle = .custom
+                congratsPage.congratsDelegate = self
+            
+                present(congratsPage, animated: true, completion: nil)
         }
     }
     
