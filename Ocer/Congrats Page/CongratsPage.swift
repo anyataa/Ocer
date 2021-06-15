@@ -59,34 +59,42 @@ enum Games {
 }
 
 
+// MARK: - Nambah function dibawah
 
 
-
-//class CongratsPage: UIView {
-//
-//    let nibName = "CongratsPage"
-//    var contentView: UIView?
-//
-   
 //
 //
+//@IBAction func popUpButton(_ sender: Any) {
+//    let congratsPage = CongratsPage()
 //
+//    congratsPage.modalPresentationStyle = .custom
+//    congratsPage.congratsDelegate = self
 //
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
+//    present(congratsPage, animated: true, completion: nil)
 //
-//        guard let view = loadViewFromNib() else{ return}
-//        view.frame = self.bounds
-//        self.addSubview(view)
-//        contentView = view
-//    }
-//
-//    func loadViewFromNib() -> UIView?{
-//        let bundle = Bundle(for: type(of: self))
-//        let nib = UINib(nibName: nibName, bundle: bundle)
-//        return nib.instantiate(withOwner: self, options: nil).first as? UIView
-//    }
+//}
 //
 //
 //
+//
+//}
+//
+////game bangun tidur
+//
+//extension ViewController: CongratsDelegate{
+//func ulangButtonTapped() {
+//    self.dismiss(animated: true, completion: nil)
+//    performSegue(withIdentifier: "toPage1", sender: nil)
+//}
+//
+//func keluarButtonTapped() {
+//    self.dismiss(animated: true, completion: nil)
+//    performSegue(withIdentifier: "toSubMenu", sender: nil)
+//}
+//
+//func lanjutButtonTapped() {
+//    self.dismiss(animated: true, completion: nil)
+//    performSegue(withIdentifier: "toPage2", sender: nil)
+//    print("from main page")
+//}
 //}
