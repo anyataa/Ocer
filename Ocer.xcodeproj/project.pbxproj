@@ -23,6 +23,10 @@
 		8454D394266DECD50035302A /* Mandi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D393266DECD50035302A /* Mandi.storyboard */; };
 		8454D398266DECE10035302A /* Sarapan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D396266DECE10035302A /* Sarapan.storyboard */; };
 		8454D39B266DECF20035302A /* KeSekolah.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D39A266DECF20035302A /* KeSekolah.storyboard */; };
+		C63E8623267877FB00B97B55 /* CongratsPageLater.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63E861F267877FA00B97B55 /* CongratsPageLater.xib */; };
+		C63E8624267877FB00B97B55 /* CongratsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63E8620267877FA00B97B55 /* CongratsPage.xib */; };
+		C63E8625267877FB00B97B55 /* CongratsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E8621267877FA00B97B55 /* CongratsPage.swift */; };
+		C63E8626267877FB00B97B55 /* CongratsPageLater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E8622267877FA00B97B55 /* CongratsPageLater.swift */; };
 		F3010132266E1AA000002D7A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3010131266E1AA000002D7A /* Story.swift */; };
 		F301015B266E2C2500002D7A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3010159266E2C2500002D7A /* CardView.swift */; };
 		F301015C266E2C2500002D7A /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F301015A266E2C2500002D7A /* CardView.xib */; };
@@ -52,6 +56,10 @@
 		8454D393266DECD50035302A /* Mandi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mandi.storyboard; sourceTree = "<group>"; };
 		8454D397266DECE10035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/Sarapan.storyboard; sourceTree = "<group>"; };
 		8454D39A266DECF20035302A /* KeSekolah.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KeSekolah.storyboard; sourceTree = "<group>"; };
+		C63E861F267877FA00B97B55 /* CongratsPageLater.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CongratsPageLater.xib; sourceTree = "<group>"; };
+		C63E8620267877FA00B97B55 /* CongratsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CongratsPage.xib; sourceTree = "<group>"; };
+		C63E8621267877FA00B97B55 /* CongratsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsPage.swift; sourceTree = "<group>"; };
+		C63E8622267877FA00B97B55 /* CongratsPageLater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsPageLater.swift; sourceTree = "<group>"; };
 		F3010131266E1AA000002D7A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		F3010159266E2C2500002D7A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F301015A266E2C2500002D7A /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
@@ -92,6 +100,7 @@
 		8418B8FD26685E48002C8105 /* Ocer */ = {
 			isa = PBXGroup;
 			children = (
+				C63E861E2678741700B97B55 /* Congrats Page */,
 				8454D39D266DED0B0035302A /* Storyboard */,
 				8418B8FE26685E48002C8105 /* AppDelegate.swift */,
 				8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */,
@@ -129,12 +138,25 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+
 		F398F2322678588800418853 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */,
 			);
 			path = Fonts;
+            sourceTree = "<group>";
+        };
+
+		C63E861E2678741700B97B55 /* Congrats Page */ = {
+			isa = PBXGroup;
+			children = (
+				C63E8621267877FA00B97B55 /* CongratsPage.swift */,
+				C63E8620267877FA00B97B55 /* CongratsPage.xib */,
+				C63E8622267877FA00B97B55 /* CongratsPageLater.swift */,
+				C63E861F267877FA00B97B55 /* CongratsPageLater.xib */,
+			);
+			path = "Congrats Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,11 +222,13 @@
 				8454D391266DECC80035302A /* BangunTidur.storyboard in Resources */,
 				F398F2312678586700418853 /* design.graffiti.comicsansmsgras.ttf in Resources */,
 				8454D394266DECD50035302A /* Mandi.storyboard in Resources */,
+				C63E8623267877FB00B97B55 /* CongratsPageLater.xib in Resources */,
 				8454D38D266DEC9F0035302A /* UnderDevelopment.storyboard in Resources */,
 				8418B90B26685E49002C8105 /* Assets.xcassets in Resources */,
 				8418B90626685E48002C8105 /* Main.storyboard in Resources */,
 				8454D39B266DECF20035302A /* KeSekolah.storyboard in Resources */,
 				8454D398266DECE10035302A /* Sarapan.storyboard in Resources */,
+				C63E8624267877FB00B97B55 /* CongratsPage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,11 +244,13 @@
 				8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */,
 				F3010160266E322F00002D7A /* UnderDevelopment.swift in Sources */,
 				8418B90926685E48002C8105 /* Ocer.xcdatamodeld in Sources */,
+				C63E8625267877FB00B97B55 /* CongratsPage.swift in Sources */,
 				0A87D5E326729B4800C3FED4 /* KeSekolahViewController.swift in Sources */,
 				8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */,
 				F3F6BD982673158A00616EAB /* MandiViewController.swift in Sources */,
 				F301015B266E2C2500002D7A /* CardView.swift in Sources */,
 				F301015E266E317300002D7A /* SubMenu.swift in Sources */,
+				C63E8626267877FB00B97B55 /* CongratsPageLater.swift in Sources */,
 				F3010132266E1AA000002D7A /* Story.swift in Sources */,
 				8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */,
 				F31B7005266F0F9E00A6324A /* Scene.swift in Sources */,
