@@ -36,6 +36,8 @@
 		EE2EDFE42678E8D5002596AC /* pressButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFDF2678E8D5002596AC /* pressButton.mp3 */; };
 		EE2EDFE52678E8D5002596AC /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFE02678E8D5002596AC /* wrong.mp3 */; };
 		EE2EDFE62678E8D5002596AC /* match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFE12678E8D5002596AC /* match.mp3 */; };
+		EE3E65782679BB3E00C25C0E /* InstructionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E65772679BB3E00C25C0E /* InstructionController.swift */; };
+		EE3E657A267A2E0B00C25C0E /* Instruction.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3E6579267A2E0B00C25C0E /* Instruction.xib */; };
 		EEDADC9A26770D58003004FB /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDADC9926770D58003004FB /* SettingController.swift */; };
 		F3010132266E1AA000002D7A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3010131266E1AA000002D7A /* Story.swift */; };
 		F301015B266E2C2500002D7A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3010159266E2C2500002D7A /* CardView.swift */; };
@@ -79,6 +81,8 @@
 		EE2EDFDF2678E8D5002596AC /* pressButton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pressButton.mp3; sourceTree = "<group>"; };
 		EE2EDFE02678E8D5002596AC /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 		EE2EDFE12678E8D5002596AC /* match.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = match.mp3; sourceTree = "<group>"; };
+		EE3E65772679BB3E00C25C0E /* InstructionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionController.swift; sourceTree = "<group>"; };
+		EE3E6579267A2E0B00C25C0E /* Instruction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Instruction.xib; sourceTree = "<group>"; };
 		EEDADC9926770D58003004FB /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		F3010131266E1AA000002D7A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		F3010159266E2C2500002D7A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				F3F6BD972673158A00616EAB /* MandiViewController.swift */,
 				0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */,
 				EEDADC9926770D58003004FB /* SettingController.swift */,
+				EE3E65772679BB3E00C25C0E /* InstructionController.swift */,
+				EE3E6579267A2E0B00C25C0E /* Instruction.xib */,
 			);
 			path = Ocer;
 			sourceTree = "<group>";
@@ -171,16 +177,6 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-
-		F398F2322678588800418853 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */,
-			);
-			path = Fonts;
-            sourceTree = "<group>";
-        };
-
 		C63E861E2678741700B97B55 /* Congrats Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +199,14 @@
 				EE2EDFE02678E8D5002596AC /* wrong.mp3 */,
 			);
 			path = SoundAsset;
+			sourceTree = "<group>";
+		};
+		F398F2322678588800418853 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +283,7 @@
 				EE2EDFE22678E8D5002596AC /* startDrag.mp3 in Resources */,
 				EE2EDFE52678E8D5002596AC /* wrong.mp3 in Resources */,
 				8418B90B26685E49002C8105 /* Assets.xcassets in Resources */,
+				EE3E657A267A2E0B00C25C0E /* Instruction.xib in Resources */,
 				8418B90626685E48002C8105 /* Main.storyboard in Resources */,
 				8454D39B266DECF20035302A /* KeSekolah.storyboard in Resources */,
 				8454D398266DECE10035302A /* Sarapan.storyboard in Resources */,
@@ -305,6 +310,7 @@
 				F3F6BD982673158A00616EAB /* MandiViewController.swift in Sources */,
 				F301015B266E2C2500002D7A /* CardView.swift in Sources */,
 				F301015E266E317300002D7A /* SubMenu.swift in Sources */,
+				EE3E65782679BB3E00C25C0E /* InstructionController.swift in Sources */,
 				C63E8626267877FB00B97B55 /* CongratsPageLater.swift in Sources */,
 				F3010132266E1AA000002D7A /* Story.swift in Sources */,
 				8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */,
