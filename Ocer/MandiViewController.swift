@@ -95,6 +95,8 @@ class MandiViewController: UIViewController, CongratsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Progress.setValue(of: "progress2")
+        
         view.addSubview(scene1)
         view.addSubview(scene2)
         view.addSubview(scene3)

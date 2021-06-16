@@ -22,6 +22,8 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gameProgress()
+        
         self.subSceneView.backgroundColor = UIColor(white: 1, alpha: 0.5)
         self.subSceneView.layer.cornerRadius = 30
         
@@ -37,6 +39,20 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         Setting.addButtonToView(destination: self)
     }
     
+    func gameProgress() {
+        if Progress.shared.defaults.bool(forKey: "progress2") == false {
+            self.scenes[1].sceneImage = "LockedSubMenu2"
+        }
+        
+        if Progress.shared.defaults.bool(forKey: "progress3") == false {
+            self.scenes[2].sceneImage = "LockedSubMenu3"
+        }
+        
+        if Progress.shared.defaults.bool(forKey: "progress4") == false {
+            self.scenes[3].sceneImage = "LockedSubMenu4"
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return scenes.count
     }
@@ -50,18 +66,28 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        
+        switch indexPath.row {
+        case 0:
             Setting.playSoundEffect(fileName: "pressButton")
             self.performSegue(withIdentifier: "toBangunTidur", sender: nil)
-        } else if indexPath.row == 1 {
+        case 1:
             Setting.playSoundEffect(fileName: "pressButton")
-            self.performSegue(withIdentifier: "toMandi", sender: nil)
-        } else if indexPath.row == 2 {
+            if Progress.shared.defaults.bool(forKey: "progress2") == true {
+                self.performSegue(withIdentifier: "toMandi", sender: nil)
+            }
+        case 2:
             Setting.playSoundEffect(fileName: "pressButton")
-            self.performSegue(withIdentifier: "toSarapan", sender: nil)
-        } else if indexPath.row == 3 {
+            if Progress.shared.defaults.bool(forKey: "progress3") == true {
+                self.performSegue(withIdentifier: "toSarapan", sender: nil)
+            }
+        case 3:
             Setting.playSoundEffect(fileName: "pressButton")
-            self.performSegue(withIdentifier: "toKeSekolah", sender: nil)
+            if Progress.shared.defaults.bool(forKey: "progress4") == true {
+                self.performSegue(withIdentifier: "toKeSekolah", sender: nil)
+            }
+        default:
+            print("Default")
         }
     }
     
