@@ -7,12 +7,32 @@
 
 import UIKit
 
-class BangunTidurViewController: UIViewController {
+class BangunTidurViewController: UIViewController, CongratsDelegate {
+    
+//    Protocol Congrats
+    func ulangButtonTapped() {
+            print("masuk")
+           
+//        Error said: Has no identifier called subMenu
+        
+        
+    }
+    
+    func keluarButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toSubMenu", sender: self)
+    }
+    
+    func lanjutButtonTapped() {
+            
+    }
+    //    Finish
 
     let backgroundImage =  UIImage(named: "kamar")
     let pillowImage = UIImage(named: "bantal")
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
+    var score : Int = 0
     
     func setBackgroundImage() {
         let backgroundPlaceHolder = UIImageView(image: backgroundImage)
@@ -364,15 +384,35 @@ class BangunTidurViewController: UIViewController {
         
         if (draggableObject.view!.frame.intersects(draggableZone.frame)){
             draggableObject.view!.center = draggableZone.center
+            self.score += 1
+            print(score)
+
         }
         else if (draggableObject.view!.frame.intersects(draggableZone2.frame)) {
             draggableObject.view!.center = draggableZone2.center
+            self.score += 1
+            print(score)
+           
         }
             else {
                 draggableObject.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
         }
         //turn off shadow
         draggableObject.view!.layer.shadowOpacity = 0
+//        Implement Congratulation here
+        if score == 4 {
+            print("yes you did it")
+            let congratsPage = CongratsPage()
+        
+            congratsPage.modalPresentationStyle = .custom
+            congratsPage.congratsDelegate = self
+        
+            present(congratsPage, animated: true, completion: nil)
+        }
+        
     }
 
 }
+
+// Why Extension only need to be called Once, Segue still not performing yet
+

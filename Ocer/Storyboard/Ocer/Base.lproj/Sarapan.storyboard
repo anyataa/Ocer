@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IaN-3a-IlL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="6U0-Kl-sXu" kind="presentation" modalPresentationStyle="fullScreen" id="eNi-W6-06h"/>
+                                    <segue destination="6U0-Kl-sXu" kind="presentation" identifier="SubMenu" modalPresentationStyle="fullScreen" id="eNi-W6-06h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarapan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxo-ZS-bKP">
@@ -36,10 +36,21 @@
                         <viewLayoutGuide key="safeArea" id="2pg-dD-gEr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="mMj-ob-W8G" kind="presentation" identifier="toSekolah" modalPresentationStyle="fullScreen" id="Le0-OY-xeR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rz-BN-eFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="658"/>
+        </scene>
+        <!--BangunTidur-->
+        <scene sceneID="IQz-5y-o32">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BangunTidur" id="mMj-ob-W8G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWd-Xg-Lro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2128" y="527"/>
         </scene>
         <!--SubMenu-->
         <scene sceneID="hTl-Ug-ohN">
@@ -47,7 +58,7 @@
                 <viewControllerPlaceholder storyboardName="SubMenu" id="6U0-Kl-sXu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfz-V8-oAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="-114"/>
+            <point key="canvasLocation" x="2024" y="483"/>
         </scene>
     </scenes>
     <resources>
