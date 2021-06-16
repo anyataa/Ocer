@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IaN-3a-IlL">
     <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,16 +38,17 @@
                     </view>
                     <connections>
                         <segue destination="mMj-ob-W8G" kind="presentation" identifier="toSekolah" modalPresentationStyle="fullScreen" id="Le0-OY-xeR"/>
+                        <segue destination="eKe-Wu-qwC" kind="presentation" customClass="toSarapan" modalPresentationStyle="fullScreen" id="2Ma-Ur-0hI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rz-BN-eFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="658"/>
         </scene>
-        <!--BangunTidur-->
+        <!--KeSekolah-->
         <scene sceneID="IQz-5y-o32">
             <objects>
-                <viewControllerPlaceholder storyboardName="BangunTidur" id="mMj-ob-W8G" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="KeSekolah" id="mMj-ob-W8G" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWd-Xg-Lro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2128" y="527"/>
@@ -59,6 +60,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfz-V8-oAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024" y="483"/>
+        </scene>
+        <!--Sarapan-->
+        <scene sceneID="IUk-5D-NwQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Sarapan" id="eKe-Wu-qwC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTR-so-9OK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="794"/>
         </scene>
     </scenes>
     <resources>
