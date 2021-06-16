@@ -38,7 +38,7 @@
                     </view>
                     <connections>
                         <segue destination="mMj-ob-W8G" kind="presentation" identifier="toSekolah" modalPresentationStyle="fullScreen" id="Le0-OY-xeR"/>
-                        <segue destination="eKe-Wu-qwC" kind="presentation" customClass="toSarapan" modalPresentationStyle="fullScreen" id="2Ma-Ur-0hI"/>
+                        <segue destination="eKe-Wu-qwC" kind="presentation" identifier="toSarapan" modalPresentationStyle="fullScreen" id="2Ma-Ur-0hI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rz-BN-eFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,11 +11,9 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     var score : Int = 0
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
-        print("tapped ulang")
-        score = 0
         self.dismiss(animated: true, completion: nil)
-        
-    
+        performSegue(withIdentifier: "toSarapan", sender: self)
+
     }
     
     func keluarButtonTapped() {
@@ -41,12 +39,15 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     }
     
     func setBackButton() {
+        let backButton  = UIButton(type: .custom)
         let backIcon = UIImageView(image: UIImage(named: "BackButton"))
-        backIcon.frame=CGRect(x: 30, y: 60, width: 80, height: 60)
+        backButton.frame=CGRect(x: 20, y: 40, width: 80, height: 60)
+        backButton.setImage(UIImage(named: "BackButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(segueBack), for: .touchUpInside)
         
         backIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(segueBack)))
         
-        view.addSubview(backIcon)
+        view.addSubview(backButton)
     }
     @objc func segueBack() {
         self.dismiss(animated: true, completion: nil)
