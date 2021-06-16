@@ -17,14 +17,14 @@ public class Setting{
     
     public static func addButtonToView(destination: UIViewController){
         playBGM()
-        var musicButtonImage = "musicOff.png"
+        var musicButtonImage = "musicOn.png"
         if !musicPlayer.isPlaying{
-            musicButtonImage = "musicOn.png"
+            musicButtonImage = "musicOff.png"
         }
         
-        var soundButtonImage = "soundOff.png"
+        var soundButtonImage = "soundOn.png"
         if  UserDefaults.standard.object(forKey: "volume") != nil && UserDefaults.standard.float(forKey: "volume") == 0{
-            soundButtonImage = "soundOn.png"
+            soundButtonImage = "soundOff.png"
         }
         
         let musicButton = UIButton()
@@ -103,11 +103,11 @@ public class Setting{
     @objc public static func toggleMusic () -> Bool{
         if musicPlayer.isPlaying{
             musicPlayer.pause()
-            musicButton.setBackgroundImage(UIImage.init(named: "musicOn.png"), for: UIControl.State.normal)
+            musicButton.setBackgroundImage(UIImage.init(named: "musicOff.png"), for: UIControl.State.normal)
         }
         else{
             musicPlayer.play()
-            musicButton.setBackgroundImage(UIImage.init(named: "musicOff.png"), for: UIControl.State.normal)
+            musicButton.setBackgroundImage(UIImage.init(named: "musicOn.png"), for: UIControl.State.normal)
         }
         UserDefaults.standard.set(musicPlayer.isPlaying, forKey: "musicState")
         return musicPlayer.isPlaying
@@ -119,11 +119,11 @@ public class Setting{
             var volume = UserDefaults.standard.float(forKey: "volume")
             if volume == 0{
                 volume = 0.5
-                soundButton.setBackgroundImage(UIImage.init(named: "soundOff.png"), for: UIControl.State.normal)
+                soundButton.setBackgroundImage(UIImage.init(named: "soundOn.png"), for: UIControl.State.normal)
             }
             else{
                 volume = 0
-                soundButton.setBackgroundImage(UIImage.init(named: "soundOn.png"), for: UIControl.State.normal)
+                soundButton.setBackgroundImage(UIImage.init(named: "soundOff.png"), for: UIControl.State.normal)
             }
             if effectPlayer != nil{
                 effectPlayer.setVolume(volume, fadeDuration: 0)
