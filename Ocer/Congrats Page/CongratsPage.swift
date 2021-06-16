@@ -35,18 +35,14 @@ class CongratsPage: UIViewController{
     
     @IBAction func didUlangButtonTapped(_ sender: Any) {
         congratsDelegate?.ulangButtonTapped()
-        print("ulang button ok")
     }
     
     @IBAction func didLanjutButtonTapped(_ sender: Any) {
         congratsDelegate?.lanjutButtonTapped()
-      
-        print("lanjut button okay")
     }
     
     @IBAction func didKeluarButtonTapped(_ sender: Any) {
         congratsDelegate?.keluarButtonTapped()
-        print("keluar button okay")
     }
 }
 

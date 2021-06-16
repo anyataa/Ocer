@@ -36,6 +36,8 @@
 		F301015E266E317300002D7A /* SubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301015D266E317300002D7A /* SubMenu.swift */; };
 		F3010160266E322F00002D7A /* UnderDevelopment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301015F266E322F00002D7A /* UnderDevelopment.swift */; };
 		F31B7005266F0F9E00A6324A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31B7004266F0F9E00A6324A /* Scene.swift */; };
+		F398F2312678586700418853 /* design.graffiti.comicsansmsgras.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */; };
+		F3F6BD982673158A00616EAB /* MandiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F6BD972673158A00616EAB /* MandiViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		F301015D266E317300002D7A /* SubMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMenu.swift; sourceTree = "<group>"; };
 		F301015F266E322F00002D7A /* UnderDevelopment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderDevelopment.swift; sourceTree = "<group>"; };
 		F31B7004266F0F9E00A6324A /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = design.graffiti.comicsansmsgras.ttf; sourceTree = "<group>"; };
+		F3F6BD972673158A00616EAB /* MandiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +131,11 @@
 				F3010131266E1AA000002D7A /* Story.swift */,
 				F3010159266E2C2500002D7A /* CardView.swift */,
 				F301015A266E2C2500002D7A /* CardView.xib */,
+				F398F2322678588800418853 /* Fonts */,
 				F301015D266E317300002D7A /* SubMenu.swift */,
 				F301015F266E322F00002D7A /* UnderDevelopment.swift */,
 				F31B7004266F0F9E00A6324A /* Scene.swift */,
+				F3F6BD972673158A00616EAB /* MandiViewController.swift */,
 				0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */,
 			);
 			path = Ocer;
@@ -149,6 +155,16 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+
+		F398F2322678588800418853 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */,
+			);
+			path = Fonts;
+            sourceTree = "<group>";
+        };
+
 		C63E861E2678741700B97B55 /* Congrats Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +239,7 @@
 				F301015C266E2C2500002D7A /* CardView.xib in Resources */,
 				0A0E650C26770C6400583B49 /* bg.mp3 in Resources */,
 				8454D391266DECC80035302A /* BangunTidur.storyboard in Resources */,
+				F398F2312678586700418853 /* design.graffiti.comicsansmsgras.ttf in Resources */,
 				8454D394266DECD50035302A /* Mandi.storyboard in Resources */,
 				C63E8623267877FB00B97B55 /* CongratsPageLater.xib in Resources */,
 				8454D38D266DEC9F0035302A /* UnderDevelopment.storyboard in Resources */,
@@ -250,6 +267,7 @@
 				C63E8625267877FB00B97B55 /* CongratsPage.swift in Sources */,
 				0A87D5E326729B4800C3FED4 /* KeSekolahViewController.swift in Sources */,
 				8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */,
+				F3F6BD982673158A00616EAB /* MandiViewController.swift in Sources */,
 				F301015B266E2C2500002D7A /* CardView.swift in Sources */,
 				F301015E266E317300002D7A /* SubMenu.swift in Sources */,
 				C63E8626267877FB00B97B55 /* CongratsPageLater.swift in Sources */,
