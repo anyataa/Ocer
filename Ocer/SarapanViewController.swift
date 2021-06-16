@@ -40,13 +40,10 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     
     func setBackButton() {
         let backButton  = UIButton(type: .custom)
-        let backIcon = UIImageView(image: UIImage(named: "BackButton"))
         backButton.frame=CGRect(x: 20, y: 40, width: 80, height: 60)
         backButton.setImage(UIImage(named: "BackButton"), for: .normal)
         backButton.addTarget(self, action: #selector(segueBack), for: .touchUpInside)
-        
-        backIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(segueBack)))
-        
+ 
         view.addSubview(backButton)
     }
     @objc func segueBack() {
@@ -106,9 +103,10 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         setBackground()
         setBackButton()
 
-
+            
         // Do any additional setup after loading the view.
-        
+//        Sound Settings
+        Setting.addButtonToView(destination: self)
         view.addSubview(ball)
         view.addSubview(car)
         view.addSubview(ayam)
@@ -160,7 +158,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
                 if (sender.view?.frame != nil) {
                     sender.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
 //            EXECUTE SOUND EFFECT BOING!
-                   
+                    Setting.playSoundEffect(fileName: "no")
                 
                 }
             }
@@ -216,6 +214,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
             draggableObject.view!.alpha = 0
             
 //NOTE:            Play sounds
+            Setting.playSoundEffect(fileName: "ok")
             
             
         }

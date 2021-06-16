@@ -37,7 +37,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <segue destination="GRZ-n7-fQs" kind="presentation" identifier="toMandi" id="68U-fk-LQB"/>
+                        <segue destination="GRZ-n7-fQs" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" id="68U-fk-LQB"/>
                         <segue destination="wzw-FN-1aE" kind="presentation" identifier="toBangun" modalPresentationStyle="fullScreen" id="wfc-8B-JdP"/>
                     </connections>
                 </viewController>
