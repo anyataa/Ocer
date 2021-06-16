@@ -31,7 +31,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="AG4-Gc-qnH" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7x4-Js-0kv"/>
                         <segue destination="WDL-Xw-Xb5" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mej-3U-XWw"/>
                         <segue destination="abC-yx-MfR" kind="presentation" identifier="toSarapan" modalPresentationStyle="fullScreen" id="tqt-Z0-Swx"/>
                     </connections>
@@ -39,14 +38,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3J-iP-fR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="-157"/>
-        </scene>
-        <!--Mandi-->
-        <scene sceneID="s7j-os-bob">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Mandi" id="AG4-Gc-qnH" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VYN-gj-u7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1757" y="-470"/>
         </scene>
         <!--Sarapan-->
         <scene sceneID="ffR-yW-dK7">

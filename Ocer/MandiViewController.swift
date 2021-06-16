@@ -282,9 +282,16 @@ class MandiViewController: UIViewController, CongratsDelegate {
         }
     }
     
+    func resetGame() {
+        scene1.center = CGPoint(x: 205, y: 800)
+        scene2.center = CGPoint(x: 525, y: 800)
+        scene3.center = CGPoint(x: 845, y: 800)
+        scene4.center = CGPoint(x: 1165, y: 800)
+    }
+    
     func ulangButtonTapped() {
+        resetGame()
         self.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "toMandi", sender: nil)
     }
     
     func keluarButtonTapped() {
