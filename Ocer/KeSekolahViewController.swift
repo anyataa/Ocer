@@ -51,15 +51,7 @@ class KeSekolahViewController: UIViewController {
     
     @IBOutlet weak var car: UIImageView!
 	@IBOutlet weak var playButton: UIButton!
-	
-	@IBOutlet weak var musicSetting: UIButton!
-	@IBOutlet weak var soundSetting: UIButton!
-	
-	var soundPlayer: AVAudioPlayer?
-	var soundVolume: Float = 0.2
-	var musicPlayer: AVAudioPlayer?
-	var musicVolume: Float = 0.2
-    
+	 
     var zones: [Dictionary<String,Any>] = []
     var totalDistance:CGFloat = 0
 	var initialCarPosition:CGPoint?
@@ -70,7 +62,7 @@ class KeSekolahViewController: UIViewController {
         setupArrow()
         setupZones(zone1, zone2, zone3, zone4, zone5, zone6, finishZone)
 		
-		playMusic()
+		Setting.addButtonToView(destination: self)
     }
     
     func setupArrow() {
@@ -146,11 +138,11 @@ class KeSekolahViewController: UIViewController {
         //verify if each zone is correct
         for zone in zones {
             if !(zone["correct"] as! Bool) {
-				playSound("no")
+				Setting.playSoundEffect(fileName: "no")
                 return false
             }
         }
-		playSound("ok")
+		Setting.playSoundEffect(fileName: "ok")
         return true
     }
 	
@@ -243,11 +235,11 @@ class KeSekolahViewController: UIViewController {
                                 (zone["zone"] as! UIImageView).image = sview.image
                                 self.zones[index]["correct"] = true
                                 
-								playSound("ok")
+								Setting.playSoundEffect(fileName: "ok")
                                 break
                             } else {
                                 print("incorrect")
-								playSound("no")
+								Setting.playSoundEffect(fileName: "no")
                             }
                         }
                     }
@@ -261,75 +253,17 @@ class KeSekolahViewController: UIViewController {
             }
         }
     }
-	
-	@IBAction func back(_ sender: Any) {
-		self.dismiss(animated: true, completion: nil)
-	}
-	
-	@IBAction func muteMusic(_ sender: Any) {
-		muteMusic()
-	}
-	
-	@IBAction func muteSound(_ sender: Any) {
-		muteSound()
-	}
-	
-	func muteMusic(){
-		if (musicPlayer!.isPlaying){
-			musicSetting.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
-			musicPlayer?.stop()
-		} else {
-			musicSetting.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
-			musicPlayer?.play()
-		}
-	}
-	
-	func muteSound(){
-		if (soundVolume > 0) {
-			soundSetting.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
-			soundVolume = 0
-		} else {
-			soundSetting.setImage(UIImage(systemName: "speaker.wave.2"), for: .normal)
-			soundVolume = 0.2
-		}
-	}
-	
-	func playMusic(){
-		let path = Bundle.main.path(forResource: "bg", ofType: "mp3")!
-		let url = URL(fileURLWithPath: path)
-
-		do {
-			musicPlayer = try AVAudioPlayer(contentsOf: url)
-			musicPlayer?.volume = musicVolume
-			musicPlayer?.numberOfLoops = -1
-			musicPlayer?.play()
-		} catch {
-			print("couldn't load the file")
-		}
-	}
-	
-	func playSound(_ soundName:String){
-		let path = Bundle.main.path(forResource: soundName, ofType: "mp3")!
-		let url = URL(fileURLWithPath: path)
-
-		do {
-			soundPlayer = try AVAudioPlayer(contentsOf: url)
-			soundPlayer?.volume = soundVolume
-			soundPlayer?.play()
-		} catch {
-			print("couldn't load the file")
-		}
-	}
 }
 
 extension KeSekolahViewController: CongratsDelegateLater {
 	func ulangButtonTapped() {
 		resetGame()
 		self.dismiss(animated: false, completion: nil)
+		
 	}
 	
 	func keluarButtonTapped() {
 		self.dismiss(animated: true, completion: nil)
-		self.dismiss(animated: true, completion: nil)
+		performSegue(withIdentifier: "subMenu", sender: self)
 	}
 }

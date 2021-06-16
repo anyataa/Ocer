@@ -30,6 +30,13 @@
 		C63E8624267877FB00B97B55 /* CongratsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63E8620267877FA00B97B55 /* CongratsPage.xib */; };
 		C63E8625267877FB00B97B55 /* CongratsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E8621267877FA00B97B55 /* CongratsPage.swift */; };
 		C63E8626267877FB00B97B55 /* CongratsPageLater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E8622267877FA00B97B55 /* CongratsPageLater.swift */; };
+		EE2EDFD52677AAA8002596AC /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFD42677AAA8002596AC /* bgMusic.mp3 */; };
+		EE2EDFE22678E8D5002596AC /* startDrag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFDD2678E8D5002596AC /* startDrag.mp3 */; };
+		EE2EDFE32678E8D5002596AC /* congratulation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFDE2678E8D5002596AC /* congratulation.mp3 */; };
+		EE2EDFE42678E8D5002596AC /* pressButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFDF2678E8D5002596AC /* pressButton.mp3 */; };
+		EE2EDFE52678E8D5002596AC /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFE02678E8D5002596AC /* wrong.mp3 */; };
+		EE2EDFE62678E8D5002596AC /* match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE2EDFE12678E8D5002596AC /* match.mp3 */; };
+		EEDADC9A26770D58003004FB /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDADC9926770D58003004FB /* SettingController.swift */; };
 		F3010132266E1AA000002D7A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3010131266E1AA000002D7A /* Story.swift */; };
 		F301015B266E2C2500002D7A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3010159266E2C2500002D7A /* CardView.swift */; };
 		F301015C266E2C2500002D7A /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F301015A266E2C2500002D7A /* CardView.xib */; };
@@ -66,6 +73,13 @@
 		C63E8620267877FA00B97B55 /* CongratsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CongratsPage.xib; sourceTree = "<group>"; };
 		C63E8621267877FA00B97B55 /* CongratsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsPage.swift; sourceTree = "<group>"; };
 		C63E8622267877FA00B97B55 /* CongratsPageLater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsPageLater.swift; sourceTree = "<group>"; };
+		EE2EDFD42677AAA8002596AC /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
+		EE2EDFDD2678E8D5002596AC /* startDrag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startDrag.mp3; sourceTree = "<group>"; };
+		EE2EDFDE2678E8D5002596AC /* congratulation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = congratulation.mp3; sourceTree = "<group>"; };
+		EE2EDFDF2678E8D5002596AC /* pressButton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pressButton.mp3; sourceTree = "<group>"; };
+		EE2EDFE02678E8D5002596AC /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		EE2EDFE12678E8D5002596AC /* match.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = match.mp3; sourceTree = "<group>"; };
+		EEDADC9926770D58003004FB /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		F3010131266E1AA000002D7A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		F3010159266E2C2500002D7A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F301015A266E2C2500002D7A /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
@@ -118,6 +132,7 @@
 			children = (
 				C63E861E2678741700B97B55 /* Congrats Page */,
 				0AEEA8B8267700AD0088CD42 /* Sound */,
+				EE2EDFD326779B4F002596AC /* SoundAsset */,
 				8454D39D266DED0B0035302A /* Storyboard */,
 				8418B8FE26685E48002C8105 /* AppDelegate.swift */,
 				8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */,
@@ -137,6 +152,7 @@
 				F31B7004266F0F9E00A6324A /* Scene.swift */,
 				F3F6BD972673158A00616EAB /* MandiViewController.swift */,
 				0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */,
+				EEDADC9926770D58003004FB /* SettingController.swift */,
 			);
 			path = Ocer;
 			sourceTree = "<group>";
@@ -174,6 +190,19 @@
 				C63E861F267877FA00B97B55 /* CongratsPageLater.xib */,
 			);
 			path = "Congrats Page";
+			sourceTree = "<group>";
+		};
+		EE2EDFD326779B4F002596AC /* SoundAsset */ = {
+			isa = PBXGroup;
+			children = (
+				EE2EDFD42677AAA8002596AC /* bgMusic.mp3 */,
+				EE2EDFDE2678E8D5002596AC /* congratulation.mp3 */,
+				EE2EDFE12678E8D5002596AC /* match.mp3 */,
+				EE2EDFDF2678E8D5002596AC /* pressButton.mp3 */,
+				EE2EDFDD2678E8D5002596AC /* startDrag.mp3 */,
+				EE2EDFE02678E8D5002596AC /* wrong.mp3 */,
+			);
+			path = SoundAsset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,15 +263,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8454D38A266DEC850035302A /* SubMenu.storyboard in Resources */,
+				EE2EDFE32678E8D5002596AC /* congratulation.mp3 in Resources */,
 				8418B90E26685E49002C8105 /* LaunchScreen.storyboard in Resources */,
 				0AEEA8BC267700BE0088CD42 /* ok.mp3 in Resources */,
 				F301015C266E2C2500002D7A /* CardView.xib in Resources */,
+				EE2EDFE62678E8D5002596AC /* match.mp3 in Resources */,
+				EE2EDFD52677AAA8002596AC /* bgMusic.mp3 in Resources */,
 				0A0E650C26770C6400583B49 /* bg.mp3 in Resources */,
 				8454D391266DECC80035302A /* BangunTidur.storyboard in Resources */,
 				F398F2312678586700418853 /* design.graffiti.comicsansmsgras.ttf in Resources */,
 				8454D394266DECD50035302A /* Mandi.storyboard in Resources */,
 				C63E8623267877FB00B97B55 /* CongratsPageLater.xib in Resources */,
 				8454D38D266DEC9F0035302A /* UnderDevelopment.storyboard in Resources */,
+				EE2EDFE42678E8D5002596AC /* pressButton.mp3 in Resources */,
+				EE2EDFE22678E8D5002596AC /* startDrag.mp3 in Resources */,
+				EE2EDFE52678E8D5002596AC /* wrong.mp3 in Resources */,
 				8418B90B26685E49002C8105 /* Assets.xcassets in Resources */,
 				8418B90626685E48002C8105 /* Main.storyboard in Resources */,
 				8454D39B266DECF20035302A /* KeSekolah.storyboard in Resources */,
@@ -273,6 +308,7 @@
 				C63E8626267877FB00B97B55 /* CongratsPageLater.swift in Sources */,
 				F3010132266E1AA000002D7A /* Story.swift in Sources */,
 				8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */,
+				EEDADC9A26770D58003004FB /* SettingController.swift in Sources */,
 				F31B7005266F0F9E00A6324A /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

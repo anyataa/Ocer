@@ -28,6 +28,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.collectionView.delegate = self
         
         self.collectionView.backgroundColor = UIColor(white: 0, alpha: 0)
+        Setting.addButtonToView(destination: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,6 +48,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            Setting.playSoundEffect(fileName: "pressButton")
             self.performSegue(withIdentifier: "toSubMenu", sender: indexPath)
         } else {
             self.performSegue(withIdentifier: "toUnderDevelopment", sender: indexPath)
