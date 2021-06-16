@@ -9,6 +9,7 @@ import UIKit
 
 class SarapanViewController: UIViewController, CongratsDelegate {
     var score : Int = 0
+    
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
         self.dismiss(animated: true, completion: nil)
@@ -83,9 +84,9 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     
     let ball : UIView = {
     let basket = UIView(frame: CGRect(x: 100, y: 300, width: 200, height: 200))
-        
+
         basket.backgroundColor = UIColor(patternImage: UIImage(named: "Basket")!)
-        
+
         return basket
     }()
     
@@ -95,23 +96,42 @@ class SarapanViewController: UIViewController, CongratsDelegate {
             return view
     }()
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
         setBackButton()
-
+        let centerX = view.frame.width/2
+        let centerY = view.frame.height/2
+       
+        
             
-        // Do any additional setup after loading the view.
+//        centerized object
+        rug.frame = CGRect(x: centerX, y: centerY*0.1, width: 338, height: 192)
+        ball.frame = CGRect(x: centerX/4, y: centerY*1.4, width: 200, height: 200)
+        telur.frame = CGRect(x: centerX*1.6, y: centerY*1.1, width: 200, height: 164)
+        ayam.frame = CGRect(x: centerX*0.1, y: centerY*0.8, width: 200, height: 197)
+        sayur.frame = CGRect(x: centerX/3, y: centerY/7, width: 200, height: 212)
+        bowlZone.frame = CGRect(x: centerX-100, y: centerY+120, width: 200, height: 120)
+        
+        
+//         Do any additional setup after loading the view.
 //        Sound Settings
         Setting.addButtonToView(destination: self)
+//        view
         view.addSubview(ball)
         view.addSubview(rug)
         view.addSubview(ayam)
         view.addSubview(telur)
         view.addSubview(sayur)
         view.addSubview(bowlZone)
+        
+//        Trial for function
+        
+       
+        
+
         
         
 //        set Zone for drop
