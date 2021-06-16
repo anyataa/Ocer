@@ -34,6 +34,7 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         // Refactor this to new file
         let nib = UINib(nibName: "CardView", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "CardViewCell")
+        Setting.addButtonToView(destination: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -50,12 +51,16 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            Setting.playSoundEffect(fileName: "pressButton")
             self.performSegue(withIdentifier: "toBangunTidur", sender: nil)
         } else if indexPath.row == 1 {
+            Setting.playSoundEffect(fileName: "pressButton")
             self.performSegue(withIdentifier: "toMandi", sender: nil)
         } else if indexPath.row == 2 {
+            Setting.playSoundEffect(fileName: "pressButton")
             self.performSegue(withIdentifier: "toSarapan", sender: nil)
         } else if indexPath.row == 3 {
+            Setting.playSoundEffect(fileName: "pressButton")
             self.performSegue(withIdentifier: "toKeSekolah", sender: nil)
         }
     }

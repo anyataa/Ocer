@@ -131,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				C63E861E2678741700B97B55 /* Congrats Page */,
+				F398F2322678588800418853 /* Fonts */,
 				0AEEA8B8267700AD0088CD42 /* Sound */,
 				EE2EDFD326779B4F002596AC /* SoundAsset */,
 				8454D39D266DED0B0035302A /* Storyboard */,
@@ -146,7 +147,6 @@
 				F3010131266E1AA000002D7A /* Story.swift */,
 				F3010159266E2C2500002D7A /* CardView.swift */,
 				F301015A266E2C2500002D7A /* CardView.xib */,
-				F398F2322678588800418853 /* Fonts */,
 				F301015D266E317300002D7A /* SubMenu.swift */,
 				F301015F266E322F00002D7A /* UnderDevelopment.swift */,
 				F31B7004266F0F9E00A6324A /* Scene.swift */,
@@ -171,16 +171,6 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-
-		F398F2322678588800418853 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */,
-			);
-			path = Fonts;
-            sourceTree = "<group>";
-        };
-
 		C63E861E2678741700B97B55 /* Congrats Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +193,14 @@
 				EE2EDFE02678E8D5002596AC /* wrong.mp3 */,
 			);
 			path = SoundAsset;
+			sourceTree = "<group>";
+		};
+		F398F2322678588800418853 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

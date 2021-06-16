@@ -33,6 +33,7 @@
                     <connections>
                         <segue destination="AG4-Gc-qnH" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7x4-Js-0kv"/>
                         <segue destination="WDL-Xw-Xb5" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mej-3U-XWw"/>
+                        <segue destination="abC-yx-MfR" kind="presentation" identifier="toSarapan" modalPresentationStyle="fullScreen" id="tqt-Z0-Swx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3J-iP-fR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -46,6 +47,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYN-gj-u7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1757" y="-470"/>
+        </scene>
+        <!--Sarapan-->
+        <scene sceneID="ffR-yW-dK7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Sarapan" id="abC-yx-MfR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gag-uA-VDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="-112"/>
         </scene>
         <!--SubMenu-->
         <scene sceneID="yVu-SX-Oxo">
