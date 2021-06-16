@@ -89,11 +89,10 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         return basket
     }()
     
-    let car: UIView  = {
-        let mobil = UIView(frame: CGRect(x: 500, y: 50, width: 100, height: 100))
-//      NOTE:  Remove force Unwrap
-        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "guling")!)
-            return mobil
+    let rug: UIView  = {
+            let view = UIView(frame: CGRect(x: 540, y: 50, width: 338, height: 192))
+            view.backgroundColor =  UIColor(patternImage: UIImage(named: "keset")!)
+            return view
     }()
     
     
@@ -108,7 +107,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 //        Sound Settings
         Setting.addButtonToView(destination: self)
         view.addSubview(ball)
-        view.addSubview(car)
+        view.addSubview(rug)
         view.addSubview(ayam)
         view.addSubview(telur)
         view.addSubview(sayur)
@@ -122,7 +121,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
 //        Gesture
         ball.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:))))
-        car.addGestureRecognizer((UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:)))))
+        rug.addGestureRecognizer((UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:)))))
         telur.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
         ayam.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
         sayur.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
@@ -157,7 +156,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
                     sender.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
-//            EXECUTE SOUND EFFECT BOING!
+//            EXECUTE SOUND EFFECT BOING! Wrong
                     Setting.playSoundEffect(fileName: "no")
                 
                 }

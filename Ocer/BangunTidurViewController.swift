@@ -15,7 +15,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         performSegue(withIdentifier: "toBangun", sender: self)
            
 //        Error said: Has no identifier called subMenu
-        
+ 
         
     }
     
@@ -51,7 +51,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         view.addSubview(backButton)
     }
     @objc func segueBack() {
-        performSegue(withIdentifier: "subMenu", sender: self)
+        performSegue(withIdentifier: "toSubMenu", sender: self)
     }
 //    func setPillow() {
 //        let pillowImagePlace = UIImageView(image: UIImage(named: "bantal"))
