@@ -11,12 +11,17 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
+       
     }
     
     func keluarButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "SubMenu", sender: nil)
     }
     
     func lanjutButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toSekolah", sender: nil)
     }
     
 //    Protocol Finish
@@ -42,7 +47,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     }
     @objc func segueBack() {
         self.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "subMenu", sender: self)
+        performSegue(withIdentifier: "SubMenu", sender: self)
     }
     
     let ayam: UIView  = {
