@@ -12,6 +12,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
 //    Protocol Congrats
     func ulangButtonTapped() {
             print("masuk")
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toSarapan", sender: self)
            
 //        Error said: Has no identifier called subMenu
         
@@ -24,7 +26,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     }
     
     func lanjutButtonTapped() {
-            
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toMandi", sender: self)
     }
     //    Finish
 

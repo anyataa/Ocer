@@ -8,10 +8,14 @@
 import UIKit
 
 class SarapanViewController: UIViewController, CongratsDelegate {
-    
+    var score : Int = 0
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
-       
+        print("tapped ulang")
+        score = 0
+        self.dismiss(animated: true, completion: nil)
+        
+    
     }
     
     func keluarButtonTapped() {
@@ -27,7 +31,6 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 //    Protocol Finish
     
     var center: CGPoint = CGPoint.zero
-    var score : Int = 0
     var dropZone : CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     func setBackground() {
         let background = UIImageView(image: UIImage(named: "backgroundMakan"))
@@ -89,9 +92,9 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     }()
     
     let car: UIView  = {
-        let mobil = UIView(frame: CGRect(x: 500, y: 50, width: 289, height: 210))
+        let mobil = UIView(frame: CGRect(x: 500, y: 50, width: 100, height: 100))
 //      NOTE:  Remove force Unwrap
-        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "mobil")!)
+        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "guling")!)
             return mobil
     }()
     
@@ -239,7 +242,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 
 }
 
-//Tanya besik kenapa gamau klik ke segue
+//Extension
 extension ViewController: CongratsDelegate{
 func ulangButtonTapped() {
     self.dismiss(animated: true, completion: nil)

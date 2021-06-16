@@ -36,6 +36,9 @@
                         <viewLayoutGuide key="safeArea" id="LSC-by-SUd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="GRZ-n7-fQs" kind="presentation" identifier="toMandi" id="68U-fk-LQB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wow-Gi-Z3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,6 +51,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfz-V8-oAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="-528"/>
+        </scene>
+        <!--Mandi-->
+        <scene sceneID="fwd-io-IgN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mandi" id="GRZ-n7-fQs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QoD-TR-B4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1309" y="-544"/>
         </scene>
     </scenes>
     <resources>
