@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WRd-Gu-FLQ">
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mandi View Controller-->
         <scene sceneID="3SJ-Ze-kxW">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-WRd-Gu-FLQ" id="WRd-Gu-FLQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-WRd-Gu-FLQ" id="WRd-Gu-FLQ" customClass="MandiViewController" customModule="Ocer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GTH-8o-s2K">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNj-Pj-Sqj">
-                                <rect key="frame" x="60" y="79" width="77" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNj-Pj-Sqj">
+                                <rect key="frame" x="20" y="40" width="75" height="45"/>
+                                <state key="normal" image="BackButton"/>
                                 <connections>
-                                    <segue destination="6U0-Kl-sXu" kind="presentation" modalPresentationStyle="fullScreen" id="vFA-Z3-NbO"/>
+                                    <segue destination="6U0-Kl-sXu" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="vFA-Z3-NbO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mandi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-N6-UNN">
-                                <rect key="frame" x="620" y="483" width="127" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8DU-KF-Ra2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.68235294117647061" green="0.87058823529411766" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nNj-Pj-Sqj" firstAttribute="leading" secondItem="8DU-KF-Ra2" secondAttribute="leading" constant="20" id="ZQv-Jh-SnH"/>
+                            <constraint firstItem="nNj-Pj-Sqj" firstAttribute="top" secondItem="8DU-KF-Ra2" secondAttribute="top" constant="40" id="fZ2-Zg-2kp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="AG4-Gc-qnH" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7x4-Js-0kv"/>
+                        <segue destination="WDL-Xw-Xb5" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mej-3U-XWw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3J-iP-fR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="-157"/>
+        </scene>
+        <!--Mandi-->
+        <scene sceneID="s7j-os-bob">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mandi" id="AG4-Gc-qnH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VYN-gj-u7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="-470"/>
+        </scene>
+        <!--SubMenu-->
+        <scene sceneID="yVu-SX-Oxo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SubMenu" id="WDL-Xw-Xb5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0a-e8-H03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762" y="231"/>
         </scene>
         <!--SubMenu-->
         <scene sceneID="hTl-Ug-ohN">
@@ -50,8 +65,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="BackButton" width="75" height="45"/>
     </resources>
 </document>

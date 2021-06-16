@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="UIViewController-IaN-3a-IlL" id="IaN-3a-IlL" customClass="SarapanViewController" customModule="Ocer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OjD-ud-zZm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oww-aB-2ev">
@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="6U0-Kl-sXu" kind="presentation" modalPresentationStyle="fullScreen" id="eNi-W6-06h"/>
+                                    <segue destination="6U0-Kl-sXu" kind="presentation" identifier="SubMenu" modalPresentationStyle="fullScreen" id="eNi-W6-06h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarapan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxo-ZS-bKP">
@@ -36,10 +36,21 @@
                         <viewLayoutGuide key="safeArea" id="2pg-dD-gEr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="mMj-ob-W8G" kind="presentation" identifier="toSekolah" modalPresentationStyle="fullScreen" id="Le0-OY-xeR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rz-BN-eFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="658"/>
+        </scene>
+        <!--BangunTidur-->
+        <scene sceneID="IQz-5y-o32">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BangunTidur" id="mMj-ob-W8G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWd-Xg-Lro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2128" y="527"/>
         </scene>
         <!--SubMenu-->
         <scene sceneID="hTl-Ug-ohN">
@@ -47,7 +58,7 @@
                 <viewControllerPlaceholder storyboardName="SubMenu" id="6U0-Kl-sXu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfz-V8-oAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="-114"/>
+            <point key="canvasLocation" x="2024" y="483"/>
         </scene>
     </scenes>
     <resources>

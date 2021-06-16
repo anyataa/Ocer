@@ -27,9 +27,8 @@
                                     <segue destination="3Yn-2W-NWw" kind="presentation" identifier="toMainMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pbX-Da-eMW"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9j-Y7-gv6">
-                                <rect key="frame" x="495" y="218" width="814" height="607"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9j-Y7-gv6">
+                                <rect key="frame" x="470.5" y="194.5" width="825" height="635"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Isu-uz-7CB">
                                         <rect key="frame" x="0.0" y="0.0" width="814" height="607"/>
@@ -43,7 +42,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tZf-db-cJh">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="subMenuCell" id="tZf-db-cJh">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mHf-UB-NfC">
@@ -55,12 +54,18 @@
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="635" id="Kky-gX-Oob"/>
+                                    <constraint firstAttribute="width" constant="825" id="maQ-Ny-Ihe"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r63-dN-ZrT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eXE-aV-er8" firstAttribute="leading" secondItem="Vbn-xn-ipP" secondAttribute="leading" constant="-8" id="5YZ-yU-xo1"/>
+                            <constraint firstItem="T9j-Y7-gv6" firstAttribute="centerX" secondItem="Vbn-xn-ipP" secondAttribute="centerX" constant="200" id="90a-hc-IHD"/>
+                            <constraint firstItem="T9j-Y7-gv6" firstAttribute="centerY" secondItem="Vbn-xn-ipP" secondAttribute="centerY" id="Ac1-bx-5FG"/>
                             <constraint firstAttribute="trailing" secondItem="eXE-aV-er8" secondAttribute="trailing" id="IaT-b9-Sg2"/>
                             <constraint firstItem="eXE-aV-er8" firstAttribute="top" secondItem="Vbn-xn-ipP" secondAttribute="top" id="M0S-AQ-1nO"/>
                             <constraint firstItem="n74-71-Vp8" firstAttribute="leading" secondItem="r63-dN-ZrT" secondAttribute="leading" constant="20" id="PAX-iG-7ry"/>
