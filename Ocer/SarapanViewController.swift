@@ -91,7 +91,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     let car: UIView  = {
         let mobil = UIView(frame: CGRect(x: 500, y: 50, width: 289, height: 210))
 //      NOTE:  Remove force Unwrap
-        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "Mobil")!)
+        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "mobil")!)
             return mobil
     }()
     
