@@ -22,6 +22,16 @@ struct InstructionScript{
         return resultList
     }
     
+    static func generateFinishScript(gameId: String)->[InstructionScript]{
+        var resultList: [InstructionScript] = []
+        for instruction in finishedInstructionList{
+            if instruction.gameId == gameId{
+                resultList.append(instruction)
+            }
+        }
+        return resultList
+    }
+    
     static func getInstruction(list: [InstructionScript], orderNo: Int)-> InstructionScript{
         if orderNo != nil && orderNo > 0 && orderNo <= list.count{
             return list[orderNo-1]
@@ -35,17 +45,17 @@ struct InstructionScript{
 
 var instructionList: [InstructionScript] = [
     InstructionScript(gameId: "bedroom", orderNo: 1, description: "Hoahhmmmmm"),
-    InstructionScript(gameId: "bedroom", orderNo: 2, description: "Udah pagi aja, Ocer masih ngantuk nih"),
+    InstructionScript(gameId: "bedroom", orderNo: 2, description: "Udah pagi aja, Ocer masih ngantuk banget tapi"),
     InstructionScript(gameId: "bedroom", orderNo: 3, description: ". . . . ."),
     InstructionScript(gameId: "bedroom", orderNo: 4, description: "Waduh kamar Ocer kok berantakan banget ya?"),
     InstructionScript(gameId: "bedroom", orderNo: 5, description: "Beresin dulu ah sebelum pergi ke sekolah! Yuk bantuin Ocer beresin kamar! 🐒"),
-    InstructionScript(gameId: "bedroom", orderNo: 6, description: "Yayyy, kamar Ocer sudah rapi, terima kasih sudah membantu Ocer! 🌟"),
+//    InstructionScript(gameId: "bedroom", orderNo: 6, description: "Yayyy, kamar Ocer sudah rapi, terima kasih sudah membantu Ocer! 🌟"),
     
     InstructionScript(gameId: "toilet", orderNo: 1, description: "*sniff sniff* (merasakan bau mulut) 👃🏻"),
     InstructionScript(gameId: "toilet", orderNo: 2, description: "Aduduhh, mulut Ocer bau pisang! 🍌"),
     InstructionScript(gameId: "toilet", orderNo: 3, description: "Ocer mau sikat gigi dulu deh! 🪥"),
     InstructionScript(gameId: "toilet", orderNo: 4, description: "Bantuin Ocer mengurutkan langkah-langkah sikat gigi ya! 🦷"),
-    InstructionScript(gameId: "toilet", orderNo: 5, description: "Nah, kalau gini kan gigi Ocer wangi dan kinclong! 😁✨ Terima kasih sudah membantu Ocer! 🌟"),
+//    InstructionScript(gameId: "toilet", orderNo: 5, description: "Nah, kalau gini kan gigi Ocer wangi dan kinclong! 😁✨ Terima kasih sudah membantu Ocer! 🌟"),
     
     InstructionScript(gameId: "eat", orderNo: 1, description: "Halo, sekarang Ocer mau sarapan. Nah, tolong bantu Ocer masukan makanan ke mangkok Ocer ya! "),
     InstructionScript(gameId: "eat", orderNo: 2, description: "Bagaimana caranya?"),
@@ -60,4 +70,9 @@ var instructionList: [InstructionScript] = [
     InstructionScript(gameId: "school", orderNo: 5, description: "Nah, kalau semua panah sudah sesuai dengan jalan yang tepat ke sekolah sekarang injak pedal ya!"),
     InstructionScript(gameId: "school", orderNo: 6, description: "Bantu menunjukan jalan yang benar ya supaya Ocer bisa ke sekolah!")
     
+]
+
+var finishedInstructionList: [InstructionScript] = [
+    InstructionScript(gameId: "bedroom", orderNo: 1, description: "Yayyy, kamar Ocer sudah rapi, terima kasih sudah membantu Ocer! 🌟"),
+    InstructionScript(gameId: "toilet", orderNo: 1, description: "Nah, kalau gini kan gigi Ocer wangi dan kinclong! 😁✨ Terima kasih sudah membantu Ocer! 🌟"),
 ]
