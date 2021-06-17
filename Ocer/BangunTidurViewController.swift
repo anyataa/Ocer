@@ -441,6 +441,10 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     func checkWin() {
        
         if score == 4{
+        if score == 4 {
+            print("yes you did it")
+            
+            Progress.setValue(value: "p2", toKey: "progress2")
             let congratsPage = CongratsPage()
         
             congratsPage.modalPresentationStyle = .custom
