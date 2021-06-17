@@ -8,10 +8,13 @@
 import UIKit
 
 class SarapanViewController: UIViewController, CongratsDelegate {
+    var score : Int = 0
     
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
-       
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toSarapan", sender: self)
+
     }
     
     func keluarButtonTapped() {
@@ -27,7 +30,6 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 //    Protocol Finish
     
     var center: CGPoint = CGPoint.zero
-    var score : Int = 0
     var dropZone : CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     func setBackground() {
         let background = UIImageView(image: UIImage(named: "backgroundMakan"))
@@ -38,12 +40,12 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     }
     
     func setBackButton() {
-        let backIcon = UIImageView(image: UIImage(named: "BackButton"))
-        backIcon.frame=CGRect(x: 30, y: 60, width: 80, height: 60)
-        
-        backIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(segueBack)))
-        
-        view.addSubview(backIcon)
+        let backButton  = UIButton(type: .custom)
+        backButton.frame=CGRect(x: 20, y: 40, width: 80, height: 60)
+        backButton.setImage(UIImage(named: "BackButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(segueBack), for: .touchUpInside)
+ 
+        view.addSubview(backButton)
     }
     @objc func segueBack() {
         self.dismiss(animated: true, completion: nil)
@@ -82,35 +84,54 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     
     let ball : UIView = {
     let basket = UIView(frame: CGRect(x: 100, y: 300, width: 200, height: 200))
-        
+
         basket.backgroundColor = UIColor(patternImage: UIImage(named: "Basket")!)
-        
+
         return basket
     }()
     
-    let car: UIView  = {
-        let mobil = UIView(frame: CGRect(x: 500, y: 50, width: 289, height: 210))
-//      NOTE:  Remove force Unwrap
-        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "mobil")!)
-            return mobil
+    let rug: UIView  = {
+            let view = UIView(frame: CGRect(x: 540, y: 50, width: 338, height: 192))
+            view.backgroundColor =  UIColor(patternImage: UIImage(named: "keset")!)
+            return view
     }()
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
         setBackButton()
-
-
-        // Do any additional setup after loading the view.
+        let centerX = view.frame.width/2
+        let centerY = view.frame.height/2
+       
         
+            
+//        centerized object
+        rug.frame = CGRect(x: centerX, y: centerY*0.1, width: 338, height: 192)
+        ball.frame = CGRect(x: centerX/4, y: centerY*1.4, width: 200, height: 200)
+        telur.frame = CGRect(x: centerX*1.6, y: centerY*1.1, width: 200, height: 164)
+        ayam.frame = CGRect(x: centerX*0.1, y: centerY*0.8, width: 200, height: 197)
+        sayur.frame = CGRect(x: centerX/3, y: centerY/7, width: 200, height: 212)
+        bowlZone.frame = CGRect(x: centerX-100, y: centerY+120, width: 200, height: 120)
+        
+        
+//         Do any additional setup after loading the view.
+//        Sound Settings
+        Setting.addButtonToView(destination: self)
+//        view
         view.addSubview(ball)
-        view.addSubview(car)
+        view.addSubview(rug)
         view.addSubview(ayam)
         view.addSubview(telur)
         view.addSubview(sayur)
         view.addSubview(bowlZone)
+        
+//        Trial for function
+        
+       
+        
+
         
         
 //        set Zone for drop
@@ -120,7 +141,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
 //        Gesture
         ball.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:))))
-        car.addGestureRecognizer((UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:)))))
+        rug.addGestureRecognizer((UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:)))))
         telur.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
         ayam.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
         sayur.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
@@ -155,8 +176,8 @@ class SarapanViewController: UIViewController, CongratsDelegate {
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
                     sender.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
-//            EXECUTE SOUND EFFECT BOING!
-                   
+//            EXECUTE SOUND EFFECT BOING! Wrong
+                    Setting.playSoundEffect(fileName: "no")
                 
                 }
             }
@@ -212,6 +233,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
             draggableObject.view!.alpha = 0
             
 //NOTE:            Play sounds
+            Setting.playSoundEffect(fileName: "ok")
             
             
         }
@@ -239,7 +261,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 
 }
 
-//Tanya besik kenapa gamau klik ke segue
+//Extension
 extension ViewController: CongratsDelegate{
 func ulangButtonTapped() {
     self.dismiss(animated: true, completion: nil)
