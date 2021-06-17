@@ -259,6 +259,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         if self.score == 3 {
             print("Yes You Did It")
             
+            Progress.setValue(value: "p4", toKey: "progress4")
 //            implement congratulation XIB
             let congratsPage = CongratsPage()
         

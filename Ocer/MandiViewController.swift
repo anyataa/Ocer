@@ -92,8 +92,28 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
+    var pos1: CGPoint?
+    var pos2: CGPoint?
+    var pos3: CGPoint?
+    var pos4: CGPoint?
+    
+    var posZone1: CGPoint?
+    var posZone2: CGPoint?
+    var posZone3: CGPoint?
+    var posZone4: CGPoint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pos1 = scene1.center
+        pos2 = scene2.center
+        pos3 = scene3.center
+        pos4 = scene4.center
+        
+        posZone1 = sceneZone1.center
+        posZone2 = sceneZone2.center
+        posZone3 = sceneZone4.center
+        posZone4 = sceneZone4.center
         
         view.addSubview(scene1)
         view.addSubview(scene2)
@@ -114,6 +134,8 @@ class MandiViewController: UIViewController, CongratsDelegate {
         scene2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene2(_:))))
         scene3.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene3(_:))))
         scene4.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene4(_:))))
+        
+        Setting.addButtonToView(destination: self)
     }
     
     @objc func dragScene1(_ sender: UIPanGestureRecognizer) {
@@ -280,9 +302,21 @@ class MandiViewController: UIViewController, CongratsDelegate {
         }
     }
     
+    func resetGame() {
+        Progress.setValue(value: "p2", toKey: "progress2")
+        scene1.center = pos1 ?? CGPoint(x: 205, y: 800)
+        scene2.center = pos2 ?? CGPoint(x: 525, y: 800)
+        scene3.center = pos3 ?? CGPoint(x: 845, y: 800)
+        scene4.center = pos4 ?? CGPoint(x: 1165, y: 800)
+        sceneZone1.center = posZone1!
+        sceneZone2.center = posZone2!
+        sceneZone3.center = posZone3!
+        sceneZone4.center = posZone4!
+    }
+    
     func ulangButtonTapped() {
+        resetGame()
         self.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "toMandi", sender: nil)
     }
     
     func keluarButtonTapped() {
@@ -291,25 +325,43 @@ class MandiViewController: UIViewController, CongratsDelegate {
     }
     
     func lanjutButtonTapped() {
-//        self.dismiss(animated: true, completion: nil)
-//        performSegue(withIdentifier: "toSarapan", sender: nil)
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toSarapan", sender: nil)
     }
     
     func check() {
         if (self.scene1.center == self.sceneZone2.center) && (self.scene2.center == self.sceneZone4.center) && (self.scene3.center == self.sceneZone1.center) && (self.scene4.center == self.sceneZone3.center) {
-            let congratsPage = CongratsPage()
+            Progress.setValue(value: "p3", toKey: "progress3")
             
+            UIView.animate(withDuration: 5, animations: {
+                self.scene1.frame = CGRect(x: 55, y: 500, width: 300, height: 200)
+                self.sceneZone1.frame = CGRect(x: 55, y: 500, width: 300, height: 200)
+                
+                self.scene2.frame = CGRect(x: 375, y: 500, width: 300, height: 200)
+                self.sceneZone2.frame = CGRect(x: 375, y: 500, width: 300, height: 200)
+                
+                self.scene3.frame = CGRect(x: 695, y: 500, width: 300, height: 200)
+                self.sceneZone3.frame = CGRect(x: 695, y: 500, width: 300, height: 200)
+                
+                self.scene4.frame = CGRect(x: 1015, y: 500, width: 300, height: 200)
+                self.sceneZone4.frame = CGRect(x: 1015, y: 500, width: 300, height: 200)
+            }, completion: {_ in
+                let congratsPage = CongratsPage()
                 congratsPage.modalPresentationStyle = .custom
                 congratsPage.congratsDelegate = self
+                self.present(congratsPage, animated: true, completion: nil)
+            })
             
-                present(congratsPage, animated: true, completion: nil)
+            
         }
     }
     
     func dragEnded(draggableObject: UIPanGestureRecognizer, draggableZone: UIView) {
         if (draggableObject.view!.frame.intersects(draggableZone.frame)) {
+            Setting.playSoundEffect(fileName: "ok")
             draggableObject.view!.center = draggableZone.center
         } else {
+            Setting.playSoundEffect(fileName: "no")
             if draggableObject.view == scene1 {
                 draggableObject.view!.center = CGPoint(x: 205, y: 800)
             } else if draggableObject.view == scene2 {
