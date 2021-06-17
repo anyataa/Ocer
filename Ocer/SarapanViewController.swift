@@ -90,13 +90,17 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         return basket
     }()
     
-    let rug: UIView  = {
+    let rug : UIView  = {
             let view = UIView(frame: CGRect(x: 540, y: 50, width: 338, height: 192))
             view.backgroundColor =  UIColor(patternImage: UIImage(named: "keset")!)
             return view
     }()
     
-
+    var rugCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var ballCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var ayamCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var  sayurCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var telurCenter : CGPoint = CGPoint(x: 0, y: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,17 +108,20 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         setBackButton()
         let centerX = view.frame.width/2
         let centerY = view.frame.height/2
-       
-        
             
-//        centerized object
+//       set object based on center
         rug.frame = CGRect(x: centerX, y: centerY*0.1, width: 338, height: 192)
         ball.frame = CGRect(x: centerX/4, y: centerY*1.4, width: 200, height: 200)
         telur.frame = CGRect(x: centerX*1.6, y: centerY*1.1, width: 200, height: 164)
         ayam.frame = CGRect(x: centerX*0.1, y: centerY*0.8, width: 200, height: 197)
         sayur.frame = CGRect(x: centerX/3, y: centerY/7, width: 200, height: 212)
         bowlZone.frame = CGRect(x: centerX-100, y: centerY+120, width: 200, height: 120)
-        
+//     Save position
+        rugCenter = rug.center
+        ballCenter = ball.center
+        ayamCenter = ayam.center
+        sayurCenter = sayur.center
+        telurCenter = telur.center
         
 //         Do any additional setup after loading the view.
 //        Sound Settings
@@ -126,14 +133,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         view.addSubview(telur)
         view.addSubview(sayur)
         view.addSubview(bowlZone)
-        
-//        Trial for function
-        
-       
-        
-
-        
-        
+              
 //        set Zone for drop
         dropZone = bowlZone.frame
         
@@ -175,10 +175,13 @@ class SarapanViewController: UIViewController, CongratsDelegate {
           
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
-                    sender.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
-//            EXECUTE SOUND EFFECT BOING! Wrong
+                    //            EXECUTE SOUND EFFECT BOING! Wrong
                     Setting.playSoundEffect(fileName: "no")
-                
+                    if sender.view!.frame.width == 338 {
+                        sender.view!.center = self.rugCenter
+                    } else if sender.view!.frame.width == 200 {
+                        sender.view!.center = self.ballCenter
+                    }
                 }
             }
           
@@ -205,6 +208,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
                     sender.view!.layer.shadowRadius = 15
                     sender.view!.layer.shadowColor = UIColor.systemGreen.cgColor
                 } else {
+                  
                     
                 }
                 sender.view!.layer.shadowOpacity = 1
@@ -214,7 +218,6 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         case .ended:
             UIView.animate(withDuration: 0.5, delay: 0.0,usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]){
                 self.dragEnded(draggableObject: sender, draggableZone: self.bowlZone)
-                self.score += 1
                 print(self.score)
                 self.sayCongratulationWhenFinish()
             }
@@ -229,6 +232,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     func dragEnded(draggableObject: UIPanGestureRecognizer, draggableZone: UIView ) {
         
         if (draggableObject.view!.frame.intersects(draggableZone.frame)){
+            self.score += 1
             draggableObject.view!.center = draggableZone.center
             draggableObject.view!.alpha = 0
             
@@ -239,7 +243,13 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         }
     
             else {
-                draggableObject.view!.center = draggableObject.view!.center
+                if draggableObject.view!.frame.height == 212 {
+                    draggableObject.view!.center = self.sayurCenter
+                 } else if draggableObject.view!.frame.height == 164 {
+                    draggableObject.view!.center = self.telurCenter
+                 }else if draggableObject.view!.frame.height == 197 {
+                    draggableObject.view!.center = self.ayamCenter
+                 }
         }
         //turn off shadow
         draggableObject.view!.layer.shadowOpacity = 0

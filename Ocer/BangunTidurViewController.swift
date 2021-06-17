@@ -62,7 +62,10 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
 
     
-    
+   var a = false
+    var b = false
+    var c = false
+    var d = false
     
 
     let pillow: UIView = {
@@ -79,7 +82,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     let pillow2: UIView = {
         
-        let view = UIView(frame: CGRect(x: 300, y: 800, width: 195, height: 110))
+        let view = UIView(frame: CGRect(x: 300, y: 100, width: 196, height: 110))
         view.backgroundColor = UIColor(patternImage: UIImage(named: "bantal")!)
 //        let view = UIView(frame: CGRect(x: 200, y: 800, width: 188, height: 110))
 //        view.backgroundColor = .yellow
@@ -90,7 +93,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     }()
     
     let pillow3: UIView = {
-        let view = UIView(frame: CGRect(x: 300, y: 800, width: 112, height: 254))
+        let view = UIView(frame: CGRect(x: 800, y: 200, width: 112, height: 254))
         view.backgroundColor = UIColor(patternImage: UIImage(named: "guling")!)
     
 //        let view = UIView(frame: CGRect(x: 730, y: 380, width: 130, height: 250))
@@ -147,6 +150,11 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
+    var pillowCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var pillow2Center : CGPoint = CGPoint(x: 0, y: 0)
+    var pillow3Center : CGPoint = CGPoint(x: 0, y: 0)
+    var rugCenter: CGPoint = CGPoint(x: 0, y: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -166,14 +174,20 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         view.addSubview(pillowZone2)
         view.addSubview(pillowZone3)
         view.addSubview(rugZone)
-        
+//Get center
+        pillowCenter = pillow.center
+        pillow2Center = pillow2.center
+        pillow3Center = pillow3.center
+        rugCenter = rug.center
         
         //add to zones to check intersection
         zones.append(pillowZone.frame)
         zones.append(pillowZone2.frame)
         zones.append(rugZone.frame)
+        zones.append(pillowZone3.frame)
         
         //add pan gesture
+        
 //        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(drag(_:)))
         pillow.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragPillow(_ :))))
         pillow2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragPillow2(_:))))
@@ -390,6 +404,9 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             self.score += 1
             print(score)
             Setting.playSoundEffect(fileName: "ok")
+       
+         
+         
 
         }
         else if (draggableObject.view!.frame.intersects(draggableZone2.frame)) {
@@ -397,28 +414,46 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             self.score += 1
             print(score)
             Setting.playSoundEffect(fileName: "ok")
-           
+         
         }
             else {
                 draggableObject.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
+                
+                if draggableObject.view!.frame.width == 195 {
+                    draggableObject.view!.center = pillowCenter
+                } else if draggableObject.view!.frame.width == 196 {
+                    draggableObject.view!.center = pillow2Center
+                } else if draggableObject.view!.frame.width == 338 {
+                    draggableObject.view!.center = rugCenter
+                } else if draggableObject.view!.frame.width == 112 {
+                    draggableObject.view!.center = pillow3Center
+                }
                 Setting.playSoundEffect(fileName: "no")
         }
         //turn off shadow
         draggableObject.view!.layer.shadowOpacity = 0
 //        Implement Congratulation here
-        if score == 4 {
-            print("yes you did it")
+       
+        checkWin()
+    }
+    
+    
+    func checkWin() {
+       
+        if score == 4{
             let congratsPage = CongratsPage()
         
             congratsPage.modalPresentationStyle = .custom
             congratsPage.congratsDelegate = self
         
             present(congratsPage, animated: true, completion: nil)
+            
         }
-        
+            
+        }
     }
 
-}
+
 
 // Why Extension only need to be called Once, Segue still not performing yet
 
