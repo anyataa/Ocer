@@ -95,6 +95,8 @@ class MandiViewController: UIViewController, CongratsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Progress.setValue(of: "progress2")
+        
         view.addSubview(scene1)
         view.addSubview(scene2)
         view.addSubview(scene3)
@@ -114,6 +116,8 @@ class MandiViewController: UIViewController, CongratsDelegate {
         scene2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene2(_:))))
         scene3.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene3(_:))))
         scene4.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene4(_:))))
+        
+        Setting.addButtonToView(destination: self)
     }
     
     @objc func dragScene1(_ sender: UIPanGestureRecognizer) {
@@ -280,9 +284,16 @@ class MandiViewController: UIViewController, CongratsDelegate {
         }
     }
     
+    func resetGame() {
+        scene1.center = CGPoint(x: 205, y: 800)
+        scene2.center = CGPoint(x: 525, y: 800)
+        scene3.center = CGPoint(x: 845, y: 800)
+        scene4.center = CGPoint(x: 1165, y: 800)
+    }
+    
     func ulangButtonTapped() {
+        resetGame()
         self.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "toMandi", sender: nil)
     }
     
     func keluarButtonTapped() {
@@ -291,8 +302,8 @@ class MandiViewController: UIViewController, CongratsDelegate {
     }
     
     func lanjutButtonTapped() {
-//        self.dismiss(animated: true, completion: nil)
-//        performSegue(withIdentifier: "toSarapan", sender: nil)
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toSarapan", sender: nil)
     }
     
     func check() {
@@ -308,8 +319,10 @@ class MandiViewController: UIViewController, CongratsDelegate {
     
     func dragEnded(draggableObject: UIPanGestureRecognizer, draggableZone: UIView) {
         if (draggableObject.view!.frame.intersects(draggableZone.frame)) {
+            Setting.playSoundEffect(fileName: "ok")
             draggableObject.view!.center = draggableZone.center
         } else {
+            Setting.playSoundEffect(fileName: "no")
             if draggableObject.view == scene1 {
                 draggableObject.view!.center = CGPoint(x: 205, y: 800)
             } else if draggableObject.view == scene2 {

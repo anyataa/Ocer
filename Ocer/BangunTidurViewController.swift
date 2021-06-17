@@ -11,12 +11,11 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
 //    Protocol Congrats
     func ulangButtonTapped() {
-            print("masuk")
         self.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "toSarapan", sender: self)
+        performSegue(withIdentifier: "toBangun", sender: self)
            
 //        Error said: Has no identifier called subMenu
-        
+ 
         
     }
     
@@ -44,15 +43,15 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     }
     
     func setBackButton() {
-        let backIcon = UIImageView(image: UIImage(named: "BackButton"))
-        backIcon.frame=CGRect(x: 30, y: 60, width: 80, height: 60)
+        let backButton  = UIButton(type: .custom)
+        backButton.frame=CGRect(x: 20, y: 40, width: 80, height: 60)
+        backButton.setImage(UIImage(named: "BackButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(segueBack), for: .touchUpInside)
         
-        backIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(segueBack)))
-        
-        view.addSubview(backIcon)
+        view.addSubview(backButton)
     }
     @objc func segueBack() {
-        performSegue(withIdentifier: "subMenu", sender: self)
+        performSegue(withIdentifier: "toSubMenu", sender: self)
     }
 //    func setPillow() {
 //        let pillowImagePlace = UIImageView(image: UIImage(named: "bantal"))
@@ -155,7 +154,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         //set background image
         setBackgroundImage()
         setBackButton()
-//        setPillow()
+//set sound settings after loading background
+        Setting.addButtonToView(destination: self)
 
         //setup view
         view.addSubview(pillow)
@@ -389,16 +389,19 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             draggableObject.view!.center = draggableZone.center
             self.score += 1
             print(score)
+            Setting.playSoundEffect(fileName: "ok")
 
         }
         else if (draggableObject.view!.frame.intersects(draggableZone2.frame)) {
             draggableObject.view!.center = draggableZone2.center
             self.score += 1
             print(score)
+            Setting.playSoundEffect(fileName: "ok")
            
         }
             else {
                 draggableObject.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
+                Setting.playSoundEffect(fileName: "no")
         }
         //turn off shadow
         draggableObject.view!.layer.shadowOpacity = 0
