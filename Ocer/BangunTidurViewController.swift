@@ -44,7 +44,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     func setBackButton() {
         let backButton  = UIButton(type: .custom)
-        backButton.frame=CGRect(x: 20, y: 40, width: 80, height: 60)
+        backButton.frame=CGRect(x: 18, y: 58, width: 75, height: 45)
         backButton.setImage(UIImage(named: "BackButton"), for: .normal)
         backButton.addTarget(self, action: #selector(segueBack), for: .touchUpInside)
         
@@ -146,7 +146,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
 //        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
