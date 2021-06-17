@@ -51,6 +51,12 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         if Progress.shared.defaults.bool(forKey: "progress4") == false {
             self.scenes[3].sceneImage = "LockedSubMenu4"
         }
+        
+        if Progress.shared.defaults.bool(forKey: "progress2") == true && Progress.shared.defaults.bool(forKey: "progress3") == true && Progress.shared.defaults.bool(forKey: "progress4") == true  {
+            self.scenes[1].sceneImage = "SubMenu2"
+            self.scenes[2].sceneImage = "SubMenu3"
+            self.scenes[3].sceneImage = "SubMenu4"
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
