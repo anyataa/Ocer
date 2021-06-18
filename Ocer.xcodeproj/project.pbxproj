@@ -26,6 +26,7 @@
 		8454D394266DECD50035302A /* Mandi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D393266DECD50035302A /* Mandi.storyboard */; };
 		8454D398266DECE10035302A /* Sarapan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D396266DECE10035302A /* Sarapan.storyboard */; };
 		8454D39B266DECF20035302A /* KeSekolah.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D39A266DECF20035302A /* KeSekolah.storyboard */; };
+		89457623130A322519661E81 /* Pods_Ocer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6106625CD3E8109B94B4C71 /* Pods_Ocer.framework */; };
 		C63E8623267877FB00B97B55 /* CongratsPageLater.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63E861F267877FA00B97B55 /* CongratsPageLater.xib */; };
 		C63E8624267877FB00B97B55 /* CongratsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63E8620267877FA00B97B55 /* CongratsPage.xib */; };
 		C63E8625267877FB00B97B55 /* CongratsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E8621267877FA00B97B55 /* CongratsPage.swift */; };
@@ -61,6 +62,8 @@
 		0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeSekolahViewController.swift; sourceTree = "<group>"; };
 		0AEEA8B9267700BE0088CD42 /* no.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = no.mp3; sourceTree = "<group>"; };
 		0AEEA8BA267700BE0088CD42 /* ok.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ok.mp3; sourceTree = "<group>"; };
+		5D4F633BFD1632B9989C31E6 /* Pods-Ocer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ocer.release.xcconfig"; path = "Target Support Files/Pods-Ocer/Pods-Ocer.release.xcconfig"; sourceTree = "<group>"; };
+		6FCC53F51EAA92536958E187 /* Pods-Ocer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ocer.debug.xcconfig"; path = "Target Support Files/Pods-Ocer/Pods-Ocer.debug.xcconfig"; sourceTree = "<group>"; };
 		8418B8FB26685E48002C8105 /* Ocer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ocer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8418B8FE26685E48002C8105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8418B90026685E48002C8105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		8454D393266DECD50035302A /* Mandi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mandi.storyboard; sourceTree = "<group>"; };
 		8454D397266DECE10035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/Sarapan.storyboard; sourceTree = "<group>"; };
 		8454D39A266DECF20035302A /* KeSekolah.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KeSekolah.storyboard; sourceTree = "<group>"; };
+		A6106625CD3E8109B94B4C71 /* Pods_Ocer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ocer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63E861F267877FA00B97B55 /* CongratsPageLater.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CongratsPageLater.xib; sourceTree = "<group>"; };
 		C63E8620267877FA00B97B55 /* CongratsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CongratsPage.xib; sourceTree = "<group>"; };
 		C63E8621267877FA00B97B55 /* CongratsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsPage.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89457623130A322519661E81 /* Pods_Ocer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,11 +134,21 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
+		7EFE152BB4A045488ED1A2B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6106625CD3E8109B94B4C71 /* Pods_Ocer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8418B8F226685E48002C8105 = {
 			isa = PBXGroup;
 			children = (
 				8418B8FD26685E48002C8105 /* Ocer */,
 				8418B8FC26685E48002C8105 /* Products */,
+				F6A075E860A80F6C176B7087 /* Pods */,
+				7EFE152BB4A045488ED1A2B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +245,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F6A075E860A80F6C176B7087 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FCC53F51EAA92536958E187 /* Pods-Ocer.debug.xcconfig */,
+				5D4F633BFD1632B9989C31E6 /* Pods-Ocer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8418B91226685E49002C8105 /* Build configuration list for PBXNativeTarget "Ocer" */;
 			buildPhases = (
+				ECC13FADF664BA864594867E /* [CP] Check Pods Manifest.lock */,
 				8418B8F726685E48002C8105 /* Sources */,
 				8418B8F826685E48002C8105 /* Frameworks */,
 				8418B8F926685E48002C8105 /* Resources */,
+				6CD037B5032049BF576D787C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,6 +347,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CD037B5032049BF576D787C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ocer/Pods-Ocer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ocer/Pods-Ocer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ocer/Pods-Ocer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECC13FADF664BA864594867E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ocer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8418B8F726685E48002C8105 /* Sources */ = {
@@ -511,6 +580,7 @@
 		};
 		8418B91326685E49002C8105 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FCC53F51EAA92536958E187 /* Pods-Ocer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -530,6 +600,7 @@
 		};
 		8418B91426685E49002C8105 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D4F633BFD1632B9989C31E6 /* Pods-Ocer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

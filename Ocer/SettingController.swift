@@ -9,13 +9,20 @@ import Foundation
 import UIKit
 import AVFoundation
 
-public class Setting{
+class Setting: UIViewController, AVAudioPlayerDelegate{
+    
     public static var musicButton: UIButton!
     public static var soundButton: UIButton!
     public static var musicPlayer: AVAudioPlayer!
     public static var effectPlayer: AVAudioPlayer!
+    public static var instructionPlayer: AVAudioPlayer!
     
-    public static func addButtonToView(destination: UIViewController){
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
+    static func addButtonToView(destination: UIViewController){
         playBGM()
         var musicButtonImage = "musicOn.png"
         if !musicPlayer.isPlaying{
@@ -54,11 +61,9 @@ public class Setting{
         
     }
     
-    public static func playBGM(){
-        
+    static func playBGM(){
         if let url = Bundle.main.url(forResource: "bgMusic", withExtension: "mp3"){
             do{
-                
                 musicPlayer = try AVAudioPlayer(contentsOf: url)
             }
             catch{
@@ -76,7 +81,7 @@ public class Setting{
     }
     
     
-    public static func playSoundEffect(fileName: String){
+    static func playSoundEffect(fileName: String){
         
         
         if let url = Bundle.main.url(forResource: fileName, withExtension: "mp3"){
@@ -97,6 +102,48 @@ public class Setting{
                 }
                 player.play()
             }
+        }
+    }
+    
+    func playInstructionSound(fileName: String, completion: @escaping (()-> Void)){
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "mp3"){
+            do{
+                Setting.instructionPlayer = try AVAudioPlayer(contentsOf: url)
+                Setting.instructionPlayer.delegate = self
+            }
+            catch{
+                
+            }
+            if let player = Setting.instructionPlayer{
+                if UserDefaults.standard.object(forKey: "volume") != nil{
+                    player.volume = UserDefaults.standard.float(forKey: "volume")
+                    if player.volume == 0 {return}
+                    else{
+                        if Setting.musicPlayer != nil{
+                            Setting.musicPlayer.volume = 0.2
+                        }
+                    }
+                }
+                else{
+                    player.volume = 0.5
+                    if Setting.musicPlayer != nil{
+                        Setting.musicPlayer.volume = 0.2
+                    }
+                }
+                DispatchQueue.main.async {
+                    player.play()
+                }
+            }
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        Setting.normalizeVolume()
+    }
+    
+    static func normalizeVolume()-> Void{
+        if musicPlayer != nil {
+            musicPlayer.volume = 0.5
         }
     }
     
@@ -136,5 +183,5 @@ public class Setting{
         
     }
     
-    
 }
+

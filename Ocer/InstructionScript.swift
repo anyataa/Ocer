@@ -33,7 +33,7 @@ struct InstructionScript{
     }
     
     static func getInstruction(list: [InstructionScript], orderNo: Int)-> InstructionScript{
-        if orderNo != nil && orderNo > 0 && orderNo <= list.count{
+        if orderNo > 0 && orderNo <= list.count{
             return list[orderNo-1]
         }
         else{
