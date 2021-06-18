@@ -13,7 +13,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
         self.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "toSarapan", sender: self)
+        resetGame()
 
     }
     
@@ -102,6 +102,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     var  sayurCenter : CGPoint = CGPoint(x: 0, y: 0)
     var telurCenter : CGPoint = CGPoint(x: 0, y: 0)
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
@@ -152,6 +153,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
     }
     
+   
 //    Tanya Kak Zein Masukin Param di sini GIMANA? Tanya temen temen juga pas async !!!
     @objc private func dragNotFood(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
@@ -268,6 +270,20 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
             present(congratsPage, animated: true, completion: nil)
         }
+    }
+    
+    func resetGame() {
+//        rug.center = rugCenter
+//        rug.alpha = 1
+//        ball.center = ballCenter
+//        ball.alpha = 1
+        sayur.center = sayurCenter
+        sayur.alpha = 1
+        telur.center = telurCenter
+        telur.alpha = 1
+        ayam.center = ayamCenter
+        ayam.alpha = 1
+        score = 0
     }
 
 }
