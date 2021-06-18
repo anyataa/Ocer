@@ -456,6 +456,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             
         }
     }
+    
+}
 
 
 
