@@ -35,7 +35,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        Instruction.showInstructionPage(self, gameId: GAME_ID)
+//        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -31,6 +31,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="nNj-Pj-Sqj" id="XXk-QT-4FE"/>
                         <segue destination="WDL-Xw-Xb5" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mej-3U-XWw"/>
                         <segue destination="abC-yx-MfR" kind="presentation" identifier="toSarapan" modalPresentationStyle="fullScreen" id="tqt-Z0-Swx"/>
                         <segue destination="raa-q4-WIL" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="S8r-FU-RXV"/>
