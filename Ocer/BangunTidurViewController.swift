@@ -30,7 +30,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     }
     //    Finish
 
-    let backgroundImage =  UIImage(named: "kamar")
+    let backgroundImage =  UIImage(named: "kamarPolos")
     let pillowImage = UIImage(named: "bantal")
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
@@ -82,13 +82,13 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     let pillow2: UIView = {
         
-        let view = UIView(frame: CGRect(x: 300, y: 100, width: 196, height: 110))
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "bantal")!)
+        let view = UIView(frame: CGRect(x: 300, y: 20, width: 200, height: 200))
+//        view.backgroundColor = UIColor(patternImage: UIImage(named: "bantal")!)
 //        let view = UIView(frame: CGRect(x: 200, y: 800, width: 188, height: 110))
-//        view.backgroundColor = .yellow
-//        view.layer.borderColor = UIColor.black.cgColor
-//        view.layer.borderWidth = 10
-//        view.layer.cornerRadius = 20
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "Oval")!)
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 10
+        view.layer.cornerRadius = 100
         return view
     }()
     
@@ -115,36 +115,36 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     let pillowZone: UIView = {
         let view = UIView(frame: CGRect(x: 305, y: 260, width: 188, height: 110))
-//        view.backgroundColor = .white
-//        view.layer.cornerRadius = 20
-//        view.layer.borderWidth = 10
-//        view.layer.borderColor = UIColor.black.cgColor
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.layer.borderWidth = 10
+        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
     let pillowZone2: UIView = {
-        let view = UIView(frame: CGRect(x: 530, y: 260, width: 188, height: 110))
-//        view.backgroundColor = .white
-//        view.layer.cornerRadius = 20
-//        view.layer.borderWidth = 10
-//        view.layer.borderColor = UIColor.black.cgColor
+        let view = UIView(frame: CGRect(x: 570, y: 260, width: 200, height: 200))
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 100
+        view.layer.borderWidth = 10
+        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
     let pillowZone3: UIView = {
         let view = UIView(frame: CGRect(x: 430, y: 380, width: 130, height: 250))
-//        view.layer.cornerRadius = 50
-//        view.backgroundColor = .white
-//        view.layer.borderWidth = 10
-//        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.cornerRadius = 50
+        view.backgroundColor = .white
+        view.layer.borderWidth = 10
+        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
     
     let rugZone: UIView = {
-        let view = UIView(frame: CGRect(x: 840, y: 700, width: 338, height: 198))
-//        view.backgroundColor = .white
-//        view.layer.cornerRadius = 94
+        let view = UIView(frame: CGRect(x: 840, y: 700, width: 338, height: 192))
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "rugZone")!)
+        view.layer.cornerRadius = 94
 //        view.layer.borderWidth = 10
 //        view.layer.borderColor = UIColor.black.cgColor
         return view
@@ -218,7 +218,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
                     if (sender.view!.frame.intersects(zone))  {
                       
                         sender.view!.layer.shadowRadius = 15
-                        if(zone == pillowZone.frame || zone == pillowZone2.frame) {
+                        if(zone == pillowZone.frame) {
                             sender.view!.layer.shadowColor = UIColor.green.cgColor
                         } else {
                             sender.view!.layer.shadowColor = UIColor.red.cgColor
@@ -235,7 +235,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
           
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
-                    self.dragEnded(draggableObject: sender, draggableZone: self.pillowZone, draggableZone2: self.pillowZone2)
+                    self.dragEnded(draggableObject: sender, draggableZone: self.pillowZone)
                    
                  
                 }
@@ -266,7 +266,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
                     if (sender.view!.frame.intersects(zone))  {
                       
                         sender.view!.layer.shadowRadius = 15
-                        if(zone == pillowZone.frame || zone == pillowZone2.frame) {
+                        if(zone == pillowZone2.frame) {
                             sender.view!.layer.shadowColor = UIColor.green.cgColor
                         } else {
                             sender.view!.layer.shadowColor = UIColor.red.cgColor
@@ -284,7 +284,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             //TODO check UISnapBehavior
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
-                    self.dragEnded(draggableObject: sender, draggableZone: self.pillowZone, draggableZone2: self.pillowZone2)
+                    self.dragEnded(draggableObject: sender, draggableZone: self.pillowZone2)
                    
                  
                 }
@@ -335,7 +335,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             //TODO check UISnapBehavior
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
-                    self.dragEnded(draggableObject: sender, draggableZone: self.pillowZone3, draggableZone2: self.pillowZone3)
+                    self.dragEnded(draggableObject: sender, draggableZone: self.pillowZone3)
                    
                  
                 }
@@ -385,7 +385,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             //TODO check UISnapBehavior
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
-                    self.dragEnded(draggableObject: sender, draggableZone: self.rugZone, draggableZone2: self.rugZone)
+                    self.dragEnded(draggableObject: sender, draggableZone: self.rugZone)
                    
                  
                 }
@@ -395,29 +395,22 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         }
     }
     
+  
     
-    
-    func dragEnded(draggableObject: UIPanGestureRecognizer, draggableZone: UIView , draggableZone2: UIView) {
+    func dragEnded(draggableObject: UIPanGestureRecognizer, draggableZone: UIView) {
         
         if (draggableObject.view!.frame.intersects(draggableZone.frame)){
             draggableObject.view!.center = draggableZone.center
-            self.score += 1
-            print(score)
+         
             Setting.playSoundEffect(fileName: "ok")
+            
        
          
          
 
         }
-        else if (draggableObject.view!.frame.intersects(draggableZone2.frame)) {
-            draggableObject.view!.center = draggableZone2.center
-            self.score += 1
-            print(score)
-            Setting.playSoundEffect(fileName: "ok")
-         
-        }
+      
             else {
-                draggableObject.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
                 
                 if draggableObject.view!.frame.width == 195 {
                     draggableObject.view!.center = pillowCenter
@@ -440,8 +433,9 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     func checkWin() {
        
-        if score == 4{
-        if score == 4 {
+//        else {a = false; b = false ; c = false; d = false}
+  
+        if rug.center == rugZone.center  && pillow3.center == pillowZone3.center  && pillow2.center == pillowZone2.center && pillow.center == pillowZone.center {
             print("yes you did it")
             
             Progress.setValue(value: "p2", toKey: "progress2")
@@ -451,10 +445,11 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             congratsPage.congratsDelegate = self
         
             present(congratsPage, animated: true, completion: nil)
+            print(a,b,c,d)
+        
             
         }
-            
-        }
+        print(a,b,c,d)
     }
     
 }
