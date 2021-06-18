@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    public var GAME_ID: String = "bedroom"
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let stories: [Story] = [
@@ -29,6 +31,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         self.collectionView.backgroundColor = UIColor(white: 0, alpha: 0)
         Setting.addButtonToView(destination: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
