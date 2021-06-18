@@ -56,9 +56,10 @@ class Instruction: UIViewController{
             setting.playInstructionSound(fileName: "\(script.gameId)" + "_" + "\(script.orderNo)") {
                 Setting.normalizeVolume()
             }
-            label.startTypewritingAnimation {
+            label.restartTypewritingAnimation(completion: {
+                label.startTypewritingAnimation()
                 self.currOrderNo += 1
-            }
+            })
         }
     }
     
