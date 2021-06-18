@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNj-Pj-Sqj">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNj-Pj-Sqj">
                                 <rect key="frame" x="20" y="40" width="75" height="45"/>
                                 <state key="normal" image="BackButton"/>
                                 <connections>
@@ -31,8 +31,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="AG4-Gc-qnH" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7x4-Js-0kv"/>
                         <segue destination="WDL-Xw-Xb5" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mej-3U-XWw"/>
+                        <segue destination="abC-yx-MfR" kind="presentation" identifier="toSarapan" modalPresentationStyle="fullScreen" id="tqt-Z0-Swx"/>
+                        <segue destination="raa-q4-WIL" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="S8r-FU-RXV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3J-iP-fR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -40,12 +41,20 @@
             <point key="canvasLocation" x="1199" y="-157"/>
         </scene>
         <!--Mandi-->
-        <scene sceneID="s7j-os-bob">
+        <scene sceneID="Cfs-4P-gRk">
             <objects>
-                <viewControllerPlaceholder storyboardName="Mandi" id="AG4-Gc-qnH" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VYN-gj-u7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Mandi" id="raa-q4-WIL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWE-Zm-jym" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1757" y="-470"/>
+            <point key="canvasLocation" x="1692" y="-457"/>
+        </scene>
+        <!--Sarapan-->
+        <scene sceneID="ffR-yW-dK7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Sarapan" id="abC-yx-MfR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gag-uA-VDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="-112"/>
         </scene>
         <!--SubMenu-->
         <scene sceneID="yVu-SX-Oxo">

@@ -29,7 +29,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="6U0-Kl-sXu" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" id="zSI-8u-w9e"/>
+                                    <segue destination="6U0-Kl-sXu" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zSI-8u-w9e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,12 +37,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <segue destination="GRZ-n7-fQs" kind="presentation" identifier="toMandi" id="68U-fk-LQB"/>
+                        <segue destination="GRZ-n7-fQs" kind="presentation" identifier="toMandi" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="68U-fk-LQB"/>
+                        <segue destination="wzw-FN-1aE" kind="presentation" identifier="toBangun" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="wfc-8B-JdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wow-Gi-Z3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="-923"/>
+        </scene>
+        <!--BangunTidur-->
+        <scene sceneID="Ecf-MT-iP1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BangunTidur" id="wzw-FN-1aE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7u-DZ-Tm0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="-529"/>
         </scene>
         <!--SubMenu-->
         <scene sceneID="hTl-Ug-ohN">

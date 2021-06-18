@@ -9,13 +9,12 @@ import UIKit
 
 class SarapanViewController: UIViewController, CongratsDelegate {
     var score : Int = 0
+    
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
-        print("tapped ulang")
-        score = 0
         self.dismiss(animated: true, completion: nil)
-        
-    
+        resetGame()
+
     }
     
     func keluarButtonTapped() {
@@ -41,12 +40,12 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     }
     
     func setBackButton() {
-        let backIcon = UIImageView(image: UIImage(named: "BackButton"))
-        backIcon.frame=CGRect(x: 30, y: 60, width: 80, height: 60)
-        
-        backIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(segueBack)))
-        
-        view.addSubview(backIcon)
+        let backButton  = UIButton(type: .custom)
+        backButton.frame=CGRect(x: 18, y: 58, width: 80, height: 60)
+        backButton.setImage(UIImage(named: "BackButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(segueBack), for: .touchUpInside)
+ 
+        view.addSubview(backButton)
     }
     @objc func segueBack() {
         self.dismiss(animated: true, completion: nil)
@@ -85,37 +84,57 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     
     let ball : UIView = {
     let basket = UIView(frame: CGRect(x: 100, y: 300, width: 200, height: 200))
-        
+
         basket.backgroundColor = UIColor(patternImage: UIImage(named: "Basket")!)
-        
+
         return basket
     }()
     
-    let car: UIView  = {
-        let mobil = UIView(frame: CGRect(x: 500, y: 50, width: 100, height: 100))
-//      NOTE:  Remove force Unwrap
-        mobil.backgroundColor = UIColor(patternImage: UIImage(named: "guling")!)
-            return mobil
+    let rug : UIView  = {
+            let view = UIView(frame: CGRect(x: 540, y: 50, width: 338, height: 192))
+            view.backgroundColor =  UIColor(patternImage: UIImage(named: "keset")!)
+            return view
     }()
     
+    var rugCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var ballCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var ayamCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var  sayurCenter : CGPoint = CGPoint(x: 0, y: 0)
+    var telurCenter : CGPoint = CGPoint(x: 0, y: 0)
     
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
         setBackButton()
-
-
-        // Do any additional setup after loading the view.
+        let centerX = view.frame.width/2
+        let centerY = view.frame.height/2
+            
+//       set object based on center
+        rug.frame = CGRect(x: centerX, y: centerY*0.1, width: 338, height: 192)
+        ball.frame = CGRect(x: centerX/4, y: centerY*1.4, width: 200, height: 200)
+        telur.frame = CGRect(x: centerX*1.6, y: centerY*1.1, width: 200, height: 164)
+        ayam.frame = CGRect(x: centerX*0.1, y: centerY*0.8, width: 200, height: 197)
+        sayur.frame = CGRect(x: centerX/3, y: centerY/7, width: 200, height: 212)
+        bowlZone.frame = CGRect(x: centerX-100, y: centerY+120, width: 200, height: 120)
+//     Save position
+        rugCenter = rug.center
+        ballCenter = ball.center
+        ayamCenter = ayam.center
+        sayurCenter = sayur.center
+        telurCenter = telur.center
         
+//         Do any additional setup after loading the view.
+//        Sound Settings
+        Setting.addButtonToView(destination: self)
+//        view
         view.addSubview(ball)
-        view.addSubview(car)
+        view.addSubview(rug)
         view.addSubview(ayam)
         view.addSubview(telur)
         view.addSubview(sayur)
         view.addSubview(bowlZone)
-        
-        
+              
 //        set Zone for drop
         dropZone = bowlZone.frame
         
@@ -123,7 +142,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
 //        Gesture
         ball.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:))))
-        car.addGestureRecognizer((UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:)))))
+        rug.addGestureRecognizer((UIPanGestureRecognizer(target: self, action: #selector(dragNotFood(_:)))))
         telur.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
         ayam.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
         sayur.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragFood(_:))))
@@ -134,6 +153,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
     }
     
+   
 //    Tanya Kak Zein Masukin Param di sini GIMANA? Tanya temen temen juga pas async !!!
     @objc private func dragNotFood(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
@@ -157,10 +177,13 @@ class SarapanViewController: UIViewController, CongratsDelegate {
           
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
                 if (sender.view?.frame != nil) {
-                    sender.view!.center = CGPoint(x: Int.random(in: 30...900), y: Int.random(in: 50...600))
-//            EXECUTE SOUND EFFECT BOING!
-                   
-                
+                    //            EXECUTE SOUND EFFECT BOING! Wrong
+                    Setting.playSoundEffect(fileName: "no")
+                    if sender.view!.frame.width == 338 {
+                        sender.view!.center = self.rugCenter
+                    } else if sender.view!.frame.width == 200 {
+                        sender.view!.center = self.ballCenter
+                    }
                 }
             }
           
@@ -187,6 +210,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
                     sender.view!.layer.shadowRadius = 15
                     sender.view!.layer.shadowColor = UIColor.systemGreen.cgColor
                 } else {
+                  
                     
                 }
                 sender.view!.layer.shadowOpacity = 1
@@ -196,7 +220,6 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         case .ended:
             UIView.animate(withDuration: 0.5, delay: 0.0,usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]){
                 self.dragEnded(draggableObject: sender, draggableZone: self.bowlZone)
-                self.score += 1
                 print(self.score)
                 self.sayCongratulationWhenFinish()
             }
@@ -211,16 +234,24 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     func dragEnded(draggableObject: UIPanGestureRecognizer, draggableZone: UIView ) {
         
         if (draggableObject.view!.frame.intersects(draggableZone.frame)){
+            self.score += 1
             draggableObject.view!.center = draggableZone.center
             draggableObject.view!.alpha = 0
             
 //NOTE:            Play sounds
+            Setting.playSoundEffect(fileName: "ok")
             
             
         }
     
             else {
-                draggableObject.view!.center = draggableObject.view!.center
+                if draggableObject.view!.frame.height == 212 {
+                    draggableObject.view!.center = self.sayurCenter
+                 } else if draggableObject.view!.frame.height == 164 {
+                    draggableObject.view!.center = self.telurCenter
+                 }else if draggableObject.view!.frame.height == 197 {
+                    draggableObject.view!.center = self.ayamCenter
+                 }
         }
         //turn off shadow
         draggableObject.view!.layer.shadowOpacity = 0
@@ -230,6 +261,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         if self.score == 3 {
             print("Yes You Did It")
             
+            Progress.setValue(value: "p4", toKey: "progress4")
 //            implement congratulation XIB
             let congratsPage = CongratsPage()
         
@@ -238,6 +270,20 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
             present(congratsPage, animated: true, completion: nil)
         }
+    }
+    
+    func resetGame() {
+//        rug.center = rugCenter
+//        rug.alpha = 1
+//        ball.center = ballCenter
+//        ball.alpha = 1
+        sayur.center = sayurCenter
+        sayur.alpha = 1
+        telur.center = telurCenter
+        telur.alpha = 1
+        ayam.center = ayamCenter
+        ayam.alpha = 1
+        score = 0
     }
 
 }

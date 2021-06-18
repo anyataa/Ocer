@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IaN-3a-IlL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IaN-3a-IlL">
     <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="6U0-Kl-sXu" kind="presentation" identifier="SubMenu" modalPresentationStyle="fullScreen" id="eNi-W6-06h"/>
+                                    <segue destination="6U0-Kl-sXu" kind="presentation" identifier="SubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="eNi-W6-06h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarapan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxo-ZS-bKP">
@@ -37,8 +37,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <segue destination="mMj-ob-W8G" kind="presentation" identifier="toSekolah" modalPresentationStyle="fullScreen" id="Le0-OY-xeR"/>
-                        <segue destination="eKe-Wu-qwC" kind="presentation" customClass="toSarapan" modalPresentationStyle="fullScreen" id="2Ma-Ur-0hI"/>
+                        <segue destination="mMj-ob-W8G" kind="presentation" identifier="toSekolah" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Le0-OY-xeR"/>
+                        <segue destination="eKe-Wu-qwC" kind="presentation" identifier="toSarapan" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="2Ma-Ur-0hI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rz-BN-eFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
