@@ -37,11 +37,51 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
     var score : Int = 0
+    var animationCount : Int = 0
+    let hand : UIView = {
+        let handView = UIView(frame: CGRect(x: 130, y: 20, width: 45, height: 45))
+        handView.backgroundColor = .green
+        return handView
+    }()
     
     func setBackgroundImage() {
         let backgroundPlaceHolder = UIImageView(image: backgroundImage)
         backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         view.addSubview(backgroundPlaceHolder)
+    }
+    
+    func setHintButton() {
+        let hintButton = UIButton(type: .custom)
+        hintButton.frame=CGRect(x: 65, y: 58, width: 75, height: 45)
+        hintButton.setImage(UIImage(named: "BackButton"), for: .normal)
+        hintButton.addTarget(self, action: #selector(animateHandHint), for: .touchUpInside)
+        
+        view.addSubview(hintButton)
+    }
+    
+    @objc func animateHandHint() {
+        hand.isHidden = false
+        view.bringSubviewToFront(hand)
+        animationCount = 0
+        animateHand()
+    }
+    
+    func animateHand(){
+        if self.animationCount < 3{
+            self.animationCount += 1
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 1,delay: 0.5) {
+                    self.hand.center = self.rugCenter
+                } completion: { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.hand.center = self.rugZone.center
+                        self.animateHand()
+                    }
+                }
+            }
+        } else {
+            hand.isHidden = true
+        }
     }
     
     func setBackButton() {
@@ -176,6 +216,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         view.addSubview(pillowZone2)
         view.addSubview(pillowZone3)
         view.addSubview(rugZone)
+        view.addSubview(hand)
+        setHintButton()
 //Get center
         pillowCenter = pillow.center
         pillow2Center = pillow2.center
