@@ -1,0 +1,16 @@
+PODS:
+  - GhostTypewriter (2.1.0)
+
+DEPENDENCIES:
+  - GhostTypewriter
+
+SPEC REPOS:
+  trunk:
+    - GhostTypewriter
+
+SPEC CHECKSUMS:
+  GhostTypewriter: 62540772d227fbfe633bfa728d08fe8af5b4d805
+
+PODFILE CHECKSUM: 97cacb03338fe2cbe04999b3274b86de72fa9ee9
+
+COCOAPODS: 1.10.1
