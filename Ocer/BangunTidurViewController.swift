@@ -9,6 +9,8 @@ import UIKit
 
 class BangunTidurViewController: UIViewController, CongratsDelegate {
     
+    let GAME_ID: String = "bedroom"
+    
 //    Protocol Congrats
     func ulangButtonTapped() {
         self.dismiss(animated: true, completion: nil)
@@ -35,11 +37,51 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
     var score : Int = 0
+    var animationCount : Int = 0
+    let hand : UIView = {
+        let handView = UIView(frame: CGRect(x: 300, y: 780, width: 90, height: 98))
+        handView.backgroundColor = UIColor(patternImage: UIImage(named: "HandSmall")!)
+        return handView
+    }()
     
     func setBackgroundImage() {
         let backgroundPlaceHolder = UIImageView(image: backgroundImage)
         backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         view.addSubview(backgroundPlaceHolder)
+    }
+    
+    func setHintButton() {
+        let hintButton = UIButton(type: .custom)
+        hintButton.frame=CGRect(x: 140, y: 58, width: 36, height: 52)
+        hintButton.setImage(UIImage(named: "Instruction"), for: .normal)
+        hintButton.addTarget(self, action: #selector(animateHandHint), for: .touchUpInside)
+        
+        view.addSubview(hintButton)
+    }
+    
+    @objc func animateHandHint() {
+        hand.isHidden = false
+        view.bringSubviewToFront(hand)
+        animationCount = 0
+        animateHand()
+    }
+    
+    func animateHand(){
+        if self.animationCount < 3{
+            self.animationCount += 1
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 1,delay: 0.5) {
+                    self.hand.center = self.rugZone.center
+                } completion: { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.hand.center = self.rugCenter
+                        self.animateHand()
+                    }
+                }
+            }
+        } else {
+            hand.isHidden = true
+        }
     }
     
     func setBackButton() {
@@ -174,6 +216,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         view.addSubview(pillowZone2)
         view.addSubview(pillowZone3)
         view.addSubview(rugZone)
+        view.addSubview(hand)
+        setHintButton()
 //Get center
         pillowCenter = pillow.center
         pillow2Center = pillow2.center
@@ -193,6 +237,11 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         pillow2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragPillow2(_:))))
         pillow3.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragPillow3(_:))))
         rug.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragRug(_:))))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
 
     @objc private func dragPillow(_ sender: UIPanGestureRecognizer) {

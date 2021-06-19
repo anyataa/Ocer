@@ -36,6 +36,8 @@ class MyGesture: UIPanGestureRecognizer {
 }
 
 class KeSekolahViewController: UIViewController {
+    let GAME_ID: String = "school"
+    
     @IBOutlet weak var arrowLeft: UIImageView!
     @IBOutlet weak var arrowDown: UIImageView!
     @IBOutlet weak var arrowRight: UIImageView!
@@ -51,6 +53,11 @@ class KeSekolahViewController: UIViewController {
     
     @IBOutlet weak var car: UIImageView!
 	@IBOutlet weak var playButton: UIButton!
+	
+	
+	@IBOutlet weak var hand: UIImageView!
+	var initialHand: CGPoint = .zero
+	var animationCount: Int = 0
 	 
     var zones: [Dictionary<String,Any>] = []
     var totalDistance:CGFloat = 0
@@ -62,8 +69,41 @@ class KeSekolahViewController: UIViewController {
         setupArrow()
         setupZones(zone1, zone2, zone3, zone4, zone5, zone6, finishZone)
 		
+		hand.isHidden = true
+		initialHand = hand.center
+		
 		Setting.addButtonToView(destination: self)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
+    }
+	
+	@IBAction func playHint(_ sender: Any) {
+		hand.isHidden = false
+		view.bringSubviewToFront(hand)
+		animationCount = 0
+		animateHand()
+	}
+	
+	func animateHand(){
+		if self.animationCount < 3{
+			self.animationCount += 1
+			DispatchQueue.main.async {
+				UIView.animate(withDuration: 1,delay: 0.5) {
+					self.hand.center = self.zone1.center
+				} completion: { _ in
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+						self.hand.center = self.initialHand
+						self.animateHand()
+					}
+				}
+			}
+		} else {
+			hand.isHidden = true
+		}
+	}
     
     func setupArrow() {
         arrowUp.isUserInteractionEnabled = true
@@ -154,6 +194,7 @@ class KeSekolahViewController: UIViewController {
 			(zones[index]["zone"] as! UIImageView).image = nil
 			zones[index]["correct"] = false
 		}
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
 	}
 
     @IBAction func playButton(_ sender: Any) {
@@ -257,8 +298,8 @@ class KeSekolahViewController: UIViewController {
 
 extension KeSekolahViewController: CongratsDelegateLater {
 	func ulangButtonTapped() {
+        self.dismiss(animated: false, completion: nil)
 		resetGame()
-		self.dismiss(animated: false, completion: nil)
 		
 	}
 	
