@@ -161,6 +161,7 @@ class KeSekolahViewController: UIViewController {
 			(zones[index]["zone"] as! UIImageView).image = nil
 			zones[index]["correct"] = false
 		}
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
 	}
 
     @IBAction func playButton(_ sender: Any) {
@@ -264,8 +265,8 @@ class KeSekolahViewController: UIViewController {
 
 extension KeSekolahViewController: CongratsDelegateLater {
 	func ulangButtonTapped() {
+        self.dismiss(animated: false, completion: nil)
 		resetGame()
-		self.dismiss(animated: false, completion: nil)
 		
 	}
 	

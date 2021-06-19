@@ -291,6 +291,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         ayam.center = ayamCenter
         ayam.alpha = 1
         score = 0
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
 
 }

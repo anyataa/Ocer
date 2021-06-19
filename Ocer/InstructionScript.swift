@@ -60,7 +60,7 @@ var instructionList: [InstructionScript] = [
     InstructionScript(gameId: "toilet", orderNo: 7, description: "Teman, kamu pasti bisa! Semangat ya"),
     
     InstructionScript(gameId: "eat", orderNo: 1, description: "Halo, sekarang Ocer mau sarapan. Bantu Ocer masukan makanan ke mangkok Ocer ya! "),
-    InstructionScript(gameId: "eat", orderNo: 2, description: "Bagaimana caranya?\n Mudak kok, masukan aja makanan ke mangkuk Ocer ya!"),
+    InstructionScript(gameId: "eat", orderNo: 2, description: "Bagaimana caranya?\n Mudah kok, masukan aja makanan ke mangkuk Ocer ya!"),
     InstructionScript(gameId: "eat", orderNo: 3, description: "Nah, yang bukan makanan jangan dimasukan ke mangkok Ocer!"),
     InstructionScript(gameId: "eat", orderNo: 4, description: "Jangan sampai salah ya, Teman!\n Nanti Ocer bisa sakit perut..."),
     
