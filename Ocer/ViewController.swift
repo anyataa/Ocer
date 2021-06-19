@@ -59,8 +59,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if indexPath.row == 0 {
             Setting.playSoundEffect(fileName: "pressButton")
             self.performSegue(withIdentifier: "toSubMenu", sender: indexPath)
-        } else {
-            self.performSegue(withIdentifier: "toUnderDevelopment", sender: indexPath)
         }
     }
     
