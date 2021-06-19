@@ -137,6 +137,11 @@ class Setting: UIViewController, AVAudioPlayerDelegate{
         }
     }
     
+    func stopInstructionSound(){
+        Setting.instructionPlayer.stop()
+        Setting.normalizeVolume()
+    }
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         Setting.normalizeVolume()
     }

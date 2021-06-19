@@ -8,6 +8,8 @@
 import UIKit
 
 class SarapanViewController: UIViewController, CongratsDelegate {
+    
+    let GAME_ID: String = "eat"
     var score : Int = 0
 //     Peotocol XIB Congratulation
     func ulangButtonTapped() {
@@ -132,6 +134,11 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
         
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
     
 //    Tanya Kak Zein Masukin Param di sini GIMANA? Tanya temen temen juga pas async !!!

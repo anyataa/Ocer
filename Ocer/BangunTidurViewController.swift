@@ -9,6 +9,8 @@ import UIKit
 
 class BangunTidurViewController: UIViewController, CongratsDelegate {
     
+    let GAME_ID: String = "bedroom"
+    
 //    Protocol Congrats
     func ulangButtonTapped() {
             print("masuk")
@@ -179,6 +181,11 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
         pillow2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragPillow2(_:))))
         pillow3.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragPillow3(_:))))
         rug.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragRug(_:))))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
 
     @objc private func dragPillow(_ sender: UIPanGestureRecognizer) {
