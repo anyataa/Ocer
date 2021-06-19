@@ -39,8 +39,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     var score : Int = 0
     var animationCount : Int = 0
     let hand : UIView = {
-        let handView = UIView(frame: CGRect(x: 300, y: 780, width: 45, height: 45))
-        handView.backgroundColor = .green
+        let handView = UIView(frame: CGRect(x: 300, y: 780, width: 90, height: 98))
+        handView.backgroundColor = UIColor(patternImage: UIImage(named: "HandSmall")!)
         return handView
     }()
     
@@ -52,8 +52,8 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     func setHintButton() {
         let hintButton = UIButton(type: .custom)
-        hintButton.frame=CGRect(x: 145, y: 58, width: 75, height: 45)
-        hintButton.setImage(UIImage(named: "BackButton"), for: .normal)
+        hintButton.frame=CGRect(x: 140, y: 58, width: 36, height: 52)
+        hintButton.setImage(UIImage(named: "Instruction"), for: .normal)
         hintButton.addTarget(self, action: #selector(animateHandHint), for: .touchUpInside)
         
         view.addSubview(hintButton)
