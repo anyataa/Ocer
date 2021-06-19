@@ -43,6 +43,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     let hand : UIView = {
         let handView = UIView(frame: CGRect(x: 327, y: 179, width: 90, height: 98))
         handView.backgroundColor = UIColor(patternImage: UIImage(named: "HandSmall")!)
+        handView.alpha = 0
         return handView
     }()
     var animationCount : Int = 0
@@ -64,6 +65,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     }
     
     func animateHand(){
+        hand.alpha = 1
         if self.animationCount < 3{
             self.animationCount += 1
             DispatchQueue.main.async {
