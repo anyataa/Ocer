@@ -14,6 +14,8 @@ class MandiViewController: UIViewController, CongratsDelegate {
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var hintButton: UIButton!
+    @IBOutlet weak var hand: UIImageView!
     
     let scene1: UIView = {
         let view = UIView(frame: CGRect(x: 55, y: 700, width: 300, height: 200))
@@ -153,10 +155,15 @@ class MandiViewController: UIViewController, CongratsDelegate {
     var posZone3: CGPoint?
     var posZone4: CGPoint?
     
+    var initialHand: CGPoint = .zero
+    var animationCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackgroundImage()
+        
+        initialHand = scene1.center
         
         pos1 = scene1.center
         pos2 = scene2.center
@@ -210,17 +217,43 @@ class MandiViewController: UIViewController, CongratsDelegate {
         
         Setting.addButtonToView(destination: self)
         view.bringSubviewToFront(backButton)
+        view.bringSubviewToFront(hintButton)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
+    }
+    
+    @IBAction func playHint(_ sender: Any) {
+        hand.isHidden = false
+        view.bringSubviewToFront(hand)
+        animationCount = 0
+        animateHand()
+    }
+    
+    func animateHand(){
+        if self.animationCount < 3 {
+            self.animationCount += 1
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 1,delay: 0.5) {
+                    self.hand.center = self.sceneZone2.center
+                } completion: { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.hand.center = self.initialHand
+                        self.animateHand()
+                    }
+                }
+            }
+        } else {
+            hand.isHidden = true
+        }
     }
     
     func setBackgroundImage() {
         let backgroundPlaceHolder = UIImageView(image: UIImage(named: "BackgroundMandi"))
         backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         view.addSubview(backgroundPlaceHolder)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
     
     @objc func dragScene1(_ sender: UIPanGestureRecognizer) {
