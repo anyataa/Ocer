@@ -39,7 +39,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     var score : Int = 0
     var animationCount : Int = 0
     let hand : UIView = {
-        let handView = UIView(frame: CGRect(x: 130, y: 20, width: 45, height: 45))
+        let handView = UIView(frame: CGRect(x: 300, y: 780, width: 45, height: 45))
         handView.backgroundColor = .green
         return handView
     }()
@@ -52,7 +52,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     func setHintButton() {
         let hintButton = UIButton(type: .custom)
-        hintButton.frame=CGRect(x: 65, y: 58, width: 75, height: 45)
+        hintButton.frame=CGRect(x: 145, y: 58, width: 75, height: 45)
         hintButton.setImage(UIImage(named: "BackButton"), for: .normal)
         hintButton.addTarget(self, action: #selector(animateHandHint), for: .touchUpInside)
         
@@ -71,10 +71,10 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
             self.animationCount += 1
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 1,delay: 0.5) {
-                    self.hand.center = self.rugCenter
+                    self.hand.center = self.rugZone.center
                 } completion: { _ in
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        self.hand.center = self.rugZone.center
+                        self.hand.center = self.rugCenter
                         self.animateHand()
                     }
                 }

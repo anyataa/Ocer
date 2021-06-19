@@ -40,6 +40,47 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
         self.view.addSubview(background)
     }
+    let hand : UIView = {
+        let handView = UIView(frame: CGRect(x: 300, y: 780, width: 45, height: 45))
+        handView.backgroundColor = .green
+        return handView
+    }()
+    var animationCount : Int = 0
+    
+    func setHintButton() {
+        let hintButton = UIButton(type: .custom)
+        hintButton.frame=CGRect(x: 145, y: 58, width: 75, height: 45)
+        hintButton.setImage(UIImage(named: "BackButton"), for: .normal)
+        hintButton.addTarget(self, action: #selector(animateHandHint), for: .touchUpInside)
+        
+        view.addSubview(hintButton)
+    }
+    
+    @objc func animateHandHint() {
+        hand.isHidden = false
+        view.bringSubviewToFront(hand)
+        animationCount = 0
+        animateHand()
+    }
+    
+    func animateHand(){
+        if self.animationCount < 3{
+            self.animationCount += 1
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 1,delay: 0.5) {
+                    self.hand.center = self.bowlZone.center
+                } completion: { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.hand.center = self.sayurCenter
+                        self.animateHand()
+                    }
+                }
+            }
+        } else {
+            hand.isHidden = true
+        }
+    }
+    
     
     func setBackButton() {
         let backButton  = UIButton(type: .custom)
