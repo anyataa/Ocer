@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="design.graffiti.comicsansmsgras.ttf">
+            <string>ComicSansMS-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Instruction" customModule="Ocer" customModuleProvider="target">
             <connections>
@@ -44,7 +49,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="ZFb-6y-2Gz" userLabel="text_label" customClass="TypewriterLabel" customModule="GhostTypewriter">
                             <rect key="frame" x="234" y="389" width="424" height="116"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <fontDescription key="fontDescription" name="ComicSansMS-Bold" family="Comic Sans MS" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>

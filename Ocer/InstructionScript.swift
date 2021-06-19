@@ -47,8 +47,8 @@ var instructionList: [InstructionScript] = [
     InstructionScript(gameId: "bedroom", orderNo: 1, description: "Hoahmm… 🥱\n Udah pagi aja, Ocer masih ngantuk nih! 💤\n ……"),
     InstructionScript(gameId: "bedroom", orderNo: 2, description: "Waduh kamar Ocer berantakan banget ya?"),
     InstructionScript(gameId: "bedroom", orderNo: 3, description: "Beresin dulu yuk sebelum pergi ke sekolah!"),
-    InstructionScript(gameId: "bedroom", orderNo: 4, description: "Teman, Yuk bantuin Ocer beresin kamar! 🐒"),
-    InstructionScript(gameId: "bedroom", orderNo: 5, description: "Bantu Ocer meletakan benda sesuai bentuknya ya"),
+    InstructionScript(gameId: "bedroom", orderNo: 4, description: "Teman, yuk bantuin Ocer beresin kamar! 🐒"),
+    InstructionScript(gameId: "bedroom", orderNo: 5, description: "Bantu Ocer meletakan benda sesuai bentuknya ya, Teman!"),
 //    InstructionScript(gameId: "bedroom", orderNo: 6, description: "Yayyy, kamar Ocer sudah rapi, terima kasih sudah membantu Ocer! 🌟"),
     
     InstructionScript(gameId: "toilet", orderNo: 1, description: "👃🏻 Aduh, mulut Ocer bau pisang banget nih karena baru bangun tidur!🍌"),
