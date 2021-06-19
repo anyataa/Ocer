@@ -19,9 +19,11 @@ class Instruction: UIViewController{
     
     var setting = Setting()
     var instructionList: [InstructionScript]!
+    var isDismissed: Bool = false
     
     var currOrderNo: Int = 0{
         didSet{
+            if isDismissed {return}
             animateInstruction(orderNo: currOrderNo)
         }
     }
@@ -38,7 +40,8 @@ class Instruction: UIViewController{
     
     @IBAction func onNextTapped(_ sender: Any) {
         self.dismiss(animated: true) {
-            Setting.normalizeVolume()
+            self.isDismissed = true
+            self.setting.stopInstructionSound()
         }
     }
     

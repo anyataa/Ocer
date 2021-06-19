@@ -9,6 +9,8 @@ import UIKit
 
 class MandiViewController: UIViewController, CongratsDelegate {
     
+    let GAME_ID: String = "toilet"
+    
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
     
@@ -204,6 +206,11 @@ class MandiViewController: UIViewController, CongratsDelegate {
         scene4.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene4(_:))))
         
         Setting.addButtonToView(destination: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
     
     @objc func dragScene1(_ sender: UIPanGestureRecognizer) {
