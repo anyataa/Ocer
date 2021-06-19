@@ -40,6 +40,47 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
         self.view.addSubview(background)
     }
+    let hand : UIView = {
+        let handView = UIView(frame: CGRect(x: 300, y: 780, width: 90, height: 98))
+        handView.backgroundColor = UIColor(patternImage: UIImage(named: "HandSmall")!)
+        return handView
+    }()
+    var animationCount : Int = 0
+    
+    func setHintButton() {
+        let hintButton = UIButton(type: .custom)
+        hintButton.frame=CGRect(x: 140, y: 58, width: 36, height: 52)
+        hintButton.setImage(UIImage(named: "Instruction"), for: .normal)
+        hintButton.addTarget(self, action: #selector(animateHandHint), for: .touchUpInside)
+        
+        view.addSubview(hintButton)
+    }
+    
+    @objc func animateHandHint() {
+        hand.isHidden = false
+        view.bringSubviewToFront(hand)
+        animationCount = 0
+        animateHand()
+    }
+    
+    func animateHand(){
+        if self.animationCount < 3{
+            self.animationCount += 1
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 1,delay: 0.5) {
+                    self.hand.center = self.bowlZone.center
+                } completion: { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.hand.center = self.sayurCenter
+                        self.animateHand()
+                    }
+                }
+            }
+        } else {
+            hand.isHidden = true
+        }
+    }
+    
     
     func setBackButton() {
         let backButton  = UIButton(type: .custom)
@@ -77,7 +118,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     }()
     
     let bowlZone: UIView = {
-        let bowl = UIView(frame: CGRect(x: 580, y: 680, width: 200, height: 130))
+        let bowl = UIView(frame: CGRect(x: 580, y: 780, width: 200, height: 280))
 //        bowl.backgroundColor = .green
         
         return bowl
@@ -118,13 +159,15 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         telur.frame = CGRect(x: centerX*1.6, y: centerY*1.1, width: 200, height: 164)
         ayam.frame = CGRect(x: centerX*0.1, y: centerY*0.8, width: 200, height: 197)
         sayur.frame = CGRect(x: centerX/3, y: centerY/7, width: 200, height: 212)
-        bowlZone.frame = CGRect(x: centerX-100, y: centerY+120, width: 200, height: 120)
+        bowlZone.frame = CGRect(x: centerX-100, y: centerY+120, width: 200, height: 180)
 //     Save position
         rugCenter = rug.center
         ballCenter = ball.center
         ayamCenter = ayam.center
         sayurCenter = sayur.center
         telurCenter = telur.center
+        setHintButton()
+        
         
 //         Do any additional setup after loading the view.
 //        Sound Settings
@@ -136,6 +179,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         view.addSubview(telur)
         view.addSubview(sayur)
         view.addSubview(bowlZone)
+        view.addSubview(hand)
               
 //        set Zone for drop
         dropZone = bowlZone.frame
