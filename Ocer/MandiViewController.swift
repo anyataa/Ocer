@@ -9,6 +9,8 @@ import UIKit
 
 class MandiViewController: UIViewController, CongratsDelegate {
     
+    let GAME_ID: String = "toilet"
+    
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
     @IBOutlet weak var backButton: UIButton!
@@ -214,6 +216,11 @@ class MandiViewController: UIViewController, CongratsDelegate {
         let backgroundPlaceHolder = UIImageView(image: UIImage(named: "BackgroundMandi"))
         backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         view.addSubview(backgroundPlaceHolder)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
     
     @objc func dragScene1(_ sender: UIPanGestureRecognizer) {

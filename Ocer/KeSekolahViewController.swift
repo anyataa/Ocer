@@ -36,6 +36,8 @@ class MyGesture: UIPanGestureRecognizer {
 }
 
 class KeSekolahViewController: UIViewController {
+    let GAME_ID: String = "school"
+    
     @IBOutlet weak var arrowLeft: UIImageView!
     @IBOutlet weak var arrowDown: UIImageView!
     @IBOutlet weak var arrowRight: UIImageView!
@@ -63,6 +65,11 @@ class KeSekolahViewController: UIViewController {
         setupZones(zone1, zone2, zone3, zone4, zone5, zone6, finishZone)
 		
 		Setting.addButtonToView(destination: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
     
     func setupArrow() {
@@ -154,6 +161,7 @@ class KeSekolahViewController: UIViewController {
 			(zones[index]["zone"] as! UIImageView).image = nil
 			zones[index]["correct"] = false
 		}
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
 	}
 
     @IBAction func playButton(_ sender: Any) {
@@ -257,8 +265,8 @@ class KeSekolahViewController: UIViewController {
 
 extension KeSekolahViewController: CongratsDelegateLater {
 	func ulangButtonTapped() {
+        self.dismiss(animated: false, completion: nil)
 		resetGame()
-		self.dismiss(animated: false, completion: nil)
 		
 	}
 	

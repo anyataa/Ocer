@@ -8,20 +8,22 @@
 import Foundation
 import UIKit
 import AVFoundation
+import GhostTypewriter
 
 class Instruction: UIViewController{
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var darkView: UIView!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var instructionLabel: TypewriterLabel!
     
-    var shouldKeepRunning: Bool = false
+    var setting = Setting()
     var instructionList: [InstructionScript]!
-//    var finishInstructionList: [InstructionScript]!
+    var isDismissed: Bool = false
+    
     var currOrderNo: Int = 0{
         didSet{
-//            instructionLabel.text = ""
+            if isDismissed {return}
             animateInstruction(orderNo: currOrderNo)
         }
     }
@@ -33,46 +35,35 @@ class Instruction: UIViewController{
     
     public override func viewDidAppear(_ animated: Bool) {
         currOrderNo = 1
-//        animateInstruction(orderNo: currOrderNo)
     }
     
     
     @IBAction func onNextTapped(_ sender: Any) {
-//        shouldKeepRunning = false
-        if(currOrderNo < instructionList.count){
-            instructionLabel.text = ""
-            currOrderNo += 1
-//            animateInstruction(orderNo: currOrderNo)
+        self.dismiss(animated: true) {
+            self.isDismissed = true
+            self.setting.stopInstructionSound()
         }
-        else{
-            self.dismiss(animated: true) {
-                
-            }
-        }
-        
     }
     
+    
     func animateInstruction(orderNo: Int){
-        print("\(orderNo)")
-        if orderNo > instructionList.count {return}
+        if orderNo > instructionList.count {
+            return
+        }
         let script = instructionList[orderNo - 1]
         var instruction = ""
         instruction = script.description
+        
         if let label = instructionLabel{
-//            shouldKeepRunning = true
-            label.text? = ""
-            Setting.playSoundEffect(fileName: "\(script.gameId)" + "_" + "\(script.orderNo)")
-            for char in instruction{
-//                instructionLabel.text += "\(char)"
-                label.text? += "\(char)"
-                RunLoop.current.run(until: Date() + 0.08)
-                
-//                let runLoop = RunLoop.current
-//                while (shouldKeepRunning && runLoop.run(mode: .tracking, before: Date() - Setting.effectPlayer.duration)) {
-//                }
+            label.text? = instruction
+            setting.playInstructionSound(fileName: "\(script.gameId)" + "_" + "\(script.orderNo)") {
+                Setting.normalizeVolume()
             }
+            label.restartTypewritingAnimation(completion: {
+                label.startTypewritingAnimation()
+                self.currOrderNo += 1
+            })
         }
-        currOrderNo+=1
     }
     
     static func showFinishInstructionPage(_ sender:UIViewController, gameId: String){
@@ -88,7 +79,6 @@ class Instruction: UIViewController{
     static func showInstructionPage(_ sender:UIViewController, gameId: String) {
         let instructionPage = Instruction()
         instructionPage.instructionList = InstructionScript.generateScript(gameId: gameId)
-//        instructionPage.finishInstructionList = InstructionScript.generateFinishScript(gameId: gameId)
         instructionPage.modalPresentationStyle = .custom
         sender.present(instructionPage, animated: true, completion: nil)
     }

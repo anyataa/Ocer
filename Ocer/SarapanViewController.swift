@@ -8,6 +8,8 @@
 import UIKit
 
 class SarapanViewController: UIViewController, CongratsDelegate {
+    
+    let GAME_ID: String = "eat"
     var score : Int = 0
     
 //     Peotocol XIB Congratulation
@@ -153,6 +155,11 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
+    }
+    
    
 //    Tanya Kak Zein Masukin Param di sini GIMANA? Tanya temen temen juga pas async !!!
     @objc private func dragNotFood(_ sender: UIPanGestureRecognizer) {
@@ -284,6 +291,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         ayam.center = ayamCenter
         ayam.alpha = 1
         score = 0
+        Instruction.showInstructionPage(self, gameId: GAME_ID)
     }
 
 }

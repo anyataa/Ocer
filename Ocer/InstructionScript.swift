@@ -33,7 +33,7 @@ struct InstructionScript{
     }
     
     static func getInstruction(list: [InstructionScript], orderNo: Int)-> InstructionScript{
-        if orderNo != nil && orderNo > 0 && orderNo <= list.count{
+        if orderNo > 0 && orderNo <= list.count{
             return list[orderNo-1]
         }
         else{
@@ -44,31 +44,33 @@ struct InstructionScript{
 }
 
 var instructionList: [InstructionScript] = [
-    InstructionScript(gameId: "bedroom", orderNo: 1, description: "Hoahhmmmmm"),
-    InstructionScript(gameId: "bedroom", orderNo: 2, description: "Udah pagi aja, Ocer masih ngantuk banget tapi"),
-    InstructionScript(gameId: "bedroom", orderNo: 3, description: ". . . . ."),
-    InstructionScript(gameId: "bedroom", orderNo: 4, description: "Waduh kamar Ocer kok berantakan banget ya?"),
-    InstructionScript(gameId: "bedroom", orderNo: 5, description: "Beresin dulu ah sebelum pergi ke sekolah! Yuk bantuin Ocer beresin kamar! 🐒"),
+    InstructionScript(gameId: "bedroom", orderNo: 1, description: "Hoaaahhhmmmm… 🥱\n Udah pagi aja, Ocer masih ngantuk nih! 💤"),
+    InstructionScript(gameId: "bedroom", orderNo: 2, description: "Waduh kamar Ocer berantakan banget ya?"),
+    InstructionScript(gameId: "bedroom", orderNo: 3, description: "Beresin dulu yuk sebelum pergi ke sekolah!"),
+    InstructionScript(gameId: "bedroom", orderNo: 4, description: "Teman, yuk bantu Ocer beresin kamar! 🐒"),
+    InstructionScript(gameId: "bedroom", orderNo: 5, description: "Bantu Ocer meletakkan benda sesuai bentuknya ya, Teman!"),
 //    InstructionScript(gameId: "bedroom", orderNo: 6, description: "Yayyy, kamar Ocer sudah rapi, terima kasih sudah membantu Ocer! 🌟"),
     
-    InstructionScript(gameId: "toilet", orderNo: 1, description: "*sniff sniff* (merasakan bau mulut) 👃🏻"),
-    InstructionScript(gameId: "toilet", orderNo: 2, description: "Aduduhh, mulut Ocer bau pisang! 🍌"),
-    InstructionScript(gameId: "toilet", orderNo: 3, description: "Ocer mau sikat gigi dulu deh! 🪥"),
-    InstructionScript(gameId: "toilet", orderNo: 4, description: "Bantuin Ocer mengurutkan langkah-langkah sikat gigi ya! 🦷"),
-//    InstructionScript(gameId: "toilet", orderNo: 5, description: "Nah, kalau gini kan gigi Ocer wangi dan kinclong! 😁✨ Terima kasih sudah membantu Ocer! 🌟"),
+    InstructionScript(gameId: "toilet", orderNo: 1, description: "👃🏻 Aduh, mulut Ocer bau pisang banget nih karena baru bangun tidur! 🍌"),
+    InstructionScript(gameId: "toilet", orderNo: 2, description: "Kalau gitu Ocer mau sikat gigi dulu deh! 🪥"),
+    InstructionScript(gameId: "toilet", orderNo: 3, description: "Teman, bantuin Ocer mengurutkan langkah-langkah sikat gigi ya! 🦷"),
+    InstructionScript(gameId: "toilet", orderNo: 4, description: "Biar Ocer mulutnya bisa bersih dan ga bau lagi"),
+    InstructionScript(gameId: "toilet", orderNo: 5, description: "Teman, kamu bisa tahan gambar ke kotak sesuai urutan langkah sikat gigi ya!"),
+    InstructionScript(gameId: "toilet", orderNo: 6, description: "Setelah itu letakkan gambar ke kotak secara berurutan!"),
+    InstructionScript(gameId: "toilet", orderNo: 7, description: "Teman, kamu pasti bisa! Semangat ya!"),
     
-    InstructionScript(gameId: "eat", orderNo: 1, description: "Halo, sekarang Ocer mau sarapan. Nah, tolong bantu Ocer masukan makanan ke mangkok Ocer ya! "),
-    InstructionScript(gameId: "eat", orderNo: 2, description: "Bagaimana caranya?"),
-    InstructionScript(gameId: "eat", orderNo: 3, description: "Masukan makanan seperti gerakan di bawah ya!  (Ada demo bergerak makanan ke mangkok)."),
-    InstructionScript(gameId: "eat", orderNo: 4, description: "Nah, yang bukan makanan jangan dimasukan ke mangkok Ocer!"),
-    InstructionScript(gameId: "eat", orderNo: 5, description: "Jangan sampai salah nanti Ocer sakit perut."),
+    InstructionScript(gameId: "eat", orderNo: 1, description: "Halo, sekarang Ocer mau sarapan. Bantu Ocer masukkan makanan ke mangkok Ocer ya! 🥦"),
+    InstructionScript(gameId: "eat", orderNo: 2, description: "Bagaimana caranya?\nMudah kok, masukkan aja makanan ke mangkuk Ocer ya!"),
+    InstructionScript(gameId: "eat", orderNo: 3, description: "Nah, yang bukan makanan jangan dimasukkan ke mangkok Ocer!"),
+    InstructionScript(gameId: "eat", orderNo: 4, description: "Jangan sampai salah ya, Teman!\nNanti Ocer bisa sakit perut"),
     
-    InstructionScript(gameId: "school", orderNo: 1, description: "Ocer sudah siap ke sekolah! Terimakasih sudah membantu Ocer membereskan tempat tidur, mandi, dan sarapan."),
-    InstructionScript(gameId: "school", orderNo: 2, description: "Sekarang Ocer sudah siap ke sekolah."),
-    InstructionScript(gameId: "school", orderNo: 3, description: "Tapi, Ocer lupa jalannya ke sekolah."),
-    InstructionScript(gameId: "school", orderNo: 4, description: "Tolong bantu Ocer dalam menentukan jalan ke sekolah dengan cara memasukan panah yang sesuai ke kotak"),
-    InstructionScript(gameId: "school", orderNo: 5, description: "Nah, kalau semua panah sudah sesuai dengan jalan yang tepat ke sekolah sekarang injak pedal ya!"),
-    InstructionScript(gameId: "school", orderNo: 6, description: "Bantu menunjukan jalan yang benar ya supaya Ocer bisa ke sekolah!")
+    InstructionScript(gameId: "school", orderNo: 1, description: "Terima kasih sudah membantu Ocer membereskan tempat tidur, mandi, dan sarapan"),
+    InstructionScript(gameId: "school", orderNo: 2, description: "Sekarang Ocer sudah siap ke sekolah. Tapi, Ocer lupa jalan ke sekolah 😢"),
+    InstructionScript(gameId: "school", orderNo: 3, description: "Teman, tolong bantu Ocer menentukan jalan ke sekolah ya 🥺"),
+    InstructionScript(gameId: "school", orderNo: 4, description: "Caranya, masukkan panah ke kotak berdasarkan arah yang sesuai untuk ditempuh mobil"),
+    InstructionScript(gameId: "school", orderNo: 5, description: "Sekarang kalau semua kotak panah di jalan sudah terisi untuk menunjukkan jalan ke sekolah,"),
+    InstructionScript(gameId: "school", orderNo: 6, description: "Kamu sekarang bisa tekan tombol di kanan bawah supaya mobilnya bisa jalan!"),
+    InstructionScript(gameId: "school", orderNo: 7, description: "Nah, bantu menunjukkan jalan yang benar ke Ocer ya, supaya Ocer bisa ke sekolah nih!")
     
 ]
 

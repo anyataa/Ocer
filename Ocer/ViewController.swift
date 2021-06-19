@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    public var GAME_ID: String = "bedroom"
+//    public var GAME_ID: String = "bedroom"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -33,10 +33,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         Setting.addButtonToView(destination: self)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
 //        Instruction.showInstructionPage(self, gameId: GAME_ID)
-    }
+//    }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stories.count
