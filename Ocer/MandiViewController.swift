@@ -13,6 +13,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
     
     var center: CGPoint = CGPoint.zero
     var zones: [CGRect] = []
+    @IBOutlet weak var backButton: UIButton!
     
     let scene1: UIView = {
         let view = UIView(frame: CGRect(x: 55, y: 700, width: 300, height: 200))
@@ -155,6 +156,8 @@ class MandiViewController: UIViewController, CongratsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackgroundImage()
+        
         pos1 = scene1.center
         pos2 = scene2.center
         pos3 = scene3.center
@@ -206,6 +209,13 @@ class MandiViewController: UIViewController, CongratsDelegate {
         scene4.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene4(_:))))
         
         Setting.addButtonToView(destination: self)
+        view.bringSubviewToFront(backButton)
+    }
+    
+    func setBackgroundImage() {
+        let backgroundPlaceHolder = UIImageView(image: UIImage(named: "BackgroundMandi"))
+        backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        view.addSubview(backgroundPlaceHolder)
     }
     
     override func viewDidAppear(_ animated: Bool) {

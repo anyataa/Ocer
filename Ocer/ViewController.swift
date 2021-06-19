@@ -33,10 +33,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         Setting.addButtonToView(destination: self)
     }
     
+
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
 //        Instruction.showInstructionPage(self, gameId: GAME_ID)
 //    }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stories.count
