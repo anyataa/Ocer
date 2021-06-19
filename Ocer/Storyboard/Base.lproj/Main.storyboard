@@ -72,7 +72,6 @@
                     <connections>
                         <outlet property="collectionView" destination="2Sy-7F-r4j" id="nYR-J9-ayI"/>
                         <segue destination="6U0-Kl-sXu" kind="presentation" identifier="toSubMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="AgM-T4-CPe"/>
-                        <segue destination="4He-KM-KLh" kind="presentation" identifier="toUnderDevelopment" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mhN-TT-RjS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -129,7 +128,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="2734" height="2048"/>
+        <image name="Background" width="4098" height="3072"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
