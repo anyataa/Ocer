@@ -41,7 +41,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         self.view.addSubview(background)
     }
     let hand : UIView = {
-        let handView = UIView(frame: CGRect(x: 300, y: 780, width: 90, height: 98))
+        let handView = UIView(frame: CGRect(x: 327, y: 179, width: 90, height: 98))
         handView.backgroundColor = UIColor(patternImage: UIImage(named: "HandSmall")!)
         return handView
     }()
@@ -211,16 +211,16 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         case .began:
             //get object position on drag start
             center = sender.view!.center
-            print("began")
+//            print("began")
         
         case .changed:
             //bring dragged object to front (topmost z index within the same view hierarchy)
             view.bringSubviewToFront(sender.view!)
-            print("change")
+//            print("change")
             
             //update object position while dragging
             let translation = sender.translation(in: view)
-            print("translate")
+//            print("translate")
             sender.view!.center = CGPoint(x: center.x + translation.x,
                                           y: center.y + translation.y)
 
@@ -271,7 +271,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         case .ended:
             UIView.animate(withDuration: 0.5, delay: 0.0,usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]){
                 self.dragEnded(draggableObject: sender, draggableZone: self.bowlZone)
-                print(self.score)
+//                print(self.score)
                 self.sayCongratulationWhenFinish()
             }
             
@@ -310,8 +310,8 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     
     func sayCongratulationWhenFinish(){
         if self.score == 3 {
-            print("Yes You Did It")
-            
+//            print("Yes You Did It")
+//            print(sayurCenter)
             Progress.setValue(value: "p4", toKey: "progress4")
 //            implement congratulation XIB
             let congratsPage = CongratsPage()
@@ -355,7 +355,7 @@ func keluarButtonTapped() {
 func lanjutButtonTapped() {
     self.dismiss(animated: true, completion: nil)
     performSegue(withIdentifier: "toPage2", sender: nil)
-    print("from main page")
+//    print("from main page")
     }
 }
 
