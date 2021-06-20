@@ -342,25 +342,6 @@ class SarapanViewController: UIViewController, CongratsDelegate {
 
 }
 
-//Extension
-extension ViewController: CongratsDelegate{
-func ulangButtonTapped() {
-    self.dismiss(animated: true, completion: nil)
-    performSegue(withIdentifier: "toPage1", sender: nil)
-}
-
-func keluarButtonTapped() {
-    self.dismiss(animated: true, completion: nil)
-    performSegue(withIdentifier: "subMenu", sender: nil)
-}
-
-func lanjutButtonTapped() {
-    self.dismiss(animated: true, completion: nil)
-    performSegue(withIdentifier: "toPage2", sender: nil)
-//    print("from main page")
-    }
-}
-
 
 // MARK: What my code lacks of?
 // 1. Force unwrap (!)

@@ -16,9 +16,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let nib = UINib(nibName: "CardView", bundle: nil)
-//        collectionView.register(nib, forCellWithReuseIdentifier: "CardViewCell")
-        
         RegisterNib.registerCollectionViewNib(nibName: "CardView", collectionView: collectionView, cellId: "CardViewCell")
         
         self.collectionView.dataSource = self
