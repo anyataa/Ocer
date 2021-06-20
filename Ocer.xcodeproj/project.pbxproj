@@ -21,7 +21,6 @@
 		8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */; };
 		8438ED9A2674915B00100FA1 /* SarapanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438ED992674915B00100FA1 /* SarapanViewController.swift */; };
 		8454D38A266DEC850035302A /* SubMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D388266DEC850035302A /* SubMenu.storyboard */; };
-		8454D38D266DEC9F0035302A /* UnderDevelopment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */; };
 		8454D391266DECC80035302A /* BangunTidur.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D38F266DECC80035302A /* BangunTidur.storyboard */; };
 		8454D394266DECD50035302A /* Mandi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D393266DECD50035302A /* Mandi.storyboard */; };
 		8454D398266DECE10035302A /* Sarapan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D396266DECE10035302A /* Sarapan.storyboard */; };
@@ -69,10 +68,12 @@
 		F301015B266E2C2500002D7A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3010159266E2C2500002D7A /* CardView.swift */; };
 		F301015C266E2C2500002D7A /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F301015A266E2C2500002D7A /* CardView.xib */; };
 		F301015E266E317300002D7A /* SubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301015D266E317300002D7A /* SubMenu.swift */; };
-		F3010160266E322F00002D7A /* UnderDevelopment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301015F266E322F00002D7A /* UnderDevelopment.swift */; };
 		F31B7005266F0F9E00A6324A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31B7004266F0F9E00A6324A /* Scene.swift */; };
 		F398F2312678586700418853 /* design.graffiti.comicsansmsgras.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */; };
 		F399EA892679C8C8005E6765 /* ProgressHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399EA882679C8C8005E6765 /* ProgressHandler.swift */; };
+		F3D0F55C267EE39F00B737DB /* SeederStaticDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F55B267EE39F00B737DB /* SeederStaticDataStore.swift */; };
+		F3D0F55F267EE53B00B737DB /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F55E267EE53B00B737DB /* MenuRepository.swift */; };
+		F3D0F573267EE90100B737DB /* RegisterNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F572267EE90100B737DB /* RegisterNib.swift */; };
 		F3F6BD982673158A00616EAB /* MandiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F6BD972673158A00616EAB /* MandiViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +96,6 @@
 		8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangunTidurViewController.swift; sourceTree = "<group>"; };
 		8438ED992674915B00100FA1 /* SarapanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SarapanViewController.swift; sourceTree = "<group>"; };
 		8454D389266DEC850035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/SubMenu.storyboard; sourceTree = "<group>"; };
-		8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnderDevelopment.storyboard; sourceTree = "<group>"; };
 		8454D390266DECC80035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/BangunTidur.storyboard; sourceTree = "<group>"; };
 		8454D393266DECD50035302A /* Mandi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mandi.storyboard; sourceTree = "<group>"; };
 		8454D397266DECE10035302A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ocer/Base.lproj/Sarapan.storyboard; sourceTree = "<group>"; };
@@ -143,10 +143,12 @@
 		F3010159266E2C2500002D7A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F301015A266E2C2500002D7A /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F301015D266E317300002D7A /* SubMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMenu.swift; sourceTree = "<group>"; };
-		F301015F266E322F00002D7A /* UnderDevelopment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderDevelopment.swift; sourceTree = "<group>"; };
 		F31B7004266F0F9E00A6324A /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = design.graffiti.comicsansmsgras.ttf; sourceTree = "<group>"; };
 		F399EA882679C8C8005E6765 /* ProgressHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHandler.swift; sourceTree = "<group>"; };
+		F3D0F55B267EE39F00B737DB /* SeederStaticDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederStaticDataStore.swift; sourceTree = "<group>"; };
+		F3D0F55E267EE53B00B737DB /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
+		F3D0F572267EE90100B737DB /* RegisterNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNib.swift; sourceTree = "<group>"; };
 		F3F6BD972673158A00616EAB /* MandiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,49 +203,20 @@
 		8418B8FD26685E48002C8105 /* Ocer */ = {
 			isa = PBXGroup;
 			children = (
-				C63E861E2678741700B97B55 /* Congrats Page */,
-				F398F2322678588800418853 /* Fonts */,
+				F3217232267E19150061801A /* Feature */,
+				F3217233267E191C0061801A /* Themes */,
+				F3217234267E19230061801A /* Helper */,
+				F3217236267E19CB0061801A /* Utilities */,
 				0AEEA8B8267700AD0088CD42 /* Sound */,
 				EE2EDFD326779B4F002596AC /* SoundAsset */,
-				8454D39D266DED0B0035302A /* Storyboard */,
 				8418B8FE26685E48002C8105 /* AppDelegate.swift */,
-				8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */,
 				8418B90026685E48002C8105 /* SceneDelegate.swift */,
-				8438ED992674915B00100FA1 /* SarapanViewController.swift */,
-				8418B90226685E48002C8105 /* ViewController.swift */,
 				8418B90A26685E49002C8105 /* Assets.xcassets */,
 				8418B90C26685E49002C8105 /* LaunchScreen.storyboard */,
 				8418B90F26685E49002C8105 /* Info.plist */,
 				8418B90726685E48002C8105 /* Ocer.xcdatamodeld */,
-				F3010131266E1AA000002D7A /* Story.swift */,
-				F3010159266E2C2500002D7A /* CardView.swift */,
-				F301015A266E2C2500002D7A /* CardView.xib */,
-				F301015D266E317300002D7A /* SubMenu.swift */,
-				F301015F266E322F00002D7A /* UnderDevelopment.swift */,
-				F31B7004266F0F9E00A6324A /* Scene.swift */,
-				F3F6BD972673158A00616EAB /* MandiViewController.swift */,
-				0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */,
-				EEDADC9926770D58003004FB /* SettingController.swift */,
-				F399EA882679C8C8005E6765 /* ProgressHandler.swift */,
-				EE3E65772679BB3E00C25C0E /* Instruction.swift */,
-				EE3E6579267A2E0B00C25C0E /* Instruction.xib */,
-				EE3E657B267B30D400C25C0E /* InstructionScript.swift */,
 			);
 			path = Ocer;
-			sourceTree = "<group>";
-		};
-		8454D39D266DED0B0035302A /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				8418B90426685E48002C8105 /* Main.storyboard */,
-				8454D39A266DECF20035302A /* KeSekolah.storyboard */,
-				8454D396266DECE10035302A /* Sarapan.storyboard */,
-				8454D393266DECD50035302A /* Mandi.storyboard */,
-				8454D38F266DECC80035302A /* BangunTidur.storyboard */,
-				8454D38C266DEC9F0035302A /* UnderDevelopment.storyboard */,
-				8454D388266DEC850035302A /* SubMenu.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		C63E861E2678741700B97B55 /* Congrats Page */ = {
@@ -326,12 +299,298 @@
 			path = bedroom;
 			sourceTree = "<group>";
 		};
+		F3217232267E19150061801A /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F552267EE14800B737DB /* BerangkatSekolah */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		F3217233267E191C0061801A /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F553267EE16C00B737DB /* UI */,
+				F398F2322678588800418853 /* Fonts */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		F3217234267E19230061801A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EEDADC9926770D58003004FB /* SettingController.swift */,
+				EE3E657B267B30D400C25C0E /* InstructionScript.swift */,
+				F3D0F572267EE90100B737DB /* RegisterNib.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F3217236267E19CB0061801A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F556267EE2C500B737DB /* StaticData */,
+				F3217237267E19DC0061801A /* UserDefaults */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F3217237267E19DC0061801A /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F558267EE2F500B737DB /* Model */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		F398F2322678588800418853 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F3D0F552267EE14800B737DB /* BerangkatSekolah */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F560267EE65000B737DB /* Pages */,
+				F3D0F55A267EE36400B737DB /* Model */,
+			);
+			path = BerangkatSekolah;
+			sourceTree = "<group>";
+		};
+		F3D0F553267EE16C00B737DB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F554267EE18E00B737DB /* CardView */,
+				C63E861E2678741700B97B55 /* Congrats Page */,
+				F3D0F555267EE1C300B737DB /* Instruction */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F3D0F554267EE18E00B737DB /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				F3010159266E2C2500002D7A /* CardView.swift */,
+				F301015A266E2C2500002D7A /* CardView.xib */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		F3D0F555267EE1C300B737DB /* Instruction */ = {
+			isa = PBXGroup;
+			children = (
+				EE3E65772679BB3E00C25C0E /* Instruction.swift */,
+				EE3E6579267A2E0B00C25C0E /* Instruction.xib */,
+			);
+			path = Instruction;
+			sourceTree = "<group>";
+		};
+		F3D0F556267EE2C500B737DB /* StaticData */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F557267EE2E600B737DB /* Model */,
+			);
+			path = StaticData;
+			sourceTree = "<group>";
+		};
+		F3D0F557267EE2E600B737DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3010131266E1AA000002D7A /* Story.swift */,
+				F31B7004266F0F9E00A6324A /* Scene.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3D0F558267EE2F500B737DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F399EA882679C8C8005E6765 /* ProgressHandler.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3D0F559267EE35000B737DB /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F561267EE66100B737DB /* View */,
+				F3D0F562267EE66500B737DB /* Controller */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		F3D0F55A267EE36400B737DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F55D267EE49E00B737DB /* DataStore */,
+				F3D0F55E267EE53B00B737DB /* MenuRepository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3D0F55D267EE49E00B737DB /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F55B267EE39F00B737DB /* SeederStaticDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		F3D0F560267EE65000B737DB /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F559267EE35000B737DB /* Menu */,
+				F3D0F563267EE74400B737DB /* SubMenu */,
+				F3D0F566267EE76A00B737DB /* BangunTidur */,
+				F3D0F569267EE79300B737DB /* Mandi */,
+				F3D0F56C267EE7C000B737DB /* Sarapan */,
+				F3D0F56F267EE80400B737DB /* KeSekolah */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		F3D0F561267EE66100B737DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8418B90426685E48002C8105 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3D0F562267EE66500B737DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8418B90226685E48002C8105 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3D0F563267EE74400B737DB /* SubMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F565267EE75600B737DB /* View */,
+				F3D0F564267EE74F00B737DB /* Controller */,
+			);
+			path = SubMenu;
+			sourceTree = "<group>";
+		};
+		F3D0F564267EE74F00B737DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F301015D266E317300002D7A /* SubMenu.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3D0F565267EE75600B737DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8454D388266DEC850035302A /* SubMenu.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3D0F566267EE76A00B737DB /* BangunTidur */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F567267EE77800B737DB /* View */,
+				F3D0F568267EE77D00B737DB /* Controller */,
+			);
+			path = BangunTidur;
+			sourceTree = "<group>";
+		};
+		F3D0F567267EE77800B737DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8454D38F266DECC80035302A /* BangunTidur.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3D0F568267EE77D00B737DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8424E5CF26710A800096EE9C /* BangunTidurViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3D0F569267EE79300B737DB /* Mandi */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F56B267EE7B000B737DB /* View */,
+				F3D0F56A267EE7AB00B737DB /* Controller */,
+			);
+			path = Mandi;
+			sourceTree = "<group>";
+		};
+		F3D0F56A267EE7AB00B737DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3F6BD972673158A00616EAB /* MandiViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3D0F56B267EE7B000B737DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8454D393266DECD50035302A /* Mandi.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3D0F56C267EE7C000B737DB /* Sarapan */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F56E267EE7F000B737DB /* View */,
+				F3D0F56D267EE7EA00B737DB /* Controller */,
+			);
+			path = Sarapan;
+			sourceTree = "<group>";
+		};
+		F3D0F56D267EE7EA00B737DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8438ED992674915B00100FA1 /* SarapanViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3D0F56E267EE7F000B737DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8454D396266DECE10035302A /* Sarapan.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3D0F56F267EE80400B737DB /* KeSekolah */ = {
+			isa = PBXGroup;
+			children = (
+				F3D0F571267EE80D00B737DB /* View */,
+				F3D0F570267EE80900B737DB /* Controller */,
+			);
+			path = KeSekolah;
+			sourceTree = "<group>";
+		};
+		F3D0F570267EE80900B737DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A87D5E226729B4800C3FED4 /* KeSekolahViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3D0F571267EE80D00B737DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8454D39A266DECF20035302A /* KeSekolah.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F6A075E860A80F6C176B7087 /* Pods */ = {
@@ -429,7 +688,6 @@
 				EE3BF6FA267D99540036F318 /* school_5.mp3 in Resources */,
 				EE3BF6D7267D98F00036F318 /* bedroom_2.mp3 in Resources */,
 				C63E8623267877FB00B97B55 /* CongratsPageLater.xib in Resources */,
-				8454D38D266DEC9F0035302A /* UnderDevelopment.storyboard in Resources */,
 				EE2EDFE42678E8D5002596AC /* pressButton.mp3 in Resources */,
 				EE3BF6F5267D99540036F318 /* school_1.mp3 in Resources */,
 				EE3BF6EB267D99400036F318 /* eat_1.mp3 in Resources */,
@@ -504,18 +762,20 @@
 				8418B90326685E48002C8105 /* ViewController.swift in Sources */,
 				8438ED9A2674915B00100FA1 /* SarapanViewController.swift in Sources */,
 				8418B8FF26685E48002C8105 /* AppDelegate.swift in Sources */,
-				F3010160266E322F00002D7A /* UnderDevelopment.swift in Sources */,
 				8418B90926685E48002C8105 /* Ocer.xcdatamodeld in Sources */,
 				C63E8625267877FB00B97B55 /* CongratsPage.swift in Sources */,
 				0A87D5E326729B4800C3FED4 /* KeSekolahViewController.swift in Sources */,
 				8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */,
 				F399EA892679C8C8005E6765 /* ProgressHandler.swift in Sources */,
 				F3F6BD982673158A00616EAB /* MandiViewController.swift in Sources */,
+				F3D0F55C267EE39F00B737DB /* SeederStaticDataStore.swift in Sources */,
 				EE3E657C267B30D400C25C0E /* InstructionScript.swift in Sources */,
 				F301015B266E2C2500002D7A /* CardView.swift in Sources */,
 				F301015E266E317300002D7A /* SubMenu.swift in Sources */,
 				EE3E65782679BB3E00C25C0E /* Instruction.swift in Sources */,
+				F3D0F573267EE90100B737DB /* RegisterNib.swift in Sources */,
 				C63E8626267877FB00B97B55 /* CongratsPageLater.swift in Sources */,
+				F3D0F55F267EE53B00B737DB /* MenuRepository.swift in Sources */,
 				F3010132266E1AA000002D7A /* Story.swift in Sources */,
 				8424E5D026710A800096EE9C /* BangunTidurViewController.swift in Sources */,
 				EEDADC9A26770D58003004FB /* SettingController.swift in Sources */,

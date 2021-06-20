@@ -33,9 +33,9 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        // Refactor this to new file
-        let nib = UINib(nibName: "CardView", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "CardViewCell")
+//        let nib = UINib(nibName: "CardView", bundle: nil)
+//        collectionView.register(nib, forCellWithReuseIdentifier: "CardViewCell")
+        RegisterNib.registerCollectionViewNib(nibName: "CardView", collectionView: collectionView, cellId: "CardViewCell")
         Setting.addButtonToView(destination: self)
     }
     

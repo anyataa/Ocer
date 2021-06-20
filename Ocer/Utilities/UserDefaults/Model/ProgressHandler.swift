@@ -31,11 +31,6 @@ class Progress {
     }
     
     public static func setValue(value: String, toKey: String) {
-//        let dictionary = self.shared.defaults.dictionaryRepresentation()
-//        dictionary.keys.forEach { key in
-//            shared.defaults.removeObject(forKey: key)
-//        }
-//        generate()
         changedValue(value: value, key: toKey)
     }
     
