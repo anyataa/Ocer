@@ -13,10 +13,10 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var collectionView: UICollectionView!
     
     let scenes: [Scene] = [
-        Scene(sceneName: "Bangun Tidur", sceneImage: "SubMenu1"),
-        Scene(sceneName: "Menyikat Gigi", sceneImage: "SubMenu2"),
-        Scene(sceneName: "Sarapan", sceneImage: "SubMenu3"),
-        Scene(sceneName: "Pergi ke Sekolah", sceneImage: "SubMenu4")
+        Scene(sceneName: "Bangun Tidur", sceneImage: "SubMenu 1"),
+        Scene(sceneName: "Menyikat Gigi", sceneImage: "SubMenu 2"),
+        Scene(sceneName: "Sarapan", sceneImage: "SubMenu 3"),
+        Scene(sceneName: "Pergi ke Sekolah", sceneImage: "SubMenu 4")
     ]
     
     override func viewDidLoad() {
@@ -39,21 +39,21 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     func gameProgress() {
         if Progress.shared.defaults.bool(forKey: "progress2") == false {
-            self.scenes[1].sceneImage = "LockedSubMenu2"
+            self.scenes[1].sceneImage = "Lock SubMenu 2"
         }
         
         if Progress.shared.defaults.bool(forKey: "progress3") == false {
-            self.scenes[2].sceneImage = "LockedSubMenu3"
+            self.scenes[2].sceneImage = "Lock SubMenu 3"
         }
         
         if Progress.shared.defaults.bool(forKey: "progress4") == false {
-            self.scenes[3].sceneImage = "LockedSubMenu4"
+            self.scenes[3].sceneImage = "Lock SubMenu 4"
         }
         
         if Progress.shared.defaults.bool(forKey: "progress2") == true && Progress.shared.defaults.bool(forKey: "progress3") == true && Progress.shared.defaults.bool(forKey: "progress4") == true  {
-            self.scenes[1].sceneImage = "SubMenu2"
-            self.scenes[2].sceneImage = "SubMenu3"
-            self.scenes[3].sceneImage = "SubMenu4"
+            self.scenes[1].sceneImage = "SubMenu 2"
+            self.scenes[2].sceneImage = "SubMenu 3"
+            self.scenes[3].sceneImage = "SubMenu 4"
         }
     }
     

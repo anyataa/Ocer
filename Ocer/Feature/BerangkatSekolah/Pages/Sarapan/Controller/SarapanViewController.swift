@@ -34,7 +34,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
     var center: CGPoint = CGPoint.zero
     var dropZone : CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     func setBackground() {
-        let background = UIImageView(image: UIImage(named: "backgroundMakan"))
+        let background = UIImageView(image: UIImage(named: "Background Makanan"))
         
         background.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         
