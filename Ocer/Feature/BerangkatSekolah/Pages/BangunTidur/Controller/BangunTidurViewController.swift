@@ -127,13 +127,13 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     
     let pillow2: UIView = {
         
-        let view = UIView(frame: CGRect(x: 300, y: 20, width: 200, height: 200))
+        let view = UIView(frame: CGRect(x: 300, y: 20, width: 150, height: 77))
 //        view.backgroundColor = UIColor(patternImage: UIImage(named: "bantal")!)
 //        let view = UIView(frame: CGRect(x: 200, y: 800, width: 188, height: 110))
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "Oval")!)
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 10
-        view.layer.cornerRadius = 100
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "pillowLong")!)
+//        view.layer.borderColor = UIColor.black.cgColor
+//        view.layer.borderWidth = 10
+//        view.layer.cornerRadius = 100
         return view
     }()
     
@@ -168,11 +168,11 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
     }()
     
     let pillowZone2: UIView = {
-        let view = UIView(frame: CGRect(x: 570, y: 260, width: 200, height: 200))
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 100
-        view.layer.borderWidth = 10
-        view.layer.borderColor = UIColor.black.cgColor
+        let view = UIView(frame: CGRect(x: 570, y: 320, width: 150, height: 77))
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "pillowLongZone")!)
+//        view.layer.cornerRadius = 100
+//        view.layer.borderWidth = 10
+//        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
     
