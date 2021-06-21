@@ -117,7 +117,7 @@ class BangunTidurViewController: UIViewController, CongratsDelegate {
 //        let view = UIImageView(image: UIImage(named: "bantal"))
 //        view.frame = CGRect(x: 100, y: 500, width: 188, height: 110)
         
-        let view = UIView(frame: CGRect(x: 500, y: 500, width: 195, height: 110))
+        let view = UIView(frame: CGRect(x: 100, y: 500, width: 195, height: 110))
         view.backgroundColor = UIColor(patternImage: UIImage(named: "bantal")!)
 //        view.layer.borderColor = UIColor.black.cgColor
 //        view.layer.borderWidth = 10
