@@ -93,7 +93,7 @@ class SarapanViewController: UIViewController, CongratsDelegate {
         view.addSubview(backButton)
     }
     @objc func segueBack() {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "SubMenu", sender: self)
     }
     
