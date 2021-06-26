@@ -8,6 +8,7 @@
 import Foundation
 
 class Progress {
+    
     static let shared = Progress()
     let defaults = UserDefaults.standard
     
@@ -40,4 +41,5 @@ class Progress {
             shared.defaults.removeObject(forKey: key)
         }
     }
+    
 }

@@ -9,10 +9,19 @@ import UIKit
 
 class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var subSceneView: UIView!
+    @IBOutlet weak var subSceneView: UIView! {
+        didSet {
+            self.subSceneView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+            self.subSceneView.layer.cornerRadius = 30
+            
+            self.collectionView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+            self.collectionView.layer.cornerRadius = 30
+        }
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let scenes: [Scene] = [
+    private let scenes: [Scene] = [
         Scene(sceneName: "Bangun Tidur", sceneImage: "SubMenu 1"),
         Scene(sceneName: "Menyikat Gigi", sceneImage: "SubMenu 2"),
         Scene(sceneName: "Sarapan", sceneImage: "SubMenu 3"),
@@ -23,15 +32,6 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         super.viewDidLoad()
         
         gameProgress()
-        
-        self.subSceneView.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        self.subSceneView.layer.cornerRadius = 30
-        
-        self.collectionView.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        self.collectionView.layer.cornerRadius = 30
-        
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
         
         RegisterNib.registerCollectionViewNib(nibName: "CardView", collectionView: collectionView, cellId: "CardViewCell")
         Setting.addButtonToView(destination: self)
@@ -61,6 +61,16 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         return scenes.count
     }
     
+}
+
+extension SubMenu {
+    
+    func playSoundEffect() {
+        DispatchQueue.main.async {
+            Setting.playSoundEffect(fileName: "pressButton")
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: indexPath) as! CardView
         cell.cardName.text = scenes[indexPath.row].sceneName
@@ -70,23 +80,22 @@ class SubMenu: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         switch indexPath.row {
         case 0:
-            Setting.playSoundEffect(fileName: "pressButton")
+            playSoundEffect()
             self.performSegue(withIdentifier: "toBangunTidur", sender: nil)
         case 1:
-            Setting.playSoundEffect(fileName: "pressButton")
+            playSoundEffect()
             if Progress.shared.defaults.bool(forKey: "progress2") == true {
                 self.performSegue(withIdentifier: "toMandi", sender: nil)
             }
         case 2:
-            Setting.playSoundEffect(fileName: "pressButton")
+            playSoundEffect()
             if Progress.shared.defaults.bool(forKey: "progress3") == true {
                 self.performSegue(withIdentifier: "toSarapan", sender: nil)
             }
         case 3:
-            Setting.playSoundEffect(fileName: "pressButton")
+            playSoundEffect()
             if Progress.shared.defaults.bool(forKey: "progress4") == true {
                 self.performSegue(withIdentifier: "toKeSekolah", sender: nil)
             }

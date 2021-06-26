@@ -51,6 +51,10 @@
                                                 </collectionViewCellContentView>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="LyP-5A-QDk" id="tG5-BN-PD8"/>
+                                            <outlet property="delegate" destination="LyP-5A-QDk" id="ATS-8X-8vt"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

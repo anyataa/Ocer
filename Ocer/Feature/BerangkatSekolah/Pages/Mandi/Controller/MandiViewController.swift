@@ -17,7 +17,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
     @IBOutlet weak var hintButton: UIButton!
     @IBOutlet weak var hand: UIImageView!
     
-    let scene1: UIView = {
+    lazy var scene1: UIView = {
         let view = UIView(frame: CGRect(x: 55, y: 700, width: 300, height: 200))
         view.backgroundColor = UIColor(patternImage: UIImage(named: "Mandi2")!)
         view.layer.borderColor = UIColor.black.cgColor
@@ -27,7 +27,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let scene2: UIView = {
+    lazy var scene2: UIView = {
         let view = UIView(frame: CGRect(x: 375, y: 700, width: 300, height: 200))
         view.backgroundColor = UIColor(patternImage: UIImage(named: "Mandi4")!)
         view.layer.borderColor = UIColor.black.cgColor
@@ -37,7 +37,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let scene3: UIView = {
+    lazy var scene3: UIView = {
         let view = UIView(frame: CGRect(x: 695, y: 700, width: 300, height: 200))
         view.backgroundColor = UIColor(patternImage: UIImage(named: "Mandi1")!)
         view.layer.borderColor = UIColor.black.cgColor
@@ -47,7 +47,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let scene4: UIView = {
+    lazy var scene4: UIView = {
         let view = UIView(frame: CGRect(x: 1015, y: 700, width: 300, height: 200))
         view.backgroundColor = UIColor(patternImage: UIImage(named: "Mandi3")!)
         view.layer.borderColor = UIColor.black.cgColor
@@ -57,7 +57,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let sceneZone1: UIView = {
+    lazy var sceneZone1: UIView = {
         let view = UIView(frame: CGRect(x: 55, y: 200, width: 300, height: 200))
         view.backgroundColor = .white
         view.layer.borderColor = UIColor.black.cgColor
@@ -67,7 +67,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let sceneZone2: UIView = {
+    lazy var sceneZone2: UIView = {
         let view = UIView(frame: CGRect(x: 375, y: 200, width: 300, height: 200))
         view.backgroundColor = .white
         view.layer.borderColor = UIColor.black.cgColor
@@ -77,7 +77,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let sceneZone3: UIView = {
+    lazy var sceneZone3: UIView = {
         let view = UIView(frame: CGRect(x: 695, y: 200, width: 300, height: 200))
         view.backgroundColor = .white
         view.layer.borderColor = UIColor.black.cgColor
@@ -87,7 +87,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let sceneZone4: UIView = {
+    lazy var sceneZone4: UIView = {
         let view = UIView(frame: CGRect(x: 1015, y: 200, width: 300, height: 200))
         view.backgroundColor = .white
         view.layer.borderColor = UIColor.black.cgColor
@@ -97,63 +97,63 @@ class MandiViewController: UIViewController, CongratsDelegate {
         return view
     }()
     
-    let correctZone1: UIView = {
+    lazy var correctZone1: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    let correctZone2: UIView = {
+    lazy var correctZone2: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    let correctZone3: UIView = {
+    lazy var correctZone3: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    let correctZone4: UIView = {
+    lazy var correctZone4: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    let draggedZone1: UIView = {
+    lazy var draggedZone1: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    let draggedZone2: UIView = {
+    lazy var draggedZone2: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    let draggedZone3: UIView = {
+    lazy var draggedZone3: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    let draggedZone4: UIView = {
+    lazy var draggedZone4: UIView = {
         let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
         
         return view
     }()
     
-    var pos1: CGPoint?
-    var pos2: CGPoint?
-    var pos3: CGPoint?
-    var pos4: CGPoint?
+    private var pos1: CGPoint?
+    private var pos2: CGPoint?
+    private var pos3: CGPoint?
+    private var pos4: CGPoint?
     
-    var posZone1: CGPoint?
-    var posZone2: CGPoint?
-    var posZone3: CGPoint?
-    var posZone4: CGPoint?
+    private var posZone1: CGPoint?
+    private var posZone2: CGPoint?
+    private var posZone3: CGPoint?
+    private var posZone4: CGPoint?
     
     var initialHand: CGPoint = .zero
     var animationCount: Int = 0
@@ -161,54 +161,7 @@ class MandiViewController: UIViewController, CongratsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackgroundImage()
-        
-        initialHand = scene1.center
-        
-        pos1 = scene1.center
-        pos2 = scene2.center
-        pos3 = scene3.center
-        pos4 = scene4.center
-        
-        posZone1 = sceneZone1.center
-        posZone2 = sceneZone2.center
-        posZone3 = sceneZone3.center
-        posZone4 = sceneZone4.center
-        
-        draggedZone1.center = scene1.center
-        draggedZone2.center = scene2.center
-        draggedZone3.center = scene3.center
-        draggedZone4.center = scene4.center
-        
-        view.addSubview(draggedZone1)
-        view.addSubview(draggedZone2)
-        view.addSubview(draggedZone3)
-        view.addSubview(draggedZone4)
-        
-        view.addSubview(scene1)
-        view.addSubview(scene2)
-        view.addSubview(scene3)
-        view.addSubview(scene4)
-        
-        view.addSubview(sceneZone1)
-        view.addSubview(sceneZone2)
-        view.addSubview(sceneZone3)
-        view.addSubview(sceneZone4)
-        
-        correctZone2.center = sceneZone2.center
-        correctZone4.center = sceneZone4.center
-        correctZone1.center = sceneZone1.center
-        correctZone3.center = sceneZone3.center
-        
-        view.addSubview(correctZone1)
-        view.addSubview(correctZone2)
-        view.addSubview(correctZone3)
-        view.addSubview(correctZone4)
-        
-        zones.append(correctZone1.frame)
-        zones.append(correctZone2.frame)
-        zones.append(correctZone3.frame)
-        zones.append(correctZone4.frame)
+        initialSetup()
         
         scene1.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene1(_:))))
         scene2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragScene2(_:))))
@@ -250,12 +203,6 @@ class MandiViewController: UIViewController, CongratsDelegate {
         }
     }
     
-    func setBackgroundImage() {
-        let backgroundPlaceHolder = UIImageView(image: UIImage(named: "BackgroundMandi"))
-        backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        view.addSubview(backgroundPlaceHolder)
-    }
-    
     @objc func dragScene1(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began:
@@ -267,24 +214,30 @@ class MandiViewController: UIViewController, CongratsDelegate {
             let translation = sender.translation(in: view)
             scene1.center = CGPoint(x: center.x + translation.x, y: center.y + translation.y)
             draggedZone1.center = scene1.center
-
+            
             for zone in zones {
                 if (sender.view?.frame != nil) {
                     if (draggedZone1.frame.intersects(zone)) {
-                        sender.view!.layer.shadowRadius = 15
+                        DispatchQueue.main.async {
+                            sender.view!.layer.shadowRadius = 15
 
-                        if (zone == correctZone2.frame) {
-                            sender.view!.layer.shadowColor = UIColor.green.cgColor
-                        } else {
-                            sender.view!.layer.shadowColor = UIColor.red.cgColor
+                            if (zone == self.correctZone2.frame) {
+                                sender.view!.layer.shadowColor = UIColor.green.cgColor
+                            } else {
+                                sender.view!.layer.shadowColor = UIColor.red.cgColor
+                            }
+                            sender.view!.layer.shadowOpacity = 1
                         }
-                        sender.view!.layer.shadowOpacity = 1
                         break
                     } else {
-                        sender.view!.layer.shadowOpacity = 0
+                        DispatchQueue.main.async {
+                            sender.view!.layer.shadowOpacity = 0
+                        }
                     }
                 }
             }
+
+            
 
         case .ended:
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseIn]) {
@@ -439,40 +392,6 @@ class MandiViewController: UIViewController, CongratsDelegate {
         performSegue(withIdentifier: "toSarapan", sender: nil)
     }
     
-    func check() {
-        if (self.scene1.center == self.sceneZone2.center) && (self.scene2.center == self.sceneZone4.center) && (self.scene3.center == self.sceneZone1.center) && (self.scene4.center == self.sceneZone3.center) {
-            Progress.setValue(value: "p3", toKey: "progress3")
-            
-            UIView.animate(withDuration: 5, animations: {
-                self.scene1.frame = CGRect(x: 375, y: 500, width: 300, height: 200)
-                self.sceneZone1.frame = CGRect(x: 55, y: 500, width: 300, height: 200)
-                self.correctZone1.frame = self.sceneZone1.frame
-                self.draggedZone1.frame = self.scene1.frame
-
-                self.scene2.frame = CGRect(x: 1015, y: 500, width: 300, height: 200)
-                self.sceneZone2.frame = CGRect(x: 375, y: 500, width: 300, height: 200)
-                self.correctZone2.frame = self.sceneZone2.frame
-                self.draggedZone2.frame = self.scene2.frame
-
-                self.scene3.frame = CGRect(x: 55, y: 500, width: 300, height: 200)
-                self.sceneZone3.frame = CGRect(x: 695, y: 500, width: 300, height: 200)
-                self.correctZone3.frame = self.sceneZone3.frame
-                self.draggedZone3.frame = self.scene3.frame
-
-                self.scene4.frame = CGRect(x: 695, y: 500, width: 300, height: 200)
-                self.sceneZone4.frame = CGRect(x: 1015, y: 500, width: 300, height: 200)
-                self.correctZone4.frame = self.sceneZone4.frame
-                self.draggedZone4.frame = self.scene4.frame
-            }, completion: {_ in
-                let congratsPage = CongratsPage()
-                congratsPage.modalPresentationStyle = .custom
-                congratsPage.congratsDelegate = self
-                self.present(congratsPage, animated: true, completion: nil)
-            })
-            
-        }
-    }
-    
     func dragEnded(draggableObject: UIView, draggableZone: UIView) {
         if (draggableObject.frame.intersects(draggableZone.frame)) {
             Setting.playSoundEffect(fileName: "ok")
@@ -520,6 +439,82 @@ class MandiViewController: UIViewController, CongratsDelegate {
         scene3.layer.shadowOpacity = 0
         scene4.layer.shadowOpacity = 0
         draggableObject.layer.shadowOpacity = 0
+    }
+    
+}
+
+extension MandiViewController {
+    
+    func initialSetup() {
+        setBackgroundImage()
+        setUpPosition()
+        setUpView()
+        appendToZones()
+    }
+    
+    func setBackgroundImage() {
+        let backgroundPlaceHolder = UIImageView(image: UIImage(named: "BackgroundMandi"))
+        backgroundPlaceHolder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        view.addSubview(backgroundPlaceHolder)
+    }
+    
+    func setUpPosition() {
+        initialHand = scene1.center
+        
+        pos1 = scene1.center
+        pos2 = scene2.center
+        pos3 = scene3.center
+        pos4 = scene4.center
+        
+        posZone1 = sceneZone1.center
+        posZone2 = sceneZone2.center
+        posZone3 = sceneZone3.center
+        posZone4 = sceneZone4.center
+    }
+    
+    func setUpView() {
+        ZoneRepository.matchCenter(of: draggedZone1, draggedZone2, draggedZone3, draggedZone4, with: scene1, scene2, scene3, scene4)
+        ZoneRepository.add(subViewName: draggedZone1, draggedZone2, draggedZone3, draggedZone4, scene1, scene2, scene3, scene4, sceneZone1, sceneZone2, sceneZone3, sceneZone4, to: view)
+        ZoneRepository.matchCenter(of: correctZone2, correctZone4, correctZone1, correctZone3, with: sceneZone2, sceneZone4, sceneZone1, sceneZone3)
+        ZoneRepository.add(subViewName: correctZone1, correctZone2, correctZone3, correctZone4, to: view)
+    }
+    
+    func appendToZones() {
+        zones.append(correctZone1.frame)
+        zones.append(correctZone2.frame)
+        zones.append(correctZone3.frame)
+        zones.append(correctZone4.frame)
+    }
+    
+}
+
+extension MandiViewController {
+    
+    func isCheckingTrue() -> Bool {
+        if (self.scene1.center == self.sceneZone2.center) && (self.scene2.center == self.sceneZone4.center) && (self.scene3.center == self.sceneZone1.center) && (self.scene4.center == self.sceneZone3.center) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func check() {
+        if (isCheckingTrue()) {
+            Progress.setValue(value: "p3", toKey: "progress3")
+            
+            UIView.animate(withDuration: 5, animations: {
+                ZoneRepository.moveScene(scene: self.scene1, sceneZone: self.sceneZone1, correctZone: self.correctZone1, draggedZone: self.draggedZone1, x: 375, x2: 55)
+                ZoneRepository.moveScene(scene: self.scene2, sceneZone: self.sceneZone2, correctZone: self.correctZone2, draggedZone: self.draggedZone2, x: 1015, x2: 375)
+                ZoneRepository.moveScene(scene: self.scene3, sceneZone: self.sceneZone3, correctZone: self.correctZone3, draggedZone: self.draggedZone3, x: 55, x2: 695)
+                ZoneRepository.moveScene(scene: self.scene4, sceneZone: self.sceneZone4, correctZone: self.correctZone4, draggedZone: self.draggedZone4, x: 695, x2: 1015)
+            }, completion: {_ in
+                let congratsPage = CongratsPage()
+                congratsPage.modalPresentationStyle = .custom
+                congratsPage.congratsDelegate = self
+                self.present(congratsPage, animated: true, completion: nil)
+            })
+            
+        }
     }
     
 }

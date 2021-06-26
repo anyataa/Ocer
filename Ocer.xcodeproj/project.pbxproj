@@ -71,6 +71,7 @@
 		F31B7005266F0F9E00A6324A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31B7004266F0F9E00A6324A /* Scene.swift */; };
 		F398F2312678586700418853 /* design.graffiti.comicsansmsgras.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */; };
 		F399EA892679C8C8005E6765 /* ProgressHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399EA882679C8C8005E6765 /* ProgressHandler.swift */; };
+		F39F9A1D2686DB0900D32430 /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F9A1C2686DB0900D32430 /* ZoneRepository.swift */; };
 		F3D0F55C267EE39F00B737DB /* SeederStaticDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F55B267EE39F00B737DB /* SeederStaticDataStore.swift */; };
 		F3D0F55F267EE53B00B737DB /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F55E267EE53B00B737DB /* MenuRepository.swift */; };
 		F3D0F573267EE90100B737DB /* RegisterNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F572267EE90100B737DB /* RegisterNib.swift */; };
@@ -146,6 +147,7 @@
 		F31B7004266F0F9E00A6324A /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		F398F2302678586700418853 /* design.graffiti.comicsansmsgras.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = design.graffiti.comicsansmsgras.ttf; sourceTree = "<group>"; };
 		F399EA882679C8C8005E6765 /* ProgressHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHandler.swift; sourceTree = "<group>"; };
+		F39F9A1C2686DB0900D32430 /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
 		F3D0F55B267EE39F00B737DB /* SeederStaticDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederStaticDataStore.swift; sourceTree = "<group>"; };
 		F3D0F55E267EE53B00B737DB /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
 		F3D0F572267EE90100B737DB /* RegisterNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNib.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				EEDADC9926770D58003004FB /* SettingController.swift */,
 				EE3E657B267B30D400C25C0E /* InstructionScript.swift */,
 				F3D0F572267EE90100B737DB /* RegisterNib.swift */,
+				F39F9A1C2686DB0900D32430 /* ZoneRepository.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				C63E8625267877FB00B97B55 /* CongratsPage.swift in Sources */,
 				0A87D5E326729B4800C3FED4 /* KeSekolahViewController.swift in Sources */,
 				8418B90126685E48002C8105 /* SceneDelegate.swift in Sources */,
+				F39F9A1D2686DB0900D32430 /* ZoneRepository.swift in Sources */,
 				F399EA892679C8C8005E6765 /* ProgressHandler.swift in Sources */,
 				F3F6BD982673158A00616EAB /* MandiViewController.swift in Sources */,
 				F3D0F55C267EE39F00B737DB /* SeederStaticDataStore.swift in Sources */,

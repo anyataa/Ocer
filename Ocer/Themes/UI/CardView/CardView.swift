@@ -14,6 +14,8 @@ class CardView: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        cardImage.layer.cornerRadius = 30
     }
 
 }
